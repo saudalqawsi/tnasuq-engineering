@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import TnasuqLogo from '@/components/ui/TnasuqLogo';
 
 export default function PerimeterNav() {
   const { lang, toggleLanguage, t, isRTL } = useLanguage();
@@ -38,17 +39,7 @@ export default function PerimeterNav() {
       >
         <div className="flex items-center justify-between px-6 md:px-12 py-5">
           {/* Logo */}
-          <button
-            onClick={() => scrollTo('hero')}
-            className="flex flex-col items-start gap-0 group"
-          >
-            <span className="text-xl md:text-2xl font-inter font-bold tracking-tight text-foreground">
-              TNASUQ
-            </span>
-            <span className="text-[10px] font-arabic font-medium text-muted-foreground tracking-widest">
-              تناسق
-            </span>
-          </button>
+          <TnasuqLogo size="md" onClick={() => scrollTo('hero')} />
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-10">

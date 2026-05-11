@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
+import TnasuqLogo from '@/components/ui/TnasuqLogo';
 
 export default function FooterSection() {
   const { t, isRTL } = useLanguage();
@@ -25,9 +26,8 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-20">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex flex-col gap-1 mb-6">
-              <span className="text-2xl font-inter font-bold tracking-tight">TNASUQ</span>
-              <span className="text-sm font-arabic text-primary-foreground/40">تناسق للاستشارات الهندسية</span>
+            <div className="mb-6 opacity-80">
+              <TnasuqLogo size="lg" />
             </div>
             <p className={`text-sm text-primary-foreground/40 leading-relaxed max-w-xs ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {t.footer.tagline}

@@ -89,7 +89,7 @@ export default function HeroSection({ heroImage }) {
             className="mb-6"
           >
             {isRTL ? (
-              <span className="font-arabic text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.15] text-foreground">
+              <span className="font-arabic text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.1] text-foreground">
                 تناسق
                 <br />
                 <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4), 0 1px 0 hsl(32 30% 85%)' }}>للاستشارات</span>
