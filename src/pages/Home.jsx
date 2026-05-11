@@ -4,7 +4,7 @@ import PerimeterNav from '@/components/navigation/PerimeterNav';
 import HeroSection from '@/components/sections/HeroSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import ServicesSection from '@/components/sections/ServicesSection';
-import LogoProposalsSection from '@/components/sections/LogoProposalsSection';
+import LogoVariationsSection from '@/components/sections/LogoVariationsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
 
@@ -27,7 +27,7 @@ export default function Home() {
         <HeroSection heroImage={HERO_IMAGE} />
         <PortfolioSection projectImages={PROJECT_IMAGES} />
         <ServicesSection />
-        <LogoProposalsSection />
+        <LogoVariationsSection />
         <ContactSection />
         <FooterSection />
       </div>
