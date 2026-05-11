@@ -172,7 +172,7 @@ export default function LogoVariationsSection() {
     <section
       id="logo-variations"
       ref={ref}
-      className="relative py-24 md:py-36 overflow-hidden"
+      className="relative py-24 md:py-36 overflow-hidden hidden"
       dir={isRTL ? 'rtl' : 'ltr'}>
       
       
