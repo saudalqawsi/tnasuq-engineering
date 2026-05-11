@@ -175,61 +175,61 @@ export default function LogoVariationsSection() {
       className="relative py-24 md:py-36 overflow-hidden"
       dir={isRTL ? 'rtl' : 'ltr'}>
       
-      <div className="px-6 md:px-16 lg:px-24 hidden">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-16 md:mb-24">
-          
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-[1.5px] bg-primary" />
-            <span className={`text-sm tracking-[0.2em] text-primary font-medium uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-              {isRTL ? 'هوية بصرية' : 'Visual Identity'}
-            </span>
-          </div>
-          <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
-            {isRTL ? '٣ تنويعات للشعار' : '3 Logo Variations'}
-          </h2>
-          <p className={`text-lg text-muted-foreground max-w-2xl leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-            {isRTL ?
-            'ثلاث نسخ من الشعار الثنائي اللغة، كل واحدة على خلفية شبكة هندسية مختلفة.' :
-            'Three variations of the bilingual wordmark, each set against a different engineering grid background.'}
-          </p>
-        </motion.div>
+      
 
-        {/* Variation cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {VARIANTS.map((v, i) => {
-            const label = isRTL ? v.label.ar : v.label.en;
-            return (
-              <motion.div
-                key={v.id}
-                initial={{ opacity: 0, y: 40 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: i * 0.15 }}
-                className={`group relative border border-border/60 overflow-hidden hover:border-primary/40 transition-colors duration-500 ${v.bg}`}>
-                
-                {/* Blueprint grid background */}
-                <v.Grid />
 
-                {/* Logo display */}
-                <div className="relative z-10 flex items-center justify-center px-10 py-16 md:py-20">
-                  {v.render(foreground)}
-                </div>
 
-                {/* Label */}
-                <div className="relative z-10 border-t border-border/40 px-6 py-4">
-                  <span className={`text-xs tracking-[0.12em] text-muted-foreground uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                    {label}
-                  </span>
-                </div>
-              </motion.div>);
 
-          })}
-        </div>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     </section>);
 
 }
