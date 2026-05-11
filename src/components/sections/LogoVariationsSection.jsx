@@ -21,8 +21,8 @@ function GridA() {
       </defs>
       <rect width="100%" height="100%" fill="url(#gridA)" />
       <rect width="100%" height="100%" fill="url(#gridABig)" />
-    </svg>
-  );
+    </svg>);
+
 }
 
 // Variant B: Diagonal hatching grid
@@ -39,8 +39,8 @@ function GridB() {
       </defs>
       <rect width="100%" height="100%" fill="url(#gridB)" />
       <rect width="100%" height="100%" fill="url(#gridBOrtho)" />
-    </svg>
-  );
+    </svg>);
+
 }
 
 // Variant C: Radial / concentric rings with orthogonal axis lines
@@ -60,8 +60,8 @@ function GridC() {
       <circle cx="50%" cy="50%" r="60" fill="none" stroke="hsl(32 45% 38% / 0.1)" strokeWidth="0.7" />
       <circle cx="50%" cy="50%" r="100" fill="none" stroke="hsl(32 45% 38% / 0.1)" strokeWidth="0.7" />
       <circle cx="50%" cy="50%" r="148" fill="none" stroke="hsl(32 45% 38% / 0.1)" strokeWidth="0.7" />
-    </svg>
-  );
+    </svg>);
+
 }
 
 // Diamond joint SVG element
@@ -69,24 +69,24 @@ function DiamondJoint({ color = 'hsl(32 55% 36%)' }) {
   return (
     <svg width="12" height="12" viewBox="0 0 10 10" className="mx-1">
       <rect x="1.5" y="1.5" width="7" height="7" rx="0" transform="rotate(45 5 5)"
-        fill="none" stroke={color} strokeWidth="1.5" />
+      fill="none" stroke={color} strokeWidth="1.5" />
       <rect x="3.5" y="3.5" width="3" height="3" transform="rotate(45 5 5)"
-        fill={color} />
-    </svg>
-  );
+      fill={color} />
+    </svg>);
+
 }
 
 const VARIANTS = [
-  {
-    id: 'A',
-    label: { en: 'Variation A — Blueprint Grid', ar: 'النسخة A — شبكة المخطط' },
-    bg: 'bg-[hsl(40_7%_95%)]',
-    Grid: GridA,
-    // Clean stacked lockup, rule + diamond
-    render: (foreground) => (
-      <div className="flex flex-col items-center gap-0 select-none">
+{
+  id: 'A',
+  label: { en: 'Variation A — Blueprint Grid', ar: 'النسخة A — شبكة المخطط' },
+  bg: 'bg-[hsl(40_7%_95%)]',
+  Grid: GridA,
+  // Clean stacked lockup, rule + diamond
+  render: (foreground) =>
+  <div className="flex flex-col items-center gap-0 select-none">
         <span className="font-inter font-black tracking-[-0.03em] leading-none"
-          style={{ fontSize: 52, color: foreground }}>
+    style={{ fontSize: 52, color: foreground }}>
           TNASUQ
         </span>
         <div className="flex items-center my-[5px] w-full">
@@ -95,22 +95,22 @@ const VARIANTS = [
           <span className="flex-1 block" style={{ height: 1, background: `${foreground}30` }} />
         </div>
         <span className="font-arabic font-bold tracking-[0.1em] leading-none"
-          style={{ fontSize: 38, color: foreground }}>
+    style={{ fontSize: 38, color: foreground }}>
           تناسق
         </span>
       </div>
-    ),
-  },
-  {
-    id: 'B',
-    label: { en: 'Variation B — Hatched Grid', ar: 'النسخة B — شبكة مائلة' },
-    bg: 'bg-[hsl(40_7%_95%)]',
-    Grid: GridB,
-    // Side by side split by a vertical structural rule
-    render: (foreground) => (
-      <div className="flex items-center gap-0 select-none">
+
+},
+{
+  id: 'B',
+  label: { en: 'Variation B — Hatched Grid', ar: 'النسخة B — شبكة مائلة' },
+  bg: 'bg-[hsl(40_7%_95%)]',
+  Grid: GridB,
+  // Side by side split by a vertical structural rule
+  render: (foreground) =>
+  <div className="flex items-center gap-0 select-none">
         <span className="font-inter font-black tracking-[-0.03em] leading-none"
-          style={{ fontSize: 46, color: foreground }}>
+    style={{ fontSize: 46, color: foreground }}>
           TNASUQ
         </span>
         {/* Vertical rule with diamond */}
@@ -120,46 +120,46 @@ const VARIANTS = [
           <span className="flex-1 block w-[1px]" style={{ background: `${foreground}25` }} />
         </div>
         <span className="font-arabic font-bold tracking-[0.08em] leading-none"
-          style={{ fontSize: 38, color: foreground }}>
+    style={{ fontSize: 38, color: foreground }}>
           تناسق
         </span>
       </div>
-    ),
-  },
-  {
-    id: 'C',
-    label: { en: 'Variation C — Crosshair Grid', ar: 'النسخة C — شبكة محورية' },
-    bg: 'bg-[hsl(40_7%_95%)]',
-    Grid: GridC,
-    // Centered stacked, letters separated by a full-width rule band
-    render: (foreground) => (
-      <div className="flex flex-col items-center select-none" style={{ gap: 0 }}>
+
+},
+{
+  id: 'C',
+  label: { en: 'Variation C — Crosshair Grid', ar: 'النسخة C — شبكة محورية' },
+  bg: 'bg-[hsl(40_7%_95%)]',
+  Grid: GridC,
+  // Centered stacked, letters separated by a full-width rule band
+  render: (foreground) =>
+  <div className="flex flex-col items-center select-none" style={{ gap: 0 }}>
         <span className="font-inter font-black tracking-[-0.03em] leading-none"
-          style={{ fontSize: 52, color: foreground }}>
+    style={{ fontSize: 52, color: foreground }}>
           TNASUQ
         </span>
         {/* Rule band with corner registration marks */}
         <div className="relative w-full flex items-center justify-center my-2" style={{ height: 16 }}>
           <div className="absolute left-0 top-0 w-2 h-2 border-l border-t"
-            style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
+      style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
           <div className="absolute right-0 top-0 w-2 h-2 border-r border-t"
-            style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
+      style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
           <div className="absolute left-0 bottom-0 w-2 h-2 border-l border-b"
-            style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
+      style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
           <div className="absolute right-0 bottom-0 w-2 h-2 border-r border-b"
-            style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
+      style={{ borderColor: 'hsl(32 55% 36% / 0.6)' }} />
           <span className="w-full block" style={{ height: '0.5px', background: `${foreground}20` }} />
           <DiamondJoint color="hsl(32 55% 36%)" />
           <span className="w-full block" style={{ height: '0.5px', background: `${foreground}20` }} />
         </div>
         <span className="font-arabic font-bold tracking-[0.12em] leading-none"
-          style={{ fontSize: 40, color: foreground }}>
+    style={{ fontSize: 40, color: foreground }}>
           تناسق
         </span>
       </div>
-    ),
-  },
-];
+
+}];
+
 
 export default function LogoVariationsSection() {
   const { isRTL } = useLanguage();
@@ -173,16 +173,16 @@ export default function LogoVariationsSection() {
       id="logo-variations"
       ref={ref}
       className="relative py-24 md:py-36 overflow-hidden"
-      dir={isRTL ? 'rtl' : 'ltr'}
-    >
-      <div className="px-6 md:px-16 lg:px-24">
+      dir={isRTL ? 'rtl' : 'ltr'}>
+      
+      <div className="px-6 md:px-16 lg:px-24 hidden">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-16 md:mb-24"
-        >
+          className="mb-16 md:mb-24">
+          
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[1.5px] bg-primary" />
             <span className={`text-sm tracking-[0.2em] text-primary font-medium uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
@@ -193,9 +193,9 @@ export default function LogoVariationsSection() {
             {isRTL ? '٣ تنويعات للشعار' : '3 Logo Variations'}
           </h2>
           <p className={`text-lg text-muted-foreground max-w-2xl leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-            {isRTL
-              ? 'ثلاث نسخ من الشعار الثنائي اللغة، كل واحدة على خلفية شبكة هندسية مختلفة.'
-              : 'Three variations of the bilingual wordmark, each set against a different engineering grid background.'}
+            {isRTL ?
+            'ثلاث نسخ من الشعار الثنائي اللغة، كل واحدة على خلفية شبكة هندسية مختلفة.' :
+            'Three variations of the bilingual wordmark, each set against a different engineering grid background.'}
           </p>
         </motion.div>
 
@@ -209,8 +209,8 @@ export default function LogoVariationsSection() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: i * 0.15 }}
-                className={`group relative border border-border/60 overflow-hidden hover:border-primary/40 transition-colors duration-500 ${v.bg}`}
-              >
+                className={`group relative border border-border/60 overflow-hidden hover:border-primary/40 transition-colors duration-500 ${v.bg}`}>
+                
                 {/* Blueprint grid background */}
                 <v.Grid />
 
@@ -225,11 +225,11 @@ export default function LogoVariationsSection() {
                     {label}
                   </span>
                 </div>
-              </motion.div>
-            );
+              </motion.div>);
+
           })}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
