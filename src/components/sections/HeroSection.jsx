@@ -73,7 +73,10 @@ export default function HeroSection({ heroImage }) {
             className="flex items-center gap-3 mb-8"
           >
             <div className="w-12 h-[1.5px] bg-primary" />
-            <span className={`text-sm tracking-[0.2em] text-primary font-medium uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <span
+              className={`text-sm tracking-[0.2em] font-medium uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              style={{ color: 'hsl(32 55% 36%)', textShadow: '0 1px 8px hsl(32 55% 70% / 0.35)' }}
+            >
               {t.hero.tagline}
             </span>
           </motion.div>
@@ -89,7 +92,7 @@ export default function HeroSection({ heroImage }) {
               <span className="font-arabic text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.15] text-foreground">
                 تناسق
                 <br />
-                <span className="text-primary">للاستشارات</span>
+                <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4), 0 1px 0 hsl(32 30% 85%)' }}>للاستشارات</span>
                 <br />
                 الهندسية
               </span>
@@ -97,7 +100,7 @@ export default function HeroSection({ heroImage }) {
               <span className="font-inter text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-foreground">
                 Tnasuq
                 <br />
-                <span className="text-primary">Engineering</span>
+                <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4), 0 1px 0 hsl(32 30% 85%)' }}>Engineering</span>
                 <br />
                 Consultancy
               </span>

@@ -4,15 +4,19 @@ import PerimeterNav from '@/components/navigation/PerimeterNav';
 import HeroSection from '@/components/sections/HeroSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import ServicesSection from '@/components/sections/ServicesSection';
+import LogoProposalsSection from '@/components/sections/LogoProposalsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
 
+// Hero
 const HERO_IMAGE = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/5e0aff43e_generated_95c7e70c.png';
+
+// Aspirational project images
 const PROJECT_IMAGES = [
-  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e746819d0_generated_2fb429c9.png',
-  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/da8cc2f25_generated_b539105a.png',
-  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6ff340606_generated_0a4a4cdb.png',
-  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/c96547783_generated_8bf85ec5.png',
+  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4c8d9b838_generated_image.png',
+  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a26002cb1_generated_image.png',
+  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3c6f05496_generated_image.png',
+  'https://media.base44.com/images/public/6a01985ff51577d637f369f5/939357ebf_generated_image.png',
 ];
 
 export default function Home() {
@@ -23,6 +27,7 @@ export default function Home() {
         <HeroSection heroImage={HERO_IMAGE} />
         <PortfolioSection projectImages={PROJECT_IMAGES} />
         <ServicesSection />
+        <LogoProposalsSection />
         <ContactSection />
         <FooterSection />
       </div>

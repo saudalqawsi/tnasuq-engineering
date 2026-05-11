@@ -58,7 +58,10 @@ export default function PortfolioSection({ projectImages }) {
 
               {/* Bottom info - always visible */}
               <div className={`absolute bottom-0 left-0 right-0 p-5 md:p-8 bg-gradient-to-t from-foreground/80 to-transparent`}>
-                <span className={`text-[10px] tracking-[0.2em] text-primary-foreground/70 uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <span
+                  className={`text-[10px] tracking-[0.2em] uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                  style={{ color: 'hsl(32 65% 68%)' }}
+                >
                   {project.category}
                 </span>
                 <h3 className={`text-lg md:text-xl font-semibold text-primary-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
@@ -83,7 +86,7 @@ export default function PortfolioSection({ projectImages }) {
                   <p className={`text-sm text-primary-foreground/80 mb-6 leading-relaxed max-w-md ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {project.description}
                   </p>
-                  <div className="inline-flex items-center gap-2 text-primary-foreground border-b border-primary-foreground/30 pb-1 hover:border-primary-foreground transition-colors">
+                  <div className="inline-flex items-center gap-2 border-b pb-1 transition-colors" style={{ color: 'hsl(32 65% 68%)', borderColor: 'hsl(32 65% 68% / 0.5)' }}>
                     <span className={`text-xs tracking-wider uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {t.portfolio.viewSpecs}
                     </span>

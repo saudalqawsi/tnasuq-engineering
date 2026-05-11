@@ -78,10 +78,20 @@ export default function ContactSection() {
               </div>
               <div>
                 <span className={`text-xs tracking-[0.15em] text-muted-foreground uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                  {isRTL ? 'الموقع' : 'Location'}
+                  {isRTL ? 'الهاتف' : 'Phone'}
                 </span>
-                <span className={`text-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                  {isRTL ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Kingdom of Saudi Arabia'}
+                <a href="tel:+966530336660" className="text-foreground hover:text-primary transition-colors font-inter" dir="ltr">
+                  +966 53 033 6660
+                </a>
+              </div>
+              <div>
+                <span className={`text-xs tracking-[0.15em] text-muted-foreground uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  {isRTL ? 'العنوان' : 'Address'}
+                </span>
+                <span className={`text-foreground text-sm leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  {isRTL
+                    ? 'شارع الشيخ عبدالله بن جبرين، حي القيروان\nالرياض ١٣٥٣١، المملكة العربية السعودية'
+                    : '3649 Al Shaikh Abdullah Ibn Jibrin St.\nAl Qairawan District, Riyadh 13531, KSA'}
                 </span>
               </div>
             </div>

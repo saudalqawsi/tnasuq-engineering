@@ -109,7 +109,7 @@ export default function ServicesSection() {
                 className="group bg-foreground p-8 md:p-10 hover:bg-foreground/80 transition-colors duration-500"
               >
                 <div className="mb-8">
-                  <Icon className="w-12 h-12 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                  <Icon className="w-12 h-12 group-hover:text-primary-foreground transition-colors duration-500" style={{ color: 'hsl(32 55% 60%)' }} />
                 </div>
                 <h3 className={`text-xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {service.title}

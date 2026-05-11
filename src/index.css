@@ -15,7 +15,7 @@
     --card-foreground: 0 0% 10%;
     --popover: 40 7% 97%;
     --popover-foreground: 0 0% 10%;
-    --primary: 30 30% 49%;
+    --primary: 32 45% 42%;
     --primary-foreground: 40 7% 95%;
     --secondary: 40 4% 88%;
     --secondary-foreground: 0 0% 10%;
@@ -28,11 +28,11 @@
     --border: 0 0% 82%;
     --input: 0 0% 82%;
     --ring: 30 30% 49%;
-    --chart-1: 30 30% 49%;
+    --chart-1: 32 45% 42%;
     --chart-2: 0 0% 45%;
     --chart-3: 0 0% 30%;
-    --chart-4: 30 40% 60%;
-    --chart-5: 30 20% 70%;
+    --chart-4: 32 55% 55%;
+    --chart-5: 32 25% 65%;
     --radius: 0.25rem;
 
     --sidebar-background: 40 7% 95%;
@@ -97,6 +97,17 @@
     linear-gradient(to right, hsl(0 0% 82% / 0.3) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(0 0% 82% / 0.3) 1px, transparent 1px);
   background-size: calc(100% / 12) 80px;
+}
+
+/* Bronze accent with elevated contrast — used on text */
+.text-primary-contrast {
+  color: hsl(32 45% 38%);
+  text-shadow: 0 1px 0 hsl(32 45% 85% / 0.6);
+}
+
+/* Hero primary text shadow for gold on light background */
+.text-primary {
+  text-shadow: 0 1px 12px hsl(32 45% 25% / 0.15);
 }
 
 /* Custom scrollbar */
