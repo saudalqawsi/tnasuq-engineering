@@ -30,7 +30,7 @@ export default function TnasuqLogo({ size = 'md', onClick }) {
 
       {/* Structural rule with diamond joint */}
       <div
-        className="flex items-center rounded-md my-[px]"
+        className="flex items-center rounded-md my-[1px]"
         style={{ gap: 0 }}>
         
         <span
