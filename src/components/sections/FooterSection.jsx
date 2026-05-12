@@ -2,6 +2,47 @@ import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import TnasuqLogo from '@/components/ui/TnasuqLogo';
 
+// Social icons as inline SVGs (no external dependency needed)
+function TwitterX() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+function Instagram() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+function LinkedIn() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+function Snapchat() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C8.5 2 6 4.5 6 8v1.5c-.6.2-1.5.5-2 1 0 .8.5 1.2 1 1.4-.1.3-.3.6-.5.9-.5.8-1.3 1.4-2.5 1.7.3.7 1.2 1 2.5 1.1.2.5.3 1 .5 1.4.3.6 1 1 2 1 .8 0 1.5-.3 2.5-.6.8-.3 1.5-.4 2-.4s1.2.1 2 .4c1 .3 1.7.6 2.5.6 1 0 1.7-.4 2-1 .2-.4.3-.9.5-1.4 1.3-.1 2.2-.4 2.5-1.1-1.2-.3-2-.9-2.5-1.7-.2-.3-.4-.6-.5-.9.5-.2 1-.6 1-1.4-.5-.5-1.4-.8-2-1V8c0-3.5-2.5-6-6-6z" />
+    </svg>
+  );
+}
+
+const socialLinks = [
+  { label: 'X (Twitter)', href: '#', Icon: TwitterX },
+  { label: 'Instagram', href: '#', Icon: Instagram },
+  { label: 'LinkedIn', href: '#', Icon: LinkedIn },
+  { label: 'Snapchat', href: '#', Icon: Snapchat },
+];
+
 export default function FooterSection() {
   const { t, isRTL } = useLanguage();
 
@@ -23,15 +64,28 @@ export default function FooterSection() {
 
       <div className="relative px-6 md:px-16 lg:px-24 pt-20 pb-12">
         {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-20">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-6 opacity-80">
               <TnasuqLogo size="lg" />
             </div>
-            <p className={`text-sm text-primary-foreground/40 leading-relaxed max-w-xs ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-sm text-primary-foreground/40 leading-relaxed max-w-xs mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {t.footer.tagline}
             </p>
+            {/* Social icons */}
+            <div className="flex items-center gap-3">
+              {socialLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-8 h-8 flex items-center justify-center border border-primary-foreground/15 text-primary-foreground/40 hover:text-primary-foreground hover:border-primary-foreground/40 transition-all duration-300"
+                >
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Navigation */}
@@ -70,6 +124,21 @@ export default function FooterSection() {
               </a>
               <span className={`text-sm text-primary-foreground/50 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {isRTL ? 'حي القيروان، الرياض ١٣٥٣١' : 'Al Qairawan, Riyadh 13531, KSA'}
+              </span>
+            </div>
+          </div>
+
+          {/* National Unified Number / CR */}
+          <div>
+            <span className={`text-xs tracking-[0.2em] text-primary-foreground/30 uppercase block mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              {t.footer.nationalNumber}
+            </span>
+            <div className="flex flex-col gap-2">
+              <span className="font-inter text-2xl font-bold text-primary-foreground/60 tracking-wider" dir="ltr">
+                {t.footer.crNumber}
+              </span>
+              <span className={`text-xs text-primary-foreground/25 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                {isRTL ? 'الرقم الموحّد الوطني' : 'National Unified Number'}
               </span>
             </div>
           </div>

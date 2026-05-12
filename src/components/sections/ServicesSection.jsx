@@ -1,54 +1,69 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { motion, useInView } from 'framer-motion';
+import { CheckCircle } from 'lucide-react';
 
 const serviceIcons = [
-  // Abstract geometric SVG icons for each service
-  ({ className }) => (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+  // Project Management — gantt/timeline bars
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="6" y="10" width="22" height="5" />
+      <rect x="12" y="20" width="28" height="5" />
+      <rect x="6" y="30" width="18" height="5" />
+      <line x1="6" y1="6" x2="6" y2="42" />
+    </svg>
+  ),
+  // Construction Supervision — hard hat / site
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M8 30 Q24 12 40 30" />
+      <line x1="6" y1="30" x2="42" y2="30" />
+      <rect x="14" y="30" width="20" height="8" />
+      <line x1="24" y1="14" x2="24" y2="22" />
+    </svg>
+  ),
+  // Structural — frame/truss
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
       <rect x="6" y="6" width="36" height="36" />
       <line x1="6" y1="24" x2="42" y2="24" />
       <line x1="24" y1="6" x2="24" y2="42" />
       <circle cx="24" cy="24" r="8" />
     </svg>
   ),
-  ({ className }) => (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <polygon points="24,4 44,16 44,36 24,44 4,36 4,16" />
-      <line x1="24" y1="4" x2="24" y2="44" />
-      <line x1="4" y1="16" x2="44" y2="36" />
-    </svg>
-  ),
-  ({ className }) => (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M8 40 L24 8 L40 40 Z" />
-      <line x1="14" y1="28" x2="34" y2="28" />
+  // Architectural — plan view
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="8" y="8" width="32" height="32" />
+      <rect x="8" y="8" width="16" height="16" />
+      <rect x="24" y="24" width="16" height="16" />
+      <line x1="8" y1="24" x2="40" y2="24" />
       <line x1="24" y1="8" x2="24" y2="40" />
     </svg>
   ),
-  ({ className }) => (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="10" y="24" width="28" height="18" />
-      <path d="M6 24 L24 10 L42 24" />
-      <line x1="24" y1="24" x2="24" y2="42" />
-    </svg>
-  ),
-  ({ className }) => (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="24" cy="24" r="18" />
-      <circle cx="24" cy="24" r="10" />
-      <circle cx="24" cy="24" r="3" />
-      <line x1="24" y1="6" x2="24" y2="14" />
-      <line x1="24" y1="34" x2="24" y2="42" />
-    </svg>
-  ),
-  ({ className }) => (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+  // MEP — pipes/conduit
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M12 6 L12 42" />
       <path d="M24 6 L24 42" />
       <path d="M36 6 L36 42" />
       <path d="M6 16 L42 16" />
       <path d="M6 32 L42 32" />
+      <circle cx="12" cy="16" r="2.5" fill="currentColor" stroke="none" />
+      <circle cx="24" cy="32" r="2.5" fill="currentColor" stroke="none" />
+      <circle cx="36" cy="16" r="2.5" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  // Geotechnical — layers
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="24" cy="24" r="18" />
+      <circle cx="24" cy="24" r="10" />
+      <circle cx="24" cy="24" r="3" />
+      <line x1="24" y1="6" x2="24" y2="14" />
+      <line x1="24" y1="34" x2="24" y2="42" />
+      <line x1="6" y1="24" x2="14" y2="24" />
+      <line x1="34" y1="24" x2="42" y2="24" />
     </svg>
   ),
 ];
@@ -106,10 +121,23 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group bg-foreground p-8 md:p-10 hover:bg-foreground/80 transition-colors duration-500"
+                className={`group relative bg-foreground p-8 md:p-10 hover:bg-foreground/80 transition-colors duration-500 ${
+                  service.highlight ? 'ring-1 ring-inset ring-primary/30' : ''
+                }`}
               >
+                {/* Highlight badge for PM & Supervision */}
+                {service.highlight && (
+                  <div className={`absolute top-5 ${isRTL ? 'left-5' : 'right-5'}`}>
+                    <span className={`text-[9px] tracking-[0.2em] uppercase px-2 py-1 bg-primary/20 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      {isRTL ? 'خدمة محورية' : 'Core Service'}
+                    </span>
+                  </div>
+                )}
                 <div className="mb-8">
-                  <Icon className="w-12 h-12 group-hover:text-primary-foreground transition-colors duration-500" style={{ color: 'hsl(32 55% 60%)' }} />
+                  <Icon
+                    className="w-12 h-12 group-hover:text-primary-foreground transition-colors duration-500"
+                    style={{ color: 'hsl(32 55% 60%)' }}
+                  />
                 </div>
                 <h3 className={`text-xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {service.title}
@@ -117,7 +145,6 @@ export default function ServicesSection() {
                 <p className={`text-sm text-primary-foreground/50 leading-[1.8] group-hover:text-primary-foreground/70 transition-colors duration-500 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {service.description}
                 </p>
-                {/* Index number */}
                 <div className="mt-8 font-inter text-[3rem] font-bold text-primary-foreground/[0.06] leading-none">
                   {String(i + 1).padStart(2, '0')}
                 </div>
@@ -125,6 +152,33 @@ export default function ServicesSection() {
             );
           })}
         </div>
+
+        {/* Saudi Code & Authority expertise strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 border border-primary/20 p-8 md:p-12"
+        >
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+            <div className="shrink-0">
+              <span className={`text-xs tracking-[0.2em] text-primary uppercase block mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                {t.services.codesBadge.title}
+              </span>
+              <div className={`w-8 h-[1.5px] bg-primary`} />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 flex-1">
+              {t.services.codesBadge.items.map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <CheckCircle className="w-3.5 h-3.5 shrink-0" style={{ color: 'hsl(32 55% 60%)' }} />
+                  <span className={`text-sm text-primary-foreground/60 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
