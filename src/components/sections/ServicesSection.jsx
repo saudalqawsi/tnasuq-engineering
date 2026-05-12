@@ -4,6 +4,25 @@ import { motion, useInView } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 
 const serviceIcons = [
+  // Architectural — plan view
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="8" y="8" width="32" height="32" />
+      <rect x="8" y="8" width="16" height="16" />
+      <rect x="24" y="24" width="16" height="16" />
+      <line x1="8" y1="24" x2="40" y2="24" />
+      <line x1="24" y1="8" x2="24" y2="40" />
+    </svg>
+  ),
+  // Structural — frame/truss
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="6" y="6" width="36" height="36" />
+      <line x1="6" y1="24" x2="42" y2="24" />
+      <line x1="24" y1="6" x2="24" y2="42" />
+      <circle cx="24" cy="24" r="8" />
+    </svg>
+  ),
   // Project Management — gantt/timeline bars
   ({ className, style }) => (
     <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -22,25 +41,6 @@ const serviceIcons = [
       <line x1="24" y1="14" x2="24" y2="22" />
     </svg>
   ),
-  // Structural — frame/truss
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="6" y="6" width="36" height="36" />
-      <line x1="6" y1="24" x2="42" y2="24" />
-      <line x1="24" y1="6" x2="24" y2="42" />
-      <circle cx="24" cy="24" r="8" />
-    </svg>
-  ),
-  // Architectural — plan view
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="8" y="8" width="32" height="32" />
-      <rect x="8" y="8" width="16" height="16" />
-      <rect x="24" y="24" width="16" height="16" />
-      <line x1="8" y1="24" x2="40" y2="24" />
-      <line x1="24" y1="8" x2="24" y2="40" />
-    </svg>
-  ),
   // MEP — pipes/conduit
   ({ className, style }) => (
     <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -54,7 +54,7 @@ const serviceIcons = [
       <circle cx="36" cy="16" r="2.5" fill="currentColor" stroke="none" />
     </svg>
   ),
-  // Geotechnical — layers
+  // Geotechnical — concentric rings
   ({ className, style }) => (
     <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
       <circle cx="24" cy="24" r="18" />

@@ -59,29 +59,29 @@ const translations = {
       description: 'We manage the entire engineering journey — from concept and structural design through permitting, construction supervision, and handover. Built on deep expertise in Saudi codes and authorities.',
       items: [
         {
+          title: 'Architectural Design',
+          description: 'Building permit-ready architectural drawings coordinated with Amanat Al-Riyadh setback rules, municipal zoning, and Saudi planning standards — for villas, apartments, commercial, and industrial buildings.',
+          highlight: true,
+        },
+        {
+          title: 'Structural Engineering',
+          description: 'Structural analysis and design for all building types — foundations, frames, slabs, and connections — fully compliant with the Saudi Building Code (SBC 301/303).',
+          highlight: true,
+        },
+        {
           title: 'Project Management',
           description: 'End-to-end project delivery: programme control, contractor coordination, cost management, and authority liaison from Baladiya to MOMRA — keeping your project on time and on budget.',
           highlight: true,
         },
         {
           title: 'Construction Supervision',
-          description: 'Resident engineer and site supervision services ensuring full compliance with approved drawings, SBC structural requirements, material quality standards, and Health & Safety regulations.',
+          description: 'Resident engineer and site supervision services ensuring full compliance with approved drawings, SBC requirements, material quality standards, and Health & Safety regulations.',
           highlight: true,
-        },
-        {
-          title: 'Structural Engineering',
-          description: 'Structural analysis and design for all building types — foundations, frames, slabs, and connections — fully compliant with the Saudi Building Code (SBC 301/303).',
-          highlight: false,
-        },
-        {
-          title: 'Architectural Design',
-          description: 'Building permit-ready architectural drawings coordinated with municipal guidelines, Amanat setback requirements, and Saudi aesthetic and planning standards.',
-          highlight: false,
         },
         {
           title: 'MEP Engineering',
           description: 'Full mechanical, electrical, and plumbing design coordinated with SEC, NWC, STC, and SASO requirements. We manage all service provider approvals end-to-end.',
-          highlight: false,
+          highlight: true,
         },
         {
           title: 'Geotechnical Engineering',
@@ -195,6 +195,16 @@ const translations = {
       description: 'ندير الرحلة الهندسية بالكامل — من التصميم والتحليل الإنشائي حتى التراخيص والإشراف على التنفيذ والتسليم. مبنيّ على خبرة عميقة بالكودات والجهات السعودية.',
       items: [
         {
+          title: 'التصميم المعماري',
+          description: 'رسومات معمارية جاهزة للترخيص منسّقة مع اشتراطات ارتداد أمانة الرياض، التخطيط البلدي، والمعايير السعودية — للفلل والعمائر والمباني التجارية والصناعية.',
+          highlight: true,
+        },
+        {
+          title: 'الهندسة الإنشائية',
+          description: 'تحليل وتصميم إنشائي لجميع أنواع المباني — أساسات، هياكل، بلاطات ووصلات — متوافقة بالكامل مع الكود السعودي للبناء (SBC 301/303).',
+          highlight: true,
+        },
+        {
           title: 'إدارة المشاريع',
           description: 'تسليم متكامل للمشروع: ضبط البرنامج الزمني، تنسيق المقاولين، إدارة التكاليف، والتواصل مع الجهات من البلدية إلى وزارة الشؤون البلدية — للحفاظ على مشروعك في الوقت والميزانية المحددة.',
           highlight: true,
@@ -205,19 +215,9 @@ const translations = {
           highlight: true,
         },
         {
-          title: 'الهندسة الإنشائية',
-          description: 'تحليل وتصميم إنشائي لجميع أنواع المباني — أساسات، هياكل، بلاطات ووصلات — متوافقة بالكامل مع الكود السعودي للبناء (SBC 301/303).',
-          highlight: false,
-        },
-        {
-          title: 'التصميم المعماري',
-          description: 'رسومات معمارية جاهزة للترخيص منسّقة مع التوجيهات البلدية، اشتراطات ارتداد أمانة الرياض، والمعايير الجمالية والتخطيطية السعودية.',
-          highlight: false,
-        },
-        {
           title: 'الهندسة الكهروميكانيكية',
           description: 'تصميم ميكانيكي وكهربائي وصحي منسّق مع متطلبات شركة الكهرباء والمياه وهيئة المواصفات. نتولى إدارة موافقات جميع مزودي الخدمات شاملة.',
-          highlight: false,
+          highlight: true,
         },
         {
           title: 'الهندسة الجيوتقنية',
