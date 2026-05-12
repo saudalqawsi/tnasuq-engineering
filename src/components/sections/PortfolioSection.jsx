@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 export default function PortfolioSection({ projectImages }) {
   const { t, isRTL } = useLanguage();
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
     <section
@@ -16,7 +16,7 @@ export default function PortfolioSection({ projectImages }) {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Section header */}
-      <div className="px-6 md:px-16 lg:px-24 mb-16 md:mb-24">
+      <div className="px-6 md:px-16 lg:px-24 mb-16 md:mb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -28,76 +28,92 @@ export default function PortfolioSection({ projectImages }) {
               {t.portfolio.title}
             </span>
           </div>
-          <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-6 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
-            {t.portfolio.subtitle}
-          </h2>
-          <p className={`text-lg text-muted-foreground max-w-2xl leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-            {t.portfolio.description}
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
+                {t.portfolio.subtitle}
+              </h2>
+              <p className={`text-lg text-muted-foreground max-w-2xl leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                {t.portfolio.description}
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Project grid */}
+      {/* Project grid — nasaq-style large cards */}
       <div className="px-6 md:px-16 lg:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {t.portfolio.projects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: i * 0.15 }}
-              className="group relative aspect-[4/3] overflow-hidden bg-muted cursor-pointer"
-            >
-              <img
-                src={projectImages[i]}
-                alt={project.title}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:grayscale"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/70 transition-all duration-500" />
-
-              {/* Bottom info - always visible */}
-              <div className={`absolute bottom-0 left-0 right-0 p-5 md:p-8 bg-gradient-to-t from-foreground/80 to-transparent`}>
-                <span
-                  className={`text-[10px] tracking-[0.2em] uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}
-                  style={{ color: 'hsl(32 65% 68%)' }}
-                >
-                  {project.category}
-                </span>
-                <h3 className={`text-lg md:text-xl font-semibold text-primary-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                  {project.title}
-                </h3>
-              </div>
-
-              {/* Hover content */}
-              <div className="absolute inset-0 p-5 md:p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <span className={`text-sm text-primary-foreground/60 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                      {project.location}
-                    </span>
-                  </div>
-                  <span className={`text-sm text-primary-foreground/60 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                    {project.year}
-                  </span>
-                </div>
-
-                <div>
-                  <p className={`text-sm text-primary-foreground/80 mb-6 leading-relaxed max-w-md ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                    {project.description}
-                  </p>
-                  <div className="inline-flex items-center gap-2 border-b pb-1 transition-colors" style={{ color: 'hsl(32 65% 68%)', borderColor: 'hsl(32 65% 68% / 0.5)' }}>
-                    <span className={`text-xs tracking-wider uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                      {t.portfolio.viewSpecs}
-                    </span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        {/* Top row: two equal cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-4 md:mb-5">
+          {t.portfolio.projects.slice(0, 2).map((project, i) => (
+            <ProjectCard key={i} project={project} image={projectImages[i]} index={i} inView={inView} isRTL={isRTL} t={t} />
+          ))}
+        </div>
+        {/* Bottom row: two equal cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+          {t.portfolio.projects.slice(2, 4).map((project, i) => (
+            <ProjectCard key={i + 2} project={project} image={projectImages[i + 2]} index={i + 2} inView={inView} isRTL={isRTL} t={t} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ProjectCard({ project, image, index, inView, isRTL, t }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.12 }}
+      className="group relative overflow-hidden bg-muted cursor-pointer"
+      style={{ aspectRatio: '4/3' }}
+    >
+      <img
+        src={image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+
+      {/* Persistent dark gradient at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/20 to-transparent" />
+
+      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-foreground/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      {/* Category pill top */}
+      <div className={`absolute top-5 ${isRTL ? 'right-5' : 'left-5'}`}>
+        <span
+          className={`text-[10px] tracking-[0.18em] uppercase px-3 py-1 bg-background/10 backdrop-blur-sm border border-white/20 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+        >
+          {project.category}
+        </span>
+      </div>
+
+      {/* Bottom info */}
+      <div className={`absolute bottom-0 left-0 right-0 p-6 md:p-8`}>
+        {/* Title always visible */}
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <h3 className={`text-xl md:text-2xl font-bold text-white mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              {project.title}
+            </h3>
+            <span className={`text-xs text-white/50 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              {project.location} — {project.year}
+            </span>
+          </div>
+          <div className="shrink-0 w-9 h-9 border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+            <ArrowUpRight className="w-4 h-4 text-white" />
+          </div>
+        </div>
+
+        {/* Description slides up on hover */}
+        <div className="overflow-hidden max-h-0 group-hover:max-h-32 transition-all duration-500 ease-in-out">
+          <p className={`text-sm text-white/75 leading-relaxed mt-4 max-w-md ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            {project.description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
   );
 }
