@@ -67,8 +67,8 @@ export default function TnasuqLogo({ size = 'md', onClick }) {
 
       {/* Arabic wordmark — same visual weight, not a subtext */}
       <span
-        className="font-arabic-display font-black text-foreground leading-none"
-        style={{ fontSize: s.ar, letterSpacing: '0.02em' }}>
+        className="font-arabic font-bold text-foreground leading-none"
+        style={{ fontSize: s.ar, letterSpacing: '0.05em' }}>
         
         تناسق
       </span>

@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { motion, useInView } from 'framer-motion';
 
 const pillars = {
   en: [
@@ -41,13 +40,10 @@ const pillars = {
 
 export default function WhyUsSection() {
   const { isRTL } = useLanguage();
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
   const items = isRTL ? pillars.ar : pillars.en;
 
   return (
     <section
-      ref={ref}
       className="relative py-24 md:py-36 overflow-hidden"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
@@ -65,12 +61,7 @@ export default function WhyUsSection() {
 
       <div className="relative px-6 md:px-16 lg:px-24">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-16 md:mb-24"
-        >
+        <div className="mb-16 md:mb-24">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-[1.5px] bg-primary" />
             <span className={`text-sm tracking-[0.2em] text-primary font-medium uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
@@ -80,20 +71,17 @@ export default function WhyUsSection() {
           <h2 className={`text-4xl md:text-6xl font-bold text-foreground ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
             {isRTL ? 'الفرق في التفاصيل' : 'The difference is in the details'}
           </h2>
-        </motion.div>
+        </div>
 
         {/* Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40">
           {items.map((pillar, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.15 }}
               className="group bg-background p-10 md:p-12 hover:bg-card transition-colors duration-500"
             >
               <div
-                className={`font-inter font-black text-[4rem] leading-none mb-8 select-none`}
+                className="font-inter font-black text-[4rem] leading-none mb-8 select-none"
                 style={{ color: 'hsl(32 55% 36% / 0.15)' }}
               >
                 {pillar.number}
@@ -104,9 +92,8 @@ export default function WhyUsSection() {
               <p className={`text-sm text-muted-foreground leading-[1.9] ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {pillar.body}
               </p>
-              {/* Bronze rule grows on hover */}
               <div className="mt-8 h-[1.5px] bg-primary w-8 group-hover:w-16 transition-all duration-500" />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

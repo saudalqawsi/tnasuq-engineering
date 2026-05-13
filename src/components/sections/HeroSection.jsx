@@ -92,17 +92,17 @@ export default function HeroSection({ heroImage }) {
               <span className="font-arabic text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.1] text-foreground">
                 تناسق
                 <br />
-                <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4), 0 1px 0 hsl(32 30% 85%)' }}>للاستشارات</span>
+                للاستشارات
                 <br />
-                الهندسية
+                <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4)' }}>الهندسية</span>
               </span>
             ) : (
               <span className="font-inter text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-foreground">
                 Tnasuq
                 <br />
-                <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4), 0 1px 0 hsl(32 30% 85%)' }}>Engineering</span>
+                Engineering
                 <br />
-                Consultancy
+                <span style={{ color: 'hsl(32 55% 36%)', textShadow: '0 2px 20px hsl(32 55% 70% / 0.4)' }}>Consultancy</span>
               </span>
             )}
           </motion.h1>

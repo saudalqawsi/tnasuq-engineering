@@ -7,7 +7,6 @@ module.exports = {
       fontFamily: {
         inter: ['var(--font-inter)'],
         arabic: ['var(--font-arabic)'],
-        'arabic-display': ['var(--font-arabic-display)'],
       },
       borderRadius: {
         lg: 'var(--radius)',
