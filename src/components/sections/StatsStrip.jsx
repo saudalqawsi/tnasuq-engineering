@@ -3,16 +3,16 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 const stats = {
   en: [
-    { value: '120+', label: 'Projects Delivered' },
+    { value: '15+', label: 'Projects Underway' },
     { value: '8+', label: 'Years in Saudi Market' },
-    { value: '100%', label: 'SBC Compliant Designs' },
-    { value: '24h', label: 'Inquiry Response Time' },
+    { value: 'KSA', label: 'Licensed & Registered' },
+    { value: '6', label: 'Engineering Disciplines' },
   ],
   ar: [
-    { value: '+١٢٠', label: 'مشروع منجز' },
+    { value: '+١٥', label: 'مشروع قيد التنفيذ' },
     { value: '+٨', label: 'سنوات في السوق السعودي' },
-    { value: '١٠٠٪', label: 'تصاميم متوافقة مع الكود' },
-    { value: '٢٤ساعة', label: 'وقت الاستجابة للاستفسارات' },
+    { value: 'KSA', label: 'مرخّصون ومسجّلون رسمياً' },
+    { value: '٦', label: 'تخصصات هندسية' },
   ],
 };
 
