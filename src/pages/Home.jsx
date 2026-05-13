@@ -2,11 +2,13 @@ import React from 'react';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import PerimeterNav from '@/components/navigation/PerimeterNav';
 import HeroSection from '@/components/sections/HeroSection';
+import StatsStrip from '@/components/sections/StatsStrip';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 // Hero
 const HERO_IMAGE = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/5e0aff43e_generated_95c7e70c.png';
@@ -25,11 +27,13 @@ export default function Home() {
       <div className="min-h-screen bg-background">
         <PerimeterNav />
         <HeroSection heroImage={HERO_IMAGE} />
+        <StatsStrip />
         <PortfolioSection projectImages={PROJECT_IMAGES} />
         <WhyUsSection />
         <ServicesSection />
         <ContactSection />
         <FooterSection />
+        <WhatsAppButton />
       </div>
     </LanguageProvider>
   );

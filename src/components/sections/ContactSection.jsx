@@ -10,7 +10,7 @@ import { CheckCircle2 } from 'lucide-react';
 export default function ContactSection() {
   const { t, lang, isRTL } = useLanguage();
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const inView = useInView(ref, { once: true, amount: 0.05 });
 
   const [form, setForm] = useState({
     name: '',
@@ -81,6 +81,20 @@ export default function ContactSection() {
                   {isRTL ? 'الهاتف' : 'Phone'}
                 </span>
                 <a href="tel:+966530336660" className="text-foreground hover:text-primary transition-colors font-inter" dir="ltr">
+                  +966 53 033 6660
+                </a>
+              </div>
+              <div>
+                <span className={`text-xs tracking-[0.15em] text-muted-foreground uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  {isRTL ? 'واتساب' : 'WhatsApp'}
+                </span>
+                <a
+                  href={`https://wa.me/966530336660?text=${encodeURIComponent(isRTL ? 'مرحباً، أود الاستفسار عن خدمات تناسق الهندسية.' : 'Hello, I would like to inquire about Tnasuq Engineering services.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground hover:text-primary transition-colors font-inter"
+                  dir="ltr"
+                >
                   +966 53 033 6660
                 </a>
               </div>
