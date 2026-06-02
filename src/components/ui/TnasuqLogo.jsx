@@ -70,7 +70,7 @@ export default function TnasuqLogo({ size = 'md', onClick }) {
         className="font-arabic font-bold text-foreground leading-none"
         style={{ fontSize: s.ar, letterSpacing: '0.05em' }}>
         
-        تناسق
+        تناســـق
       </span>
     </button>);
 
