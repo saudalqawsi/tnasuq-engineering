@@ -28,7 +28,7 @@ export default function Home() {
         <PerimeterNav />
         <HeroSection heroImage={HERO_IMAGE} />
         <StatsStrip />
-        <PortfolioSection projectImages={PROJECT_IMAGES} />
+        <PortfolioSection />
         <WhyUsSection />
         <ServicesSection />
         <ContactSection />
