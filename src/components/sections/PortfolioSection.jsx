@@ -4,124 +4,140 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // ─── Template definitions ────────────────────────────────────────────────────
-// Each template: { id, nameEn, nameAr, tagEn, tagAr, accentColor, images: [{url, type:'facade'|'amenity'|'interior'}] }
+const BASE = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/';
 const TEMPLATES = [
   {
-    // Terracotta mud architecture, white Najdi friezes, wooden ceilings & courtyard
     id: 'najdi',
     nameEn: 'Najdi',
     nameAr: 'نجدي',
+    descEn: 'Terracotta mud-plaster walls, white geometric Najdi friezes, traditional wooden ceilings, lantern lighting, and a central open courtyard.',
+    descAr: 'جدران طينية بلون الطرا، أفاريز نجدية هندسية بيضاء، أسقف خشبية تقليدية، إضاءة فوانيس، وفناء مكشوف مركزي.',
     tagEn: 'Arabian Heritage',
     tagAr: 'التراث العربي النجدي',
     accentColor: '#a0622a',
     images: [
-      // Façades first
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/817efed2c_Picture1.jpg',  type: 'facade' },   // P1  – front day
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4b00b3f98_Picture32.jpg', type: 'facade' },   // P32 – front dusk
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/b81fb5b86_Picture31.jpg', type: 'facade' },   // P31 – side night
-      // Amenity
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e853e80d2_Picture36.jpg', type: 'amenity' },  // P36 – open courtyard
-      // Interiors
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6898d0f84_Picture33.jpg', type: 'interior' }, // P33 – living + dining
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/69121363a_Picture34.jpg', type: 'interior' }, // P34 – living view 2
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a13b0aef1_Picture35.jpg', type: 'interior' }, // P35 – living view 3
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/f613f59af_Picture37.jpg', type: 'interior' }, // P37 – atrium ground
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0d404ee75_Picture38.jpg', type: 'interior' }, // P38 – atrium tall
+      { url: BASE + '9c4b26bc9_NAJD1.jpg',  type: 'facade' },
+      { url: BASE + '2d9717b45_NAJD2.jpg',  type: 'facade' },
+      { url: BASE + '1182663f5_NAJD3.jpg',  type: 'amenity' },
+      { url: BASE + '8cdb4cdc8_NAJD4.jpg',  type: 'interior' },
+      { url: BASE + '80bfe92d0_NAJD5.jpg',  type: 'interior' },
+      { url: BASE + '1db0ccf15_NAJD6.jpg',  type: 'interior' },
+      { url: BASE + '24767c659_NAJD7.jpg',  type: 'interior' },
     ],
   },
   {
-    // Crisp white Neo-Classic palace — grand columns, arched windows, black slate roof
-    id: 'versailles',
-    nameEn: 'Versailles',
-    nameAr: 'فرساي',
-    tagEn: 'Neo-Classical Palace',
-    tagAr: 'قصر نيو-كلاسيك',
+    id: 'palatial',
+    nameEn: 'Palatial',
+    nameAr: 'قصري',
+    descEn: 'Grand white marble palace with full-height Corinthian columns, blue mansard roof, gold-detailed ironwork doors, and a monumental symmetrical façade.',
+    descAr: 'قصر رخامي أبيض فخم بأعمدة كورنثية كاملة الارتفاع، سقف مانسارد أزرق، أبواب حديدية مذهبة، وواجهة متماثلة ضخمة.',
+    tagEn: 'Grand Palace',
+    tagAr: 'القصر الملكي',
     accentColor: '#c8a96e',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e2d356fb5_Picture21.jpg', type: 'facade' },   // P21 – full grand palace front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/740035d2e_Picture22.jpg', type: 'facade' },   // P22 – wide street view
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d20efc734_Picture23.jpg', type: 'facade' },   // P23 – far street view
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/7227695e8_Picture15.jpg', type: 'facade' },   // P15 – smaller villa front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3fa4d56a7_Picture16.jpg', type: 'facade' },   // P16 – villa corner
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e13595c9b_Picture20.jpg', type: 'facade' },   // P20 – entrance portico
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/730c8769e_Picture17.jpg', type: 'facade' },   // P17 – entrance close
+      { url: BASE + '138ff0b95_PALATIAL.jpg',   type: 'facade' },
+      { url: BASE + '8c84c2ce4_PALATIAL1.jpg',  type: 'facade' },
+      { url: BASE + 'c7497d736_PALATIAL3.jpg',  type: 'facade' },
+      { url: BASE + 'cecbc42fa_PALATIAL5.jpg',  type: 'facade' },
     ],
   },
   {
-    // Cream/ivory French baroque — mansard black roof, balconies, ornate arch entry
-    id: 'ivory',
-    nameEn: 'Ivory Classique',
-    nameAr: 'إيفوري كلاسيك',
+    id: 'neoclassical',
+    nameEn: 'Neo-Classical',
+    nameAr: 'نيو-كلاسيكي',
+    descEn: 'White stone façade with tall fluted columns, arched windows, crystal chandelier entrance portico, and ornate cornice detailing.',
+    descAr: 'واجهة حجرية بيضاء بأعمدة مخططة طويلة، نوافذ مقوسة، مدخل رواقي بثريا كريستال، وتفاصيل كورنيش منقوشة.',
+    tagEn: 'Neo-Classical',
+    tagAr: 'نيو-كلاسيكي',
+    accentColor: '#b8a888',
+    images: [
+      { url: BASE + '673c1ec3b_NEOCLASSICAL.jpg',  type: 'facade' },
+      { url: BASE + '0fbd9a84a_NEOCLASSICAL1.jpg', type: 'facade' },
+      { url: BASE + 'b9433e987_NEOCLASSICAL2.jpg', type: 'facade' },
+      { url: BASE + 'a4c9f0f0f_NEOCLASSICAL3.jpg', type: 'facade' },
+    ],
+  },
+  {
+    id: 'french-neoclassical',
+    nameEn: 'French Neo-Classical',
+    nameAr: 'فرنسي نيو-كلاسيكي',
+    descEn: 'Cream-ivory rendered walls, black mansard roof, ornate arched entry with gold chandelier, wrought-iron balconies, and classical column articulation.',
+    descAr: 'جدران بلون الكريمي الرائع، سقف مانسارد أسود، مدخل مقوس مزخرف بثريا ذهبية، شرفات حديدية مزوّقة، وتفاصيل أعمدة كلاسيكية.',
     tagEn: 'French Classical Villa',
     tagAr: 'فيلا كلاسيكية فرنسية',
     accentColor: '#b59a6c',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ca4b3ff82_Picture19.jpg', type: 'facade' },   // P19 – full front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6e6625fe5_Picture25.jpg', type: 'facade' },   // P25 – full front alt
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3d4c59d70_Picture27.jpg', type: 'facade' },   // P27 – front with G-Wagon
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/dbdd9d0a8_Picture18.jpg', type: 'facade' },   // P18 – side garden view
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/74be3f9e2_Picture24.jpg', type: 'facade' },   // P24 – side garden alt
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0e0333eb0_Picture26.jpg', type: 'facade' },   // P26 – entrance arch close
+      { url: BASE + 'caa01534e_FRENCHNEOCLASSICAL.jpg',  type: 'facade' },
+      { url: BASE + 'b411b3517_FRENCHNEOCLASSICAL1.jpg', type: 'facade' },
+      { url: BASE + 'c1d6780c0_FRENCHNEOCLASSICAL2.jpg', type: 'facade' },
+      { url: BASE + 'da5d542e5_FRENCHNEOCLASSICAL4.jpg', type: 'facade' },
     ],
   },
   {
-    // Beige travertine stone cladding, tall portal entrance, ultra-luxury
-    id: 'travertine',
-    nameEn: 'Travertine',
-    nameAr: 'ترافيرتين',
-    tagEn: 'Contemporary Monumental',
-    tagAr: 'معاصر فخم',
-    accentColor: '#8a7a6a',
-    images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/2bde9ab3d_Picture28.jpg', type: 'facade' },   // P28 – tall entrance portal front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/dad088333_Picture29.jpg', type: 'facade' },   // P29 – full facade with RR
-    ],
-  },
-  {
-    // Flat roof, bronze/beige cladding panels, floor-to-ceiling glazing, pool, landscaped
-    id: 'modern-luxury',
-    nameEn: 'Modern Luxury',
-    nameAr: 'فاخر معاصر',
-    tagEn: 'Contemporary Villa',
-    tagAr: 'فيلا معاصرة',
-    accentColor: '#7a8a7a',
-    images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/b774cfc55_Picture7.jpg',  type: 'facade' },   // P7  – front day
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/2a22500e6_Picture8.jpg',  type: 'facade' },   // P8  – pool side angle
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/5b0a29eef_Picture9.jpg',  type: 'facade' },   // P9  – street compact
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/721577587_Picture12.jpg', type: 'facade' },   // P12 – night front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/25a6a2314_Picture10.jpg', type: 'amenity' },  // P10 – pool aerial
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a9bd617ef_Picture11.jpg', type: 'amenity' },  // P11 – pool night
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4a0d7a4bd_Picture2.jpg',  type: 'interior' }, // P2  – luxury dining room
-    ],
-  },
-  {
-    // Grey/beige stone cladding, compact 3-storey, vertical timber bays, numbered units compound
-    id: 'urban',
-    nameEn: 'Urban Villas',
-    nameAr: 'فلل حضرية',
-    tagEn: 'Compact Modern Compound',
-    tagAr: 'كمبوند حديث متكامل',
-    accentColor: '#6a7a8a',
-    images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/bbdb5fc72_Picture30.jpg', type: 'facade' },   // P30 – single unit front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/25c2b8ad6_Picture3.jpg',  type: 'facade' },   // P3  – compound street 2 units
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/419eb94e9_Picture4.jpg',  type: 'facade' },   // P4  – compound close detail
-    ],
-  },
-  {
-    // Crisp white with travertine accent panels, minimal ornament, neo-classic lite
-    id: 'neo-classic-villa',
-    nameEn: 'Neo-Classic Villa',
-    nameAr: 'فيلا نيو-كلاسيك',
+    id: 'contemporary-classical',
+    nameEn: 'Contemporary Classical',
+    nameAr: 'كلاسيكي معاصر',
+    descEn: 'Crisp white render with travertine stone inlays, clean cornice lines, timber-slatted garage doors, and a refined modern-classical balance.',
+    descAr: 'طلاء أبيض نقي مع تحصينات من حجر الترافيرتين، خطوط كورنيش نظيفة، أبواب كراج بألواح خشبية، وتوازن معاصر راقٍ.',
     tagEn: 'Modern Neo-Classical',
     tagAr: 'نيو-كلاسيك عصري',
     accentColor: '#9a8a7a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/adfa18b56_Picture5.jpg',  type: 'facade' },   // P5  – front
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/39b49592b_Picture6.jpg',  type: 'facade' },   // P6  – corner
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d8f4eede1_Picture13.jpg', type: 'amenity' },  // P13 – outdoor terrace/pergola
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/8f4439479_Picture14.jpg', type: 'amenity' },  // P14 – waterfall wall terrace
+      { url: BASE + 'b6b4c64bb_CONTEMPORARYCLASSICAL.jpg',  type: 'facade' },
+      { url: BASE + '82fdaa692_CONTEMPORARYCLASSICAL1.jpg', type: 'facade' },
+      { url: BASE + 'b2adeccb2_CONTEMPORARYCLASSICAL3.jpg', type: 'amenity' },
+      { url: BASE + '6f5e5dc0d_CONTEMPORARYCLASSICAL5.jpg', type: 'amenity' },
+    ],
+  },
+  {
+    id: 'modern-classical',
+    nameEn: 'Modern Classical',
+    nameAr: 'كلاسيكي حديث',
+    descEn: 'Beige travertine stone cladding, monumental double-height entry portal, dark-framed floor-to-ceiling glazing, and bold geometric massing.',
+    descAr: 'كسوة حجر ترافيرتين بيجي، بوابة مدخل فارهة بارتفاع مضاعف، تزجيج كامل من الأرض للسقف بإطار داكن، وتكتيل هندسي جريء.',
+    tagEn: 'Contemporary Monumental',
+    tagAr: 'معاصر فخم',
+    accentColor: '#8a7a6a',
+    images: [
+      { url: BASE + 'c385295e9_MODERNCLASSICAL.jpg',  type: 'facade' },
+      { url: BASE + '884c09e76_MODERNCLASSICAL1.jpg', type: 'facade' },
+    ],
+  },
+  {
+    id: 'contemporary-lux',
+    nameEn: 'Contemporary Luxury',
+    nameAr: 'فاخر معاصر',
+    descEn: 'Flat roof with bronze cantilevered overhangs, floor-to-ceiling glazing, beige stone cladding, landscaped pool deck, and dramatic night lighting.',
+    descAr: 'سقف مسطح مع بروزات برونزية، تزجيج من الأرض للسقف، كسوة حجرية بيجي، سطح مسبح منسّق، وإضاءة ليلية درامية.',
+    tagEn: 'Contemporary Villa',
+    tagAr: 'فيلا معاصرة',
+    accentColor: '#7a8a7a',
+    images: [
+      { url: BASE + '0a081b503_CONTEMPORARYLUX1.jpg', type: 'facade' },
+      { url: BASE + 'e843f476e_CONTEMPORARYLUX2.jpg', type: 'facade' },
+      { url: BASE + '480dcf68f_CONTEMPORARYLUX3.jpg', type: 'facade' },
+      { url: BASE + '9872e0968_CONTEMPORARYLUX5.jpg', type: 'facade' },
+      { url: BASE + 'df825ea97_CONTEMPORARYLUX6.jpg', type: 'facade' },
+      { url: BASE + '8ebe061c7_CONTEMPORARYLUX4.jpg', type: 'amenity' },
+      { url: BASE + '5394914e1_CONTEMPORARYLUX8.jpg', type: 'amenity' },
+      { url: BASE + 'bb281c3c6_MODERNLUX6.jpg',       type: 'interior' },
+      { url: BASE + '9d51f6981_MODERNLUX8.jpg',       type: 'interior' },
+    ],
+  },
+  {
+    id: 'contemporary-villas',
+    nameEn: 'Contemporary Villas',
+    nameAr: 'فلل معاصرة',
+    descEn: 'Compact three-storey units with beige stone tile cladding, vertical timber louvre bays, open roof terraces, and individual street numbers for compound living.',
+    descAr: 'وحدات ثلاثية الطوابق بكسوة بلاط حجري بيجي، بروزات خشبية عمودية، أسطح مكشوفة، وأرقام شوارع فردية لنمط حياة الكمبوند.',
+    tagEn: 'Compact Modern Compound',
+    tagAr: 'كمبوند حديث متكامل',
+    accentColor: '#6a7a8a',
+    images: [
+      { url: BASE + '778872ed1_CONTEMPORARYVILLAS.jpg',  type: 'facade' },
+      { url: BASE + 'ab96b03d0_CONTEMPORARYVILLAS2.jpg', type: 'facade' },
+      { url: BASE + '92e4d77a7_CONTEMPORARYVILLAS3.jpg', type: 'facade' },
+      { url: BASE + '9c402e638_CONTEMPORARYVILLAS4.jpg', type: 'facade' },
     ],
   },
 ];
@@ -232,8 +248,8 @@ export default function PortfolioSection() {
                       <h3 className={`text-2xl md:text-3xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {lang === 'ar' ? tpl.nameAr : tpl.nameEn}
                       </h3>
-                      <p className="text-white/50 text-xs mt-1 font-inter">
-                        {sorted.length} {lang === 'ar' ? 'صورة' : 'renders'}
+                      <p className={`text-white/50 text-xs mt-1 leading-relaxed max-w-[260px] ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        {lang === 'ar' ? tpl.descAr : tpl.descEn}
                       </p>
                     </div>
                     <div
@@ -247,17 +263,11 @@ export default function PortfolioSection() {
                   </div>
                 </div>
 
-                {/* Image count pills */}
-                <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'} flex gap-1.5`}>
-                  {['facade','amenity','interior'].map((type) => {
-                    const count = tpl.images.filter(x => x.type === type).length;
-                    if (!count) return null;
-                    return (
-                      <span key={type} className="text-[9px] tracking-wider uppercase px-2 py-0.5 bg-black/40 backdrop-blur-sm text-white/70 font-inter">
-                        {TYPE_LABELS[type][lang === 'ar' ? 'ar' : 'en']}
-                      </span>
-                    );
-                  })}
+                {/* Category pill */}
+                <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
+                  <span className="text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/35 backdrop-blur-sm text-white/70 font-inter">
+                    {lang === 'ar' ? tpl.tagAr : tpl.tagEn}
+                  </span>
                 </div>
               </motion.div>
             );
