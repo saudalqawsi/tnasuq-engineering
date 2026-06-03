@@ -7,6 +7,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 // Each template: { id, nameEn, nameAr, tagEn, tagAr, accentColor, images: [{url, type:'facade'|'amenity'|'interior'}] }
 const TEMPLATES = [
   {
+    // Terracotta mud architecture, white Najdi friezes, wooden ceilings & courtyard
     id: 'najdi',
     nameEn: 'Najdi',
     nameAr: 'نجدي',
@@ -14,18 +15,22 @@ const TEMPLATES = [
     tagAr: 'التراث العربي النجدي',
     accentColor: '#a0622a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/817efed2c_Picture1.jpg',   type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/b81fb5b86_Picture31.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4b00b3f98_Picture32.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6898d0f84_Picture33.jpg',  type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/69121363a_Picture34.jpg',  type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a13b0aef1_Picture35.jpg',  type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e853e80d2_Picture36.jpg',  type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/f613f59af_Picture37.jpg',  type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0d404ee75_Picture38.jpg',  type: 'interior' },
+      // Façades first
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/817efed2c_Picture1.jpg',  type: 'facade' },   // P1  – front day
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4b00b3f98_Picture32.jpg', type: 'facade' },   // P32 – front dusk
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/b81fb5b86_Picture31.jpg', type: 'facade' },   // P31 – side night
+      // Amenity
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e853e80d2_Picture36.jpg', type: 'amenity' },  // P36 – open courtyard
+      // Interiors
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6898d0f84_Picture33.jpg', type: 'interior' }, // P33 – living + dining
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/69121363a_Picture34.jpg', type: 'interior' }, // P34 – living view 2
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a13b0aef1_Picture35.jpg', type: 'interior' }, // P35 – living view 3
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/f613f59af_Picture37.jpg', type: 'interior' }, // P37 – atrium ground
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0d404ee75_Picture38.jpg', type: 'interior' }, // P38 – atrium tall
     ],
   },
   {
+    // Crisp white Neo-Classic palace — grand columns, arched windows, black slate roof
     id: 'versailles',
     nameEn: 'Versailles',
     nameAr: 'فرساي',
@@ -33,18 +38,17 @@ const TEMPLATES = [
     tagAr: 'قصر نيو-كلاسيك',
     accentColor: '#c8a96e',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/7227695e8_Picture15.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3fa4d56a7_Picture16.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/730c8769e_Picture17.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/dbdd9d0a8_Picture18.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ca4b3ff82_Picture19.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e13595c9b_Picture20.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e2d356fb5_Picture21.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/740035d2e_Picture22.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d20efc734_Picture23.jpg',  type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e2d356fb5_Picture21.jpg', type: 'facade' },   // P21 – full grand palace front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/740035d2e_Picture22.jpg', type: 'facade' },   // P22 – wide street view
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d20efc734_Picture23.jpg', type: 'facade' },   // P23 – far street view
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/7227695e8_Picture15.jpg', type: 'facade' },   // P15 – smaller villa front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3fa4d56a7_Picture16.jpg', type: 'facade' },   // P16 – villa corner
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e13595c9b_Picture20.jpg', type: 'facade' },   // P20 – entrance portico
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/730c8769e_Picture17.jpg', type: 'facade' },   // P17 – entrance close
     ],
   },
   {
+    // Cream/ivory French baroque — mansard black roof, balconies, ornate arch entry
     id: 'ivory',
     nameEn: 'Ivory Classique',
     nameAr: 'إيفوري كلاسيك',
@@ -52,13 +56,16 @@ const TEMPLATES = [
     tagAr: 'فيلا كلاسيكية فرنسية',
     accentColor: '#b59a6c',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/74be3f9e2_Picture24.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6e6625fe5_Picture25.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0e0333eb0_Picture26.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3d4c59d70_Picture27.jpg',  type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ca4b3ff82_Picture19.jpg', type: 'facade' },   // P19 – full front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/6e6625fe5_Picture25.jpg', type: 'facade' },   // P25 – full front alt
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/3d4c59d70_Picture27.jpg', type: 'facade' },   // P27 – front with G-Wagon
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/dbdd9d0a8_Picture18.jpg', type: 'facade' },   // P18 – side garden view
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/74be3f9e2_Picture24.jpg', type: 'facade' },   // P24 – side garden alt
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0e0333eb0_Picture26.jpg', type: 'facade' },   // P26 – entrance arch close
     ],
   },
   {
+    // Beige travertine stone cladding, tall portal entrance, ultra-luxury
     id: 'travertine',
     nameEn: 'Travertine',
     nameAr: 'ترافيرتين',
@@ -66,11 +73,12 @@ const TEMPLATES = [
     tagAr: 'معاصر فخم',
     accentColor: '#8a7a6a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/2bde9ab3d_Picture28.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/dad088333_Picture29.jpg',  type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/2bde9ab3d_Picture28.jpg', type: 'facade' },   // P28 – tall entrance portal front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/dad088333_Picture29.jpg', type: 'facade' },   // P29 – full facade with RR
     ],
   },
   {
+    // Flat roof, bronze/beige cladding panels, floor-to-ceiling glazing, pool, landscaped
     id: 'modern-luxury',
     nameEn: 'Modern Luxury',
     nameAr: 'فاخر معاصر',
@@ -78,22 +86,17 @@ const TEMPLATES = [
     tagAr: 'فيلا معاصرة',
     accentColor: '#7a8a7a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/b774cfc55_Picture7.jpg',   type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/2a22500e6_Picture8.jpg',   type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/5b0a29eef_Picture9.jpg',   type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/25a6a2314_Picture10.jpg',  type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a9bd617ef_Picture11.jpg',  type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/721577587_Picture12.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4a0d7a4bd_Picture2.jpg',   type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/25c2b8ad6_Picture3.jpg',   type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/419eb94e9_Picture4.jpg',   type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/adfa18b56_Picture5.jpg',   type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/39b49592b_Picture6.jpg',   type: 'interior' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d8f4eede1_Picture13.jpg',  type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/8f4439479_Picture14.jpg',  type: 'amenity' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/b774cfc55_Picture7.jpg',  type: 'facade' },   // P7  – front day
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/2a22500e6_Picture8.jpg',  type: 'facade' },   // P8  – pool side angle
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/5b0a29eef_Picture9.jpg',  type: 'facade' },   // P9  – street compact
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/721577587_Picture12.jpg', type: 'facade' },   // P12 – night front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/25a6a2314_Picture10.jpg', type: 'amenity' },  // P10 – pool aerial
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/a9bd617ef_Picture11.jpg', type: 'amenity' },  // P11 – pool night
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4a0d7a4bd_Picture2.jpg',  type: 'interior' }, // P2  – luxury dining room
     ],
   },
   {
+    // Grey/beige stone cladding, compact 3-storey, vertical timber bays, numbered units compound
     id: 'urban',
     nameEn: 'Urban Villas',
     nameAr: 'فلل حضرية',
@@ -101,9 +104,24 @@ const TEMPLATES = [
     tagAr: 'كمبوند حديث متكامل',
     accentColor: '#6a7a8a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/bbdb5fc72_Picture30.jpg',  type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d8f4eede1_Picture13.jpg',  type: 'amenity' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/8f4439479_Picture14.jpg',  type: 'amenity' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/bbdb5fc72_Picture30.jpg', type: 'facade' },   // P30 – single unit front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/25c2b8ad6_Picture3.jpg',  type: 'facade' },   // P3  – compound street 2 units
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/419eb94e9_Picture4.jpg',  type: 'facade' },   // P4  – compound close detail
+    ],
+  },
+  {
+    // Crisp white with travertine accent panels, minimal ornament, neo-classic lite
+    id: 'neo-classic-villa',
+    nameEn: 'Neo-Classic Villa',
+    nameAr: 'فيلا نيو-كلاسيك',
+    tagEn: 'Modern Neo-Classical',
+    tagAr: 'نيو-كلاسيك عصري',
+    accentColor: '#9a8a7a',
+    images: [
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/adfa18b56_Picture5.jpg',  type: 'facade' },   // P5  – front
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/39b49592b_Picture6.jpg',  type: 'facade' },   // P6  – corner
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d8f4eede1_Picture13.jpg', type: 'amenity' },  // P13 – outdoor terrace/pergola
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/8f4439479_Picture14.jpg', type: 'amenity' },  // P14 – waterfall wall terrace
     ],
   },
 ];
