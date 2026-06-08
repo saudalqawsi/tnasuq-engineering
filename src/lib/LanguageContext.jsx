@@ -60,32 +60,32 @@ const translations = {
       items: [
         {
           title: 'Architectural Design',
-          description: 'Building permit-ready architectural drawings coordinated with Amanat Al-Riyadh setback rules, municipal zoning, and Saudi planning standards — for villas, apartments, commercial, and industrial buildings.',
+          description: 'Permit-ready drawings for villas, apartments, commercial, and industrial buildings — coordinated with Amanat Al-Riyadh setback rules, municipal zoning, and Saudi planning standards.',
           highlight: true,
         },
         {
           title: 'Structural Engineering',
-          description: 'Structural analysis and design for all building types — foundations, frames, slabs, and connections — fully compliant with the Saudi Building Code (SBC 301/303).',
+          description: 'Foundations, frames, slabs, and connections engineered for all building types — fully compliant with Saudi Building Code SBC 301/303.',
           highlight: true,
         },
         {
           title: 'Project Management',
-          description: 'End-to-end project delivery: programme control, contractor coordination, cost management, and authority liaison from Baladiya to MOMRA — keeping your project on time and on budget.',
+          description: 'Full project delivery from concept to handover: programme control, contractor coordination, cost management, and authority liaison with Baladiya and MOMRA.',
           highlight: true,
         },
         {
           title: 'Construction Supervision',
-          description: 'Resident engineer and site supervision services ensuring full compliance with approved drawings, SBC requirements, material quality standards, and Health & Safety regulations.',
+          description: 'Resident engineer and site supervision ensuring compliance with approved drawings, SBC requirements, material standards, and Health & Safety regulations on every visit.',
           highlight: true,
         },
         {
           title: 'MEP Engineering',
-          description: 'Full mechanical, electrical, and plumbing design coordinated with SEC, NWC, STC, and SASO requirements. We manage all service provider approvals end-to-end.',
+          description: 'Integrated mechanical, electrical, and plumbing design coordinated with SEC, NWC, and SASO — including full management of all service provider approvals.',
           highlight: true,
         },
         {
           title: 'Geotechnical Engineering',
-          description: 'Soil investigation, foundation recommendations, and ground improvement design — especially critical for Wadi Hanifah catchment areas and expansive soil zones across Riyadh.',
+          description: 'Soil investigation, foundation recommendations, and ground improvement design — critical for Wadi Hanifah catchment areas and expansive soil zones across Riyadh.',
           highlight: false,
         },
       ],
@@ -196,32 +196,32 @@ const translations = {
       items: [
         {
           title: 'التصميم المعماري',
-          description: 'رسومات معمارية جاهزة للترخيص منسّقة مع اشتراطات ارتداد أمانة الرياض، التخطيط البلدي، والمعايير السعودية — للفلل والعمائر والمباني التجارية والصناعية.',
+          description: 'رسومات معمارية جاهزة للترخيص للفلل والعمائر والمباني التجارية والصناعية — منسّقة مع اشتراطات ارتداد أمانة الرياض والتخطيط البلدي والمعايير السعودية.',
           highlight: true,
         },
         {
           title: 'الهندسة الإنشائية',
-          description: 'تحليل وتصميم إنشائي لجميع أنواع المباني — أساسات، هياكل، بلاطات ووصلات — متوافقة بالكامل مع الكود السعودي للبناء (SBC 301/303).',
+          description: 'أساسات وهياكل وبلاطات ووصلات لجميع أنواع المباني — متوافقة بالكامل مع الكود السعودي للبناء SBC 301/303.',
           highlight: true,
         },
         {
           title: 'إدارة المشاريع',
-          description: 'تسليم متكامل للمشروع: ضبط البرنامج الزمني، تنسيق المقاولين، إدارة التكاليف، والتواصل مع الجهات من البلدية إلى وزارة الشؤون البلدية — للحفاظ على مشروعك في الوقت والميزانية المحددة.',
+          description: 'تسليم متكامل من الفكرة حتى التسليم: ضبط الجدول الزمني، تنسيق المقاولين، إدارة التكاليف، والتواصل مع البلديات ووزارة الشؤون البلدية.',
           highlight: true,
         },
         {
           title: 'الإشراف على التنفيذ',
-          description: 'خدمات المهندس المقيم والإشراف الميداني لضمان الالتزام الكامل بالرسومات المعتمدة، اشتراطات الكود السعودي الإنشائية، معايير جودة المواد، وأنظمة الصحة والسلامة.',
+          description: 'مهندس مقيم وإشراف ميداني منتظم يضمن الالتزام بالرسومات المعتمدة، اشتراطات الكود السعودي، جودة المواد، وأنظمة الصحة والسلامة.',
           highlight: true,
         },
         {
           title: 'الهندسة الكهروميكانيكية',
-          description: 'تصميم ميكانيكي وكهربائي وصحي منسّق مع متطلبات شركة الكهرباء والمياه وهيئة المواصفات. نتولى إدارة موافقات جميع مزودي الخدمات شاملة.',
+          description: 'تصميم ميكانيكي وكهربائي وصحي متكامل منسّق مع شركة الكهرباء والمياه وهيئة المواصفات — مع إدارة كاملة لموافقات جميع مزودي الخدمات.',
           highlight: true,
         },
         {
           title: 'الهندسة الجيوتقنية',
-          description: 'تحقيق التربة، توصيات الأساسات، وتصميم تحسين الأرض — ضرورية بشكل خاص في نطاق وادي حنيفة ومناطق التربة المنتفخة في الرياض.',
+          description: 'تحقيق التربة وتوصيات الأساسات وتصميم تحسين الأرض — ضرورية في نطاق وادي حنيفة ومناطق التربة المنتفخة بالرياض.',
           highlight: false,
         },
       ],

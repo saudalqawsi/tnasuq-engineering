@@ -67,8 +67,8 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-20">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="mb-6 opacity-80">
-              <TnasuqLogo size="lg" />
+            <div className="mb-6 opacity-90">
+              <TnasuqLogo size="lg" dark={true} />
             </div>
             <p className={`text-sm text-primary-foreground/40 leading-relaxed max-w-xs mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {t.footer.tagline}
