@@ -112,9 +112,10 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className={`text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-12 ${
+            className={`text-lg md:text-xl max-w-xl leading-relaxed mb-12 ${
               isRTL ? 'font-arabic' : 'font-inter'
             }`}
+            style={{ color: 'hsl(0 0% 18%)', textShadow: '0 1px 8px rgba(255,255,255,0.5)' }}
           >
             {t.hero.subtitle}
           </motion.p>

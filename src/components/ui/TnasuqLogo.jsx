@@ -10,9 +10,7 @@ export default function TnasuqLogo({ size = 'md', onClick, dark = false }) {
   };
   const s = sizes[size] || sizes.md;
 
-  const shadowFilter = dark
-    ? 'drop-shadow(0 1px 6px rgba(0,0,0,0.6)) drop-shadow(0 0px 2px rgba(0,0,0,0.4))'
-    : 'drop-shadow(0 1px 5px rgba(0,0,0,0.22)) drop-shadow(0 0px 1px rgba(0,0,0,0.14))';
+  const shadowFilter = 'drop-shadow(0 1px 5px rgba(0,0,0,0.22)) drop-shadow(0 0px 1px rgba(0,0,0,0.14))';
 
   const content = (
     <div className="flex items-center gap-2.5" style={{ lineHeight: 1 }}>
@@ -34,7 +32,7 @@ export default function TnasuqLogo({ size = 'md', onClick, dark = false }) {
           className="font-arabic font-bold text-foreground leading-none"
           style={{ fontSize: s.arSize, letterSpacing: '0.04em' }}
         >
-          تناســـــق
+          تناســـــــــــــق
         </span>
         <span
           className="font-inter font-black tracking-[-0.02em] text-foreground leading-none"
