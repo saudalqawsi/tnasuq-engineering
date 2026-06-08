@@ -34,7 +34,7 @@ export default function TnasuqLogo({ size = 'md', onClick, dark = false }) {
           className="font-arabic font-bold text-foreground leading-none"
           style={{ fontSize: s.arSize, letterSpacing: '0.04em' }}
         >
-          تناسق
+          تناســـــق
         </span>
         <span
           className="font-inter font-black tracking-[-0.02em] text-foreground leading-none"
