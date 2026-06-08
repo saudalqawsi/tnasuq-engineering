@@ -12,8 +12,8 @@ const translations = {
       menu: 'Menu',
     },
     hero: {
-      tagline: 'Engineering Consultancy — Riyadh, KSA',
-      subtitle: 'From residential villas to commercial towers — we deliver complete design, management, and supervision services built on deep knowledge of Saudi building codes and municipal requirements.',
+      tagline: 'Engineering Consultancy · Riyadh, KSA',
+      subtitle: 'From residential villas to commercial towers, we deliver complete design, management, and supervision services built on deep knowledge of Saudi building codes and municipal requirements.',
       cta: 'Start a Project',
       scroll: 'Scroll to explore',
     },
@@ -47,7 +47,7 @@ const translations = {
         {
           title: 'Warehouse & Light Industrial',
           category: 'Industrial Facilities',
-          location: 'Industrial Zones — Riyadh',
+          location: 'Industrial Zones, Riyadh',
           year: 'Template Ready',
           description: 'Industrial shed and warehouse templates engineered to MODON zone regulations, heavy vehicle access standards, structural load requirements, and full MEP fit-out coordination.',
         },
@@ -56,7 +56,7 @@ const translations = {
     services: {
       title: 'Services',
       subtitle: 'Full Project Lifecycle',
-      description: 'We manage the entire engineering journey — from concept and structural design through permitting, construction supervision, and handover. Built on deep expertise in Saudi codes and authorities.',
+      description: 'We manage the entire engineering journey, from concept and structural design through permitting, construction supervision, and handover. Built on deep expertise in Saudi codes and authorities.',
       items: [
         {
           title: 'Architectural Design',
@@ -70,7 +70,7 @@ const translations = {
         },
         {
           title: 'Project Management',
-          description: 'Full project delivery from concept to handover: programme control, contractor coordination, cost management, and authority liaison with Baladiya and MOMRA.',
+          description: 'Full project delivery from concept to handover, covering programme control, contractor coordination, cost management, and authority liaison with Baladiya and MOMRA.',
           highlight: true,
         },
         {
@@ -148,8 +148,8 @@ const translations = {
       menu: 'القائمة',
     },
     hero: {
-      tagline: 'استشارات هندسية — الرياض، المملكة العربية السعودية',
-      subtitle: 'من الفلل السكنية إلى الأبراج التجارية — نقدّم خدمات متكاملة للتصميم والإدارة والإشراف، مبنيّة على خبرة عميقة بالكود السعودي للبناء ومتطلبات الجهات البلدية.',
+      tagline: 'استشارات هندسية · الرياض، المملكة العربية السعودية',
+      subtitle: 'من الفلل السكنية إلى الأبراج التجارية، نقدّم خدمات متكاملة للتصميم والإدارة والإشراف، مبنيّة على خبرة عميقة بالكود السعودي للبناء ومتطلبات الجهات البلدية.',
       cta: 'ابدأ مشروعك',
       scroll: 'اسحب للاستكشاف',
     },
@@ -183,7 +183,7 @@ const translations = {
         {
           title: 'مستودع وخفيف صناعي',
           category: 'منشآت صناعية',
-          location: 'المناطق الصناعية — الرياض',
+          location: 'المناطق الصناعية، الرياض',
           year: 'نموذج جاهز',
           description: 'نماذج مستودعات ومنشآت صناعية خفيفة مُهندَسة وفق أنظمة مناطق مدن الاستثمار الصناعية، معايير وصول المركبات الثقيلة، اشتراطات الأحمال الإنشائية، وتنسيق كامل للتجهيزات.',
         },
@@ -192,7 +192,7 @@ const translations = {
     services: {
       title: 'الخدمات',
       subtitle: 'دورة حياة المشروع الكاملة',
-      description: 'ندير الرحلة الهندسية بالكامل — من التصميم والتحليل الإنشائي حتى التراخيص والإشراف على التنفيذ والتسليم. مبنيّ على خبرة عميقة بالكودات والجهات السعودية.',
+      description: 'ندير الرحلة الهندسية بالكامل، من التصميم والتحليل الإنشائي حتى التراخيص والإشراف على التنفيذ والتسليم، مبنيّاً على خبرة عميقة بالكودات والجهات السعودية.',
       items: [
         {
           title: 'التصميم المعماري',
@@ -206,7 +206,7 @@ const translations = {
         },
         {
           title: 'إدارة المشاريع',
-          description: 'تسليم متكامل من الفكرة حتى التسليم: ضبط الجدول الزمني، تنسيق المقاولين، إدارة التكاليف، والتواصل مع البلديات ووزارة الشؤون البلدية.',
+          description: 'تسليم متكامل من الفكرة حتى التسليم، يشمل ضبط الجدول الزمني وتنسيق المقاولين وإدارة التكاليف والتواصل مع البلديات ووزارة الشؤون البلدية.',
           highlight: true,
         },
         {
