@@ -88,6 +88,24 @@ const translations = {
           description: 'Soil investigation, foundation recommendations, and ground improvement design — critical for Wadi Hanifah catchment areas and expansive soil zones across Riyadh.',
           highlight: false,
         },
+        {
+          title: 'Urban Planning',
+          description: 'Master planning, land-use studies, and urban design frameworks delivered in partnership with licensed urban planning specialists.',
+          highlight: false,
+          partner: true,
+        },
+        {
+          title: 'Demarcation Services',
+          description: 'Boundary demarcation, plot re-subdivision, and field survey coordination provided via certified surveying partners.',
+          highlight: false,
+          partner: true,
+        },
+        {
+          title: 'Cadastral Services',
+          description: 'Cadastral mapping, deed registration support, and parcel data preparation provided in partnership with accredited cadastral offices.',
+          highlight: false,
+          partner: true,
+        },
       ],
       codesBadge: {
         title: 'Code & Authority Expertise',
@@ -223,6 +241,24 @@ const translations = {
           title: 'الهندسة الجيوتقنية',
           description: 'تحقيق التربة وتوصيات الأساسات وتصميم تحسين الأرض — ضرورية في نطاق وادي حنيفة ومناطق التربة المنتفخة بالرياض.',
           highlight: false,
+        },
+        {
+          title: 'التخطيط العمراني',
+          description: 'دراسات التخطيط الرئيسية واستعمالات الأراضي والإطار التصميمي الحضري، تُقدَّم بالشراكة مع متخصصين معتمدين في التخطيط العمراني.',
+          highlight: false,
+          partner: true,
+        },
+        {
+          title: 'خدمات الترسيم',
+          description: 'ترسيم الحدود وإعادة تقسيم القطع الأرضية وتنسيق المسح الميداني، عبر شركاء من المساحين المعتمدين.',
+          highlight: false,
+          partner: true,
+        },
+        {
+          title: 'الخدمات المساحية والكاداسترالية',
+          description: 'إعداد خرائط مساحية وتوثيق الصكوك وإعداد بيانات القطع الأرضية، بالشراكة مع مكاتب مساحية معتمدة.',
+          highlight: false,
+          partner: true,
         },
       ],
       codesBadge: {

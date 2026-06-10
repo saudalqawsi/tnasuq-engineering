@@ -65,6 +65,36 @@ const serviceIcons = [
       <line x1="34" y1="24" x2="42" y2="24" />
     </svg>
   ),
+  // Urban Planning
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="6" y="22" width="10" height="20" />
+      <rect x="19" y="14" width="10" height="28" />
+      <rect x="32" y="18" width="10" height="24" />
+      <line x1="6" y1="42" x2="42" y2="42" />
+      <line x1="6" y1="6" x2="6" y2="22" strokeDasharray="3 2" />
+    </svg>
+  ),
+  // Demarcation
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <polygon points="24,8 40,38 8,38" />
+      <circle cx="24" cy="8" r="2.5" fill="currentColor" stroke="none" />
+      <circle cx="40" cy="38" r="2.5" fill="currentColor" stroke="none" />
+      <circle cx="8" cy="38" r="2.5" fill="currentColor" stroke="none" />
+      <line x1="24" y1="8" x2="24" y2="38" strokeDasharray="3 2" />
+    </svg>
+  ),
+  // Cadastral
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="6" y="6" width="36" height="36" />
+      <line x1="6" y1="22" x2="42" y2="22" />
+      <line x1="6" y1="34" x2="42" y2="34" />
+      <line x1="22" y1="6" x2="22" y2="42" />
+      <line x1="34" y1="6" x2="34" y2="42" />
+    </svg>
+  ),
 ];
 
 export default function ServicesSection() {
@@ -117,6 +147,13 @@ export default function ServicesSection() {
                   <div className={`absolute top-5 ${isRTL ? 'left-5' : 'right-5'}`}>
                     <span className={`text-[9px] tracking-[0.2em] uppercase px-2 py-1 bg-primary/20 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {isRTL ? 'خدمة محورية' : 'Core Service'}
+                    </span>
+                  </div>
+                )}
+                {service.partner && (
+                  <div className={`absolute top-5 ${isRTL ? 'left-5' : 'right-5'}`}>
+                    <span className={`text-[9px] tracking-[0.2em] uppercase px-2 py-1 bg-primary-foreground/10 text-primary-foreground/40 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      {isRTL ? 'عبر الشركاء' : 'Via Partners'}
                     </span>
                   </div>
                 )}

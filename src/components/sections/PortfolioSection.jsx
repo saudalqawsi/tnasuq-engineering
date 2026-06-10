@@ -241,10 +241,6 @@ export default function PortfolioSection() {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="flex items-end justify-between gap-3">
                     <div>
-                      <p className={`text-xs tracking-[0.18em] uppercase mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}
-                        style={{ color: tpl.accentColor }}>
-                        {lang === 'ar' ? tpl.tagAr : tpl.tagEn}
-                      </p>
                       <h3 className={`text-2xl md:text-3xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {lang === 'ar' ? tpl.nameAr : tpl.nameEn}
                       </h3>
@@ -263,9 +259,12 @@ export default function PortfolioSection() {
                   </div>
                 </div>
 
-                {/* Category pill */}
+                {/* Category pill — top right only */}
                 <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
-                  <span className="text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/35 backdrop-blur-sm text-white/70 font-inter">
+                  <span
+                    className={`text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/35 backdrop-blur-sm font-inter`}
+                    style={{ color: tpl.accentColor }}
+                  >
                     {lang === 'ar' ? tpl.tagAr : tpl.tagEn}
                   </span>
                 </div>
