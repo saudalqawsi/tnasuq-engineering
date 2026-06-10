@@ -85,14 +85,17 @@ const serviceIcons = [
       <line x1="24" y1="8" x2="24" y2="38" strokeDasharray="3 2" />
     </svg>
   ),
-  // Cadastral
+  // Demarcation & Cadastral (combined)
   ({ className, style }) => (
     <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
       <rect x="6" y="6" width="36" height="36" />
-      <line x1="6" y1="22" x2="42" y2="22" />
-      <line x1="6" y1="34" x2="42" y2="34" />
-      <line x1="22" y1="6" x2="22" y2="42" />
-      <line x1="34" y1="6" x2="34" y2="42" />
+      <line x1="6" y1="24" x2="42" y2="24" />
+      <line x1="24" y1="6" x2="24" y2="42" />
+      <circle cx="24" cy="24" r="2.5" fill="currentColor" stroke="none" />
+      <circle cx="6" cy="6" r="2" fill="currentColor" stroke="none" />
+      <circle cx="42" cy="6" r="2" fill="currentColor" stroke="none" />
+      <circle cx="6" cy="42" r="2" fill="currentColor" stroke="none" />
+      <circle cx="42" cy="42" r="2" fill="currentColor" stroke="none" />
     </svg>
   ),
 ];

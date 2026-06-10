@@ -262,8 +262,12 @@ export default function PortfolioSection() {
                 {/* Category pill — top right only */}
                 <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
                   <span
-                    className={`text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/35 backdrop-blur-sm font-inter`}
-                    style={{ color: tpl.accentColor }}
+                    className={`text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/40 backdrop-blur-sm font-inter`}
+                    style={{
+                      color: tpl.accentColor,
+                      textShadow: `0 0 10px ${tpl.accentColor}cc, 0 0 20px ${tpl.accentColor}66`,
+                      boxShadow: `0 0 8px ${tpl.accentColor}44, inset 0 0 6px ${tpl.accentColor}18`,
+                    }}
                   >
                     {lang === 'ar' ? tpl.tagAr : tpl.tagEn}
                   </span>

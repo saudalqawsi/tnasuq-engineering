@@ -87,6 +87,7 @@ const translations = {
           title: 'Geotechnical Engineering',
           description: 'Soil investigation, foundation recommendations, and ground improvement design — critical for Wadi Hanifah catchment areas and expansive soil zones across Riyadh.',
           highlight: false,
+          partner: true,
         },
         {
           title: 'Urban Planning',
@@ -95,14 +96,8 @@ const translations = {
           partner: true,
         },
         {
-          title: 'Demarcation Services',
-          description: 'Boundary demarcation, plot re-subdivision, and field survey coordination provided via certified surveying partners.',
-          highlight: false,
-          partner: true,
-        },
-        {
-          title: 'Cadastral Services',
-          description: 'Cadastral mapping, deed registration support, and parcel data preparation provided in partnership with accredited cadastral offices.',
+          title: 'Demarcation & Cadastral Services',
+          description: 'Boundary demarcation, plot re-subdivision, cadastral mapping, and deed registration support — provided via certified surveying and cadastral partners.',
           highlight: false,
           partner: true,
         },
@@ -241,6 +236,7 @@ const translations = {
           title: 'الهندسة الجيوتقنية',
           description: 'تحقيق التربة وتوصيات الأساسات وتصميم تحسين الأرض — ضرورية في نطاق وادي حنيفة ومناطق التربة المنتفخة بالرياض.',
           highlight: false,
+          partner: true,
         },
         {
           title: 'التخطيط العمراني',
@@ -249,14 +245,8 @@ const translations = {
           partner: true,
         },
         {
-          title: 'خدمات الترسيم',
-          description: 'ترسيم الحدود وإعادة تقسيم القطع الأرضية وتنسيق المسح الميداني، عبر شركاء من المساحين المعتمدين.',
-          highlight: false,
-          partner: true,
-        },
-        {
-          title: 'الخدمات المساحية والكاداسترالية',
-          description: 'إعداد خرائط مساحية وتوثيق الصكوك وإعداد بيانات القطع الأرضية، بالشراكة مع مكاتب مساحية معتمدة.',
+          title: 'الترسيم والخدمات المساحية',
+          description: 'ترسيم الحدود وإعادة تقسيم القطع وإعداد الخرائط المساحية وتوثيق الصكوك، عبر شركاء من المساحين والمكاتب الكاداسترالية المعتمدة.',
           highlight: false,
           partner: true,
         },
