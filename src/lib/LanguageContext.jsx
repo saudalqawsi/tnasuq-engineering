@@ -96,8 +96,8 @@ const translations = {
           partner: true,
         },
         {
-          title: 'Demarcation & Cadastral Services',
-          description: 'Boundary demarcation, plot re-subdivision, cadastral mapping, and deed registration support — provided via certified surveying and cadastral partners.',
+          title: 'Cadastral Services',
+          description: 'Cadastral mapping, parcel data preparation, and deed registration support provided in partnership with accredited cadastral offices.',
           highlight: false,
           partner: true,
         },
@@ -245,8 +245,8 @@ const translations = {
           partner: true,
         },
         {
-          title: 'الترسيم والخدمات المساحية',
-          description: 'ترسيم الحدود وإعادة تقسيم القطع وإعداد الخرائط المساحية وتوثيق الصكوك، عبر شركاء من المساحين والمكاتب الكاداسترالية المعتمدة.',
+          title: 'الخدمات المساحية الكاداسترالية',
+          description: 'إعداد الخرائط المساحية وبيانات القطع الأرضية ودعم تسجيل الصكوك، بالشراكة مع مكاتب مساحية كاداسترالية معتمدة.',
           highlight: false,
           partner: true,
         },

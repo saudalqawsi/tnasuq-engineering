@@ -75,17 +75,7 @@ const serviceIcons = [
       <line x1="6" y1="6" x2="6" y2="22" strokeDasharray="3 2" />
     </svg>
   ),
-  // Demarcation
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <polygon points="24,8 40,38 8,38" />
-      <circle cx="24" cy="8" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="40" cy="38" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="8" cy="38" r="2.5" fill="currentColor" stroke="none" />
-      <line x1="24" y1="8" x2="24" y2="38" strokeDasharray="3 2" />
-    </svg>
-  ),
-  // Demarcation & Cadastral (combined)
+  // Cadastral
   ({ className, style }) => (
     <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
       <rect x="6" y="6" width="36" height="36" />
