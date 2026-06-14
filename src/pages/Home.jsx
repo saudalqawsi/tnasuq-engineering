@@ -11,6 +11,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import ContactSection from '@/components/sections/ContactSection';
 import FooterSection from '@/components/sections/FooterSection';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import CalligraphyPickerSection from '@/components/sections/CalligraphyPickerSection';
 
 // Hero
 const HERO_IMAGE = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/5e0aff43e_generated_95c7e70c.png';
@@ -36,6 +37,7 @@ export default function Home() {
         <ServicesSection />
         <ProcessSection />
         <ContactSection />
+        <CalligraphyPickerSection />
         <FooterSection />
         <WhatsAppButton />
       </div>

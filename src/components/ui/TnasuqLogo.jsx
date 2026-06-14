@@ -2,51 +2,30 @@ import React from 'react';
 
 const LOGO_URL = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/72dedd084_logo_transparent.png';
 
-// 4 authentic Arabic calligraphy style options for the Arabic wordmark
-// Each uses a different font loaded via @import in index.css (or inline link).
-// PLACEHOLDER: Pick your preferred style (A–D) and we'll lock it in.
-const CALLIGRAPHY_STYLES = {
-  // A — Amiri: Classical Naskh, scholarly, timeless
-  A: {
-    fontFamily: "'Amiri', serif",
-    fontWeight: 700,
-    letterSpacing: '0.02em',
-    label: 'A · Amiri (Classical Naskh)',
-  },
-  // B — Scheherazade: Traditional, flowing, editorial
-  B: {
-    fontFamily: "'Scheherazade New', serif",
-    fontWeight: 700,
-    letterSpacing: '0.01em',
-    label: 'B · Scheherazade (Traditional)',
-  },
-  // C — Lateef: Elegant Kufic-inspired, structured
-  C: {
-    fontFamily: "'Lateef', serif",
-    fontWeight: 400,
-    letterSpacing: '0.03em',
-    label: 'C · Lateef (Kufic-inspired)',
-  },
-  // D — Reem Kufi: Contemporary geometric Kufic
-  D: {
-    fontFamily: "'Reem Kufi', sans-serif",
-    fontWeight: 600,
-    letterSpacing: '0.04em',
-    label: 'D · Reem Kufi (Geometric)',
-  },
+export const CALLIGRAPHY_STYLES = {
+  A: { fontFamily: "'Amiri', serif", fontWeight: 700, letterSpacing: '0.02em', label: 'A · Amiri — Classical Naskh' },
+  B: { fontFamily: "'Scheherazade New', serif", fontWeight: 700, letterSpacing: '0.01em', label: 'B · Scheherazade — Traditional Flowing' },
+  C: { fontFamily: "'Lateef', serif", fontWeight: 400, letterSpacing: '0.03em', label: 'C · Lateef — Kufic-Inspired' },
+  D: { fontFamily: "'Reem Kufi', sans-serif", fontWeight: 600, letterSpacing: '0.04em', label: 'D · Reem Kufi — Geometric Modern' },
+  E: { fontFamily: "'Noto Naskh Arabic', serif", fontWeight: 700, letterSpacing: '0.01em', label: 'E · Noto Naskh — Crisp & Universal' },
+  F: { fontFamily: "'Markazi Text', serif", fontWeight: 700, letterSpacing: '0.02em', label: 'F · Markazi Text — Editorial Naskh' },
+  G: { fontFamily: "'Tajawal', sans-serif", fontWeight: 800, letterSpacing: '0.03em', label: 'G · Tajawal — Bold Contemporary' },
+  H: { fontFamily: "'Katibeh', cursive", fontWeight: 400, letterSpacing: '0.02em', label: 'H · Katibeh — Ruqʿah Script' },
+  I: { fontFamily: "'Mada', sans-serif", fontWeight: 700, letterSpacing: '0.05em', label: 'I · Mada — Minimal Modern' },
+  J: { fontFamily: "'Cairo', sans-serif", fontWeight: 900, letterSpacing: '0.04em', label: 'J · Cairo Black — Heavy Display' },
 };
 
-// ← CHANGE THIS to 'A', 'B', 'C', or 'D' to switch styles
-const ACTIVE_STYLE = 'A';
+// ← CHANGE THIS to 'A' through 'J' to switch active style
+export const ACTIVE_STYLE = 'A';
 
-export default function TnasuqLogo({ size = 'md', onClick }) {
+export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
   const sizes = {
     sm: { h: 28, enSize: 11, arSize: 14, gap: 2 },
     md: { h: 38, enSize: 13, arSize: 16, gap: 3 },
     lg: { h: 50, enSize: 17, arSize: 21, gap: 4 },
   };
   const s = sizes[size] || sizes.md;
-  const cal = CALLIGRAPHY_STYLES[ACTIVE_STYLE];
+  const cal = CALLIGRAPHY_STYLES[styleKey || ACTIVE_STYLE];
 
   const shadowFilter = 'drop-shadow(0 1px 5px rgba(0,0,0,0.22)) drop-shadow(0 0px 1px rgba(0,0,0,0.14))';
 

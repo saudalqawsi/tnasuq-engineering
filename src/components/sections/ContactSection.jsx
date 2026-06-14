@@ -109,6 +109,26 @@ export default function ContactSection() {
                 </span>
               </div>
             </div>
+
+            {/* Map */}
+            <div className="mt-10 overflow-hidden border border-border/40" style={{ aspectRatio: '16/9' }}>
+              <iframe
+                title="Tnasuq Office Location"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=46.5980%2C24.7720%2C46.6180%2C24.7880&layer=mapnik&marker=24.7800%2C46.6080"
+                className="w-full h-full"
+                style={{ border: 0, filter: 'grayscale(30%) contrast(1.05)' }}
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://maps.google.com/maps?q=Al+Qairawan+District+Riyadh+Saudi+Arabia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-block mt-2 text-xs text-muted-foreground hover:text-primary transition-colors ${isRTL ? 'font-arabic' : 'font-inter'}`}
+            >
+              {isRTL ? 'فتح في خرائط جوجل ↗' : 'Open in Google Maps ↗'}
+            </a>
           </motion.div>
 
           {/* Right: Form */}
