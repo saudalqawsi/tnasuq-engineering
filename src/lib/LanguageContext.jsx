@@ -6,6 +6,7 @@ const translations = {
   en: {
     nav: {
       home: 'Home',
+      about: 'About',
       portfolio: 'Project Templates',
       services: 'Services',
       contact: 'Contact',
@@ -137,6 +138,8 @@ const translations = {
         construction_supervision: 'Construction Supervision',
         geotechnical_engineering: 'Geotechnical Engineering',
         mep_engineering: 'MEP Engineering',
+        urban_planning: 'Urban Planning',
+        cadastral: 'Cadastral Services',
         other: 'Other',
       },
     },
@@ -146,8 +149,10 @@ const translations = {
       nationalNumber: 'National Unified Number',
       crNumber: '7048788926',
       links: {
+        about: 'About',
         portfolio: 'Project Templates',
         services: 'Services',
+        process: 'How We Work',
         contact: 'Contact',
       },
     },
@@ -155,6 +160,7 @@ const translations = {
   ar: {
     nav: {
       home: 'الرئيسية',
+      about: 'عن تناسق',
       portfolio: 'نماذج المشاريع',
       services: 'الخدمات',
       contact: 'تواصل معنا',
@@ -286,6 +292,8 @@ const translations = {
         construction_supervision: 'الإشراف على التنفيذ',
         geotechnical_engineering: 'الهندسة الجيوتقنية',
         mep_engineering: 'الهندسة الكهروميكانيكية',
+        urban_planning: 'التخطيط العمراني',
+        cadastral: 'الخدمات المساحية',
         other: 'أخرى',
       },
     },
@@ -295,8 +303,10 @@ const translations = {
       nationalNumber: 'الرقم الموحّد الوطني',
       crNumber: '7048788926',
       links: {
+        about: 'عن تناسق',
         portfolio: 'نماذج المشاريع',
         services: 'الخدمات',
+        process: 'كيف نعمل',
         contact: 'تواصل معنا',
       },
     },

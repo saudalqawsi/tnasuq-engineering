@@ -5,35 +5,35 @@ const pillars = {
   en: [
     {
       number: '01',
-      title: 'Saudi Code Expertise',
-      body: 'We are deeply versed in the Saudi Building Code (SBC), Wadi Hanifah environmental regulations, Amanat Al-Riyadh requirements, and every service provider standard from SEC to NWC — no surprises at the permitting stage.',
+      title: 'Zero Permit Surprises',
+      body: 'We have processed approvals with Amanat Al-Riyadh, MOMRA, SEC, and NWC across dozens of projects. We know exactly what each authority requires before a drawing is submitted — preventing the costly back-and-forth that delays most projects.',
     },
     {
       number: '02',
-      title: 'End-to-End Delivery',
-      body: 'From the first sketch to final handover, we stay on the project. Design, structure, MEP coordination, authority approvals, site supervision — one firm, full accountability.',
+      title: 'One Firm, Full Accountability',
+      body: 'Architecture, structure, MEP, supervision — under one contract and one point of contact. No finger-pointing between consultants. If something needs fixing on site, we are the ones who fix it.',
     },
     {
       number: '03',
-      title: 'Market-Ready Templates',
-      body: 'Our Saudi market design templates are calibrated to the most common asset classes — villas, apartments, commercial, and industrial — so your project starts fast without sacrificing quality.',
+      title: 'Faster Starts, Proven Designs',
+      body: 'Our Saudi market design templates — calibrated to villa, apartment, commercial, and industrial typologies — mean your project moves from brief to permit-ready drawings in weeks, not months, without compromising quality.',
     },
   ],
   ar: [
     {
       number: '٠١',
-      title: 'خبرة عميقة بالكودات السعودية',
-      body: 'نمتلك معرفة راسخة بالكود السعودي للبناء (SBC) وأنظمة وادي حنيفة واشتراطات أمانة الرياض ومتطلبات جميع مزودي الخدمات من شركة الكهرباء إلى المياه — دون مفاجآت في مرحلة التراخيص.',
+      title: 'صفر مفاجآت في التراخيص',
+      body: 'أنجزنا طلبات الموافقة لدى أمانة الرياض ووزارة الشؤون البلدية وشركة الكهرباء والمياه في عشرات المشاريع. نعرف تحديداً ما تشترطه كل جهة قبل تقديم أي رسمة — وهذا يحمي مشروعك من التأخير المكلف.',
     },
     {
       number: '٠٢',
-      title: 'تسليم متكامل من البداية للنهاية',
-      body: 'من الفكرة الأولى حتى التسليم النهائي، نبقى مع المشروع. تصميم، إنشاء، تنسيق كهروميكانيكي، موافقات الجهات، إشراف ميداني — شركة واحدة، مسؤولية كاملة.',
+      title: 'شركة واحدة، مسؤولية كاملة',
+      body: 'معماري وإنشائي وكهروميكانيكي وإشراف — عقد واحد ونقطة تواصل واحدة. لا تضارب بين المستشارين. إن ظهر خطأ في الموقع، نحن من يصلحه.',
     },
     {
       number: '٠٣',
-      title: 'نماذج جاهزة للسوق السعودي',
-      body: 'نماذجنا التصميمية معدّة لأبرز فئات الأصول — فلل، عمائر، تجاري وصناعي — لتنطلق بمشروعك بسرعة دون المساس بالجودة.',
+      title: 'انطلاقة أسرع بتصاميم مُختبَرة',
+      body: 'نماذجنا التصميمية للسوق السعودي — فلل وعمائر وتجاري وصناعي — تُحرّك مشروعك من الموجز إلى الرسومات الجاهزة للترخيص في أسابيع لا أشهر، دون أي تنازل عن الجودة.',
     },
   ],
 };

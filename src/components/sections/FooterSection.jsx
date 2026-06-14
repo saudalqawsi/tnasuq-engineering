@@ -36,11 +36,13 @@ function Snapchat() {
   );
 }
 
+// PLACEHOLDER: Replace '#' with your actual social media URLs.
+// Remove any entry whose account doesn't exist yet.
 const socialLinks = [
-  { label: 'X (Twitter)', href: '#', Icon: TwitterX },
-  { label: 'Instagram', href: '#', Icon: Instagram },
-  { label: 'LinkedIn', href: '#', Icon: LinkedIn },
-  { label: 'Snapchat', href: '#', Icon: Snapchat },
+  { label: 'X (Twitter)', href: 'https://x.com/tnasuq', Icon: TwitterX },
+  { label: 'Instagram', href: 'https://instagram.com/tnasuq', Icon: Instagram },
+  { label: 'LinkedIn', href: 'https://linkedin.com/company/tnasuq', Icon: LinkedIn },
+  { label: 'Snapchat', href: 'https://snapchat.com/add/tnasuq', Icon: Snapchat },
 ];
 
 export default function FooterSection() {
@@ -95,8 +97,10 @@ export default function FooterSection() {
             </span>
             <div className="flex flex-col gap-3">
               {[
+                { id: 'about', label: t.footer.links.about },
                 { id: 'portfolio', label: t.footer.links.portfolio },
                 { id: 'services', label: t.footer.links.services },
+                { id: 'process', label: t.footer.links.process },
                 { id: 'contact', label: t.footer.links.contact },
               ].map((link) => (
                 <button

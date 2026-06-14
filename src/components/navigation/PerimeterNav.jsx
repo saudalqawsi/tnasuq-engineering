@@ -23,6 +23,7 @@ export default function PerimeterNav() {
 
   const navItems = [
     { id: 'hero', label: t.nav.home },
+    { id: 'about', label: t.nav.about },
     { id: 'portfolio', label: t.nav.portfolio },
     { id: 'services', label: t.nav.services },
     { id: 'contact', label: t.nav.contact },
