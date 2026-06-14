@@ -40,7 +40,7 @@ export default function CalligraphyPickerSection() {
               Pick your preferred logo style
             </h2>
             <p className="text-sm text-muted-foreground font-inter mt-1">
-              Click a style below. When decided, tell us the letter (A–J) and we'll lock it in and remove this section.
+              Click a style below. When decided, tell us the key (A–DD) and we'll lock it in and remove this section.
             </p>
           </div>
 
