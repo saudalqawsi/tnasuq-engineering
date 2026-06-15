@@ -114,7 +114,7 @@ export default function ContactSection() {
             <div className="mt-10 overflow-hidden border border-border/40" style={{ aspectRatio: '16/9' }}>
               <iframe
                 title="Tnasuq Office Location"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=46.5750%2C24.7900%2C46.6050%2C24.8080&layer=mapnik&marker=24.7988%2C46.5900"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=46.6400%2C24.7600%2C46.6700%2C24.7800&layer=mapnik&marker=24.7700%2C46.6550"
                 className="w-full h-full"
                 style={{ border: 0, filter: 'grayscale(30%) contrast(1.05)' }}
                 loading="lazy"

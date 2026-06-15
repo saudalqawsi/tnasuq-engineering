@@ -37,6 +37,7 @@ export default function Home() {
         <ServicesSection />
         <ProcessSection />
         <ContactSection />
+
         <CalligraphyPickerSection />
         <FooterSection />
         <WhatsAppButton />

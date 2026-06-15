@@ -40,7 +40,7 @@ export default function CalligraphyPickerSection() {
               Pick your preferred logo style
             </h2>
             <p className="text-sm text-muted-foreground font-inter mt-1">
-              Click a style below. When decided, tell us the key (A–DD) and we'll lock it in and remove this section.
+              Click a style below. When decided, tell us the key (A–XX) and we'll lock it in and remove this section.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export default function CalligraphyPickerSection() {
         </div>
 
         {/* 10 style cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
           {Object.keys(CALLIGRAPHY_STYLES).map((key) => {
             const cal = CALLIGRAPHY_STYLES[key];
             const isActive = selected === key;
