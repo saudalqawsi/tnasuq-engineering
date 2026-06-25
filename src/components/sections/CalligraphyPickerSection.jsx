@@ -17,8 +17,8 @@ function LogoPreview({ styleKey }) {
           TNASUQ
         </span>
       </div>
-    </div>
-  );
+    </div>);
+
 }
 
 export default function CalligraphyPickerSection() {
@@ -45,7 +45,7 @@ export default function CalligraphyPickerSection() {
           </div>
 
           {/* Live preview of selected */}
-          <div className="border border-primary/30 bg-background px-6 py-4">
+          <div className="border border-primary/30 bg-background px-6 py-4 hidden">
             <p className="text-[10px] tracking-[0.2em] text-primary font-inter uppercase mb-3">
               Current selection — {selected}
             </p>
@@ -65,18 +65,18 @@ export default function CalligraphyPickerSection() {
               <button
                 key={key}
                 onClick={() => setSelected(key)}
-                className={`relative group text-left p-5 border transition-all duration-300 ${
-                  isActive
-                    ? 'border-primary bg-background shadow-md'
-                    : 'border-border bg-background hover:border-primary/50'
-                }`}
-              >
+                className={`relative group text-left p-5 border transition-all duration-300 hidden ${
+                isActive ?
+                'border-primary bg-background shadow-md' :
+                'border-border bg-background hover:border-primary/50'}`
+                }>
+                
                 {/* Key badge */}
                 <div
                   className={`absolute top-3 right-3 w-5 h-5 flex items-center justify-center text-[9px] font-inter font-black transition-colors ${
-                    isActive ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'
-                  }`}
-                >
+                  isActive ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`
+                  }>
+                  
                   {key}
                 </div>
 
@@ -89,9 +89,9 @@ export default function CalligraphyPickerSection() {
                         fontFamily: cal.fontFamily,
                         fontWeight: cal.fontWeight,
                         fontSize: 15,
-                        letterSpacing: cal.letterSpacing,
-                      }}
-                    >
+                        letterSpacing: cal.letterSpacing
+                      }}>
+                      
                       تناسق
                     </span>
                     <span className="font-inter font-black tracking-[-0.02em]" style={{ fontSize: 10 }}>
@@ -106,11 +106,11 @@ export default function CalligraphyPickerSection() {
                 </p>
 
                 {/* Selected indicator */}
-                {isActive && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary" />
-                )}
-              </button>
-            );
+                {isActive &&
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary" />
+                }
+              </button>);
+
           })}
         </div>
 
@@ -118,6 +118,6 @@ export default function CalligraphyPickerSection() {
           ↑ This section is temporary and will be removed after your selection is confirmed.
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 }
