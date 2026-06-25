@@ -25,7 +25,7 @@ export default function CalligraphyPickerSection() {
   const [selected, setSelected] = useState(ACTIVE_STYLE);
 
   return (
-    <section className="py-16 bg-muted/40 border-t border-border" dir="ltr">
+    <section className="py-16 bg-muted/40 border-t border-border hidden" dir="ltr">
       <div className="px-6 md:px-16 lg:px-24">
         {/* Header */}
         <div className="mb-8 flex items-start justify-between gap-6 flex-wrap">
