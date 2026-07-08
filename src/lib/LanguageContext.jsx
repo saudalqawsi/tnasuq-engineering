@@ -66,7 +66,7 @@ const translations = {
         },
         {
           title: 'Structural Engineering',
-          description: 'Foundations, frames, slabs, and connections engineered for all building types — fully compliant with Saudi Building Code SBC 301/303.',
+          description: 'Foundations, frames, slabs, and connections engineered for all building types — fully compliant with the Saudi Building Code.',
           highlight: true,
         },
         {
@@ -112,13 +112,13 @@ const translations = {
       codesBadge: {
         title: 'Code & Authority Expertise',
         items: [
-          'Saudi Building Code (SBC)',
-          'Wadi Hanifah Regulations',
-          'Amanat Al-Riyadh Standards',
-          'MOMRA Requirements',
-          'SEC / NWC Approvals',
-          'SASO Compliance',
-          'Sports Boulevard Design Code',
+          'Saudi Building Codes',
+          'Environmental Regulations',
+          'Municipal Standards',
+          'Government Requirements',
+          'Utility Provider Approvals',
+          'National Standards Compliance',
+          'Special Zone Design Codes',
         ],
       },
     },
@@ -227,7 +227,7 @@ const translations = {
         },
         {
           title: 'الهندسة الإنشائية',
-          description: 'أساسات وهياكل وبلاطات ووصلات لجميع أنواع المباني — متوافقة بالكامل مع الكود السعودي للبناء SBC 301/303.',
+          description: 'أساسات وهياكل وبلاطات ووصلات لجميع أنواع المباني — متوافقة بالكامل مع الكود السعودي للبناء.',
           highlight: true,
         },
         {
@@ -273,13 +273,13 @@ const translations = {
       codesBadge: {
         title: 'خبرتنا في الكودات والجهات',
         items: [
-          'الكود السعودي للبناء (SBC)',
-          'أنظمة وادي حنيفة',
-          'معايير أمانة الرياض',
-          'متطلبات وزارة الشؤون البلدية',
-          'موافقات شركة الكهرباء والمياه',
-          'اشتراطات هيئة المواصفات (SASO)',
-          'كود تصميم بوليفار الرياضة',
+          'الكود السعودي للبناء',
+          'الأنظمة البيئية',
+          'المعايير البلدية',
+          'المتطلبات الحكومية',
+          'موافقات مزودي الخدمات',
+          'الالتزام بالمعايير الوطنية',
+          'كودات تصميم المناطق الخاصة',
         ],
       },
     },
