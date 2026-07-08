@@ -8,27 +8,10 @@ const HIGHLIGHTS = {
   en: [
     { value: '8+', label: 'Years in the Sector' },
     { value: '5', label: 'Distinct Industry Roles' },
-    { value: 'PMP · RMP', label: 'Certifications' },
   ],
   ar: [
     { value: '+٨', label: 'سنوات في القطاع' },
     { value: '٥', label: 'أدوار متخصصة' },
-    { value: 'PMP · RMP', label: 'شهادات مهنية' },
-  ],
-};
-
-const EXPERIENCE_PILLARS = {
-  en: [
-    { role: 'Developer', note: 'Mid-to-late stage delivery, governance frameworks, feasibility assessment, and third-party developer partnerships at giga-project scale.' },
-    { role: 'Consultant', note: 'Reviewing engineering designs, monitoring scope compliance, and supporting governance audits across complex infrastructure programmes.' },
-    { role: 'Contractor', note: 'Quality control enforcement across diverse asset classes, managing land phasing and ensuring delivery against project objectives.' },
-    { role: 'Client / Authority', note: 'Evaluating project feasibility from the client side — market demand, financial viability, regulatory compliance, and land acquisition governance.' },
-  ],
-  ar: [
-    { role: 'مطوّر', note: 'إشراف على مراحل التسليم والإطار الحوكمي وتقييم الجدوى وشراكات المطورين الخارجيين بمقياس المشاريع العملاقة.' },
-    { role: 'مستشار', note: 'مراجعة التصاميم الهندسية ومتابعة الامتثال للنطاق ودعم مراجعات الحوكمة عبر برامج بنية تحتية معقدة.' },
-    { role: 'مقاول', note: 'تطبيق آليات ضبط الجودة عبر فئات أصول متنوعة وإدارة مراحل الأراضي وضمان الالتزام بأهداف المشروع.' },
-    { role: 'عميل / جهة', note: 'تقييم جدوى المشاريع من منظور العميل — الطلب السوقي والجدوى المالية والامتثال التنظيمي وحوكمة الاستحواذ على الأراضي.' },
   ],
 };
 
@@ -36,16 +19,16 @@ const copy = {
   en: {
     tag: 'Who We Are',
     headline: 'Built from every seat\nat the table',
-    statement: 'A team that has operated as developer, contractor, consultant, and client — fluent in what the Saudi market demands at every stage of delivery.',
+    statement: 'A team that has been around the sector for years, having operated as developer, contractor, consultant, and client, fluent in what the Saudi market demands at every stage of delivery.',
     founderName: 'Saud Mohammed Alqawsi',
-    founderTitle: 'Principal · PMP · RMP · Professional Engineer (SCE)',
+    founderTitle: 'Founder & Managing Director',
   },
   ar: {
     tag: 'من نحن',
     headline: 'مبنيٌّ على خبرة\nكل جانب من المشروع',
-    statement: 'فريق عمل احترافي خبر السوق السعودي بكل أدواره — مطوّراً ومقاولاً ومستشاراً وجهةً حكومية — وملمّ بمتطلبات كل مرحلة من مراحل التنفيذ.',
+    statement: 'فريق عمل احترافي عريق في القطاع منذ سنوات، خبر السوق السعودي بكل أدواره مطوّراً ومقاولاً ومستشاراً وجهةً حكومية، وملمّ بمتطلبات كل مرحلة من مراحل التنفيذ.',
     founderName: 'سعود محمد القوسي',
-    founderTitle: 'المدير الرئيسي · PMP · RMP · مهندس معتمد',
+    founderTitle: 'المؤسس والمدير العام',
   },
 };
 
@@ -53,7 +36,6 @@ export default function AboutSection() {
   const { isRTL } = useLanguage();
   const c = isRTL ? copy.ar : copy.en;
   const highlights = isRTL ? HIGHLIGHTS.ar : HIGHLIGHTS.en;
-  const pillars = isRTL ? EXPERIENCE_PILLARS.ar : EXPERIENCE_PILLARS.en;
 
   return (
     <section
@@ -94,11 +76,11 @@ export default function AboutSection() {
           <div className="shrink-0 relative">
             <div
               className="rounded-full overflow-hidden border-2 border-primary/30"
-              style={{ width: 72, height: 72 }}
+              style={{ width: 112, height: 112 }}
             >
               <img
                 src={FOUNDER_PHOTO}
-                alt="Principal"
+                alt="Founder"
                 className="w-full h-full object-cover object-top"
                 style={{ filter: 'grayscale(15%) contrast(1.05)' }}
               />
@@ -112,7 +94,7 @@ export default function AboutSection() {
           {/* Name + Statement */}
           <div className={isRTL ? 'text-right' : 'text-left'}>
             <span className={`text-[11px] tracking-[0.15em] uppercase text-primary font-medium block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-              {c.founderName} — {c.founderTitle}
+              {c.founderName} · {c.founderTitle}
             </span>
             <p className={`text-base md:text-lg font-medium text-foreground leading-snug max-w-2xl ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {c.statement}
@@ -120,43 +102,24 @@ export default function AboutSection() {
           </div>
         </motion.div>
 
-        {/* Stats + Pillars */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.1 }}
+          className="grid grid-cols-2 gap-6 max-w-xs"
         >
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mb-12">
-            {highlights.map((h, i) => (
-              <div key={i}>
-                <span className="font-inter font-black text-2xl block leading-none mb-1" style={{ color: 'hsl(32 55% 36%)' }}>
-                  {h.value}
-                </span>
-                <span className={`text-xs text-muted-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                  {h.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Four-role grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border/30">
-            {pillars.map((p, i) => (
-              <div key={i} className="bg-background p-5">
-                <span
-                  className={`text-xs tracking-[0.15em] uppercase font-medium mb-2 block ${isRTL ? 'font-arabic' : 'font-inter'}`}
-                  style={{ color: 'hsl(32 55% 36%)' }}
-                >
-                  {p.role}
-                </span>
-                <p className={`text-xs text-muted-foreground leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                  {p.note}
-                </p>
-              </div>
-            ))}
-          </div>
+          {highlights.map((h, i) => (
+            <div key={i}>
+              <span className="font-inter font-black text-2xl block leading-none mb-1" style={{ color: 'hsl(32 55% 36%)' }}>
+                {h.value}
+              </span>
+              <span className={`text-xs text-muted-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                {h.label}
+              </span>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

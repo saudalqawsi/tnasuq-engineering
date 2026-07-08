@@ -61,7 +61,7 @@ export const CALLIGRAPHY_STYLES = {
 };
 
 // ← CHANGE THIS to any key to set the active logo style
-export const ACTIVE_STYLE = 'A';
+export const ACTIVE_STYLE = 'Y';
 
 export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
   const sizes = {
@@ -91,7 +91,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
             letterSpacing: cal.letterSpacing,
           }}
         >
-          تناسق
+          تناســق
         </span>
         <span
           className="font-inter font-black tracking-[-0.02em] text-foreground leading-none"

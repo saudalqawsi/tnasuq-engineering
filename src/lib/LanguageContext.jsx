@@ -102,6 +102,12 @@ const translations = {
           highlight: false,
           partner: true,
         },
+        {
+          title: 'Landscape Design',
+          description: 'Softscape and hardscape design, irrigation planning, and outdoor space design delivered in partnership with specialised landscape architects.',
+          highlight: false,
+          partner: true,
+        },
       ],
       codesBadge: {
         title: 'Code & Authority Expertise',
@@ -254,6 +260,12 @@ const translations = {
         {
           title: 'الخدمات المساحية الكاداسترالية',
           description: 'إعداد الخرائط المساحية وبيانات القطع الأرضية ودعم تسجيل الصكوك، بالشراكة مع مكاتب مساحية كاداسترالية معتمدة.',
+          highlight: false,
+          partner: true,
+        },
+        {
+          title: 'تصميم المناظر الطبيعية',
+          description: 'تصميم المسطحات الخضراء والصلبة وتخطيط أنظمة الري وتصميم المساحات الخارجية، بالشراكة مع مكاتب متخصصة في تنسيق الحدائق.',
           highlight: false,
           partner: true,
         },

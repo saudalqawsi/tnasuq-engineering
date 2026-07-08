@@ -88,6 +88,15 @@ const serviceIcons = [
       <circle cx="42" cy="42" r="2" fill="currentColor" stroke="none" />
     </svg>
   ),
+  // Landscape
+  ({ className, style }) => (
+    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M4 34 Q14 22 20 30 Q26 20 32 28 Q38 20 44 30" />
+      <line x1="4" y1="38" x2="44" y2="38" />
+      <circle cx="14" cy="14" r="5" />
+      <line x1="14" y1="19" x2="14" y2="34" />
+    </svg>
+  ),
 ];
 
 export default function ServicesSection() {
