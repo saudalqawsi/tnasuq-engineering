@@ -91,7 +91,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
             letterSpacing: cal.letterSpacing,
           }}
         >
-          تناســق
+          تناســـــق
         </span>
         <span
           className="font-inter font-black tracking-[-0.02em] text-foreground leading-none"
