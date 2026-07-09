@@ -33,7 +33,7 @@ export default function PerimeterNav() {
     <>
       {/* Top bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 print:hidden ${
           scrolled ? 'bg-background/90 backdrop-blur-md' : 'bg-transparent'
         }`}
         dir={isRTL ? 'rtl' : 'ltr'}
