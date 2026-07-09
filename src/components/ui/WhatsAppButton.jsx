@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className={`fixed bottom-6 z-50 flex items-center gap-2.5 bg-[#25D366] text-white px-4 py-3 shadow-lg hover:bg-[#1ebe5d] transition-colors duration-300 print:hidden ${
+      className={`fixed bottom-6 z-50 flex items-center gap-2.5 bg-[#25D366] text-white px-4 py-3 shadow-lg hover:bg-[#1ebe5d] transition-colors duration-300 ${
         isRTL ? 'left-6 flex-row-reverse' : 'right-6'
       }`}
     >

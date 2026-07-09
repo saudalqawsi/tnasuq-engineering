@@ -135,10 +135,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-/* Print styles */
-@media print {
-  .print\:hidden {
-    display: none !important;
-  }
-}
