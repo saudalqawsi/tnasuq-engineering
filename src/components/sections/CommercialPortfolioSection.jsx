@@ -16,7 +16,7 @@ const TEMPLATES = [
     images: [
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/f274ca701_generated_image.png', type: 'facade' },
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/42556f229_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e996caa93_generated_image.png', type: 'amenity' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/bb6b412f6_generated_image.png', type: 'amenity' },
     ],
   },
   {
@@ -31,7 +31,7 @@ const TEMPLATES = [
     images: [
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/cb8aa5e9e_generated_image.png', type: 'facade' },
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ebb0b6669_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/82df9276e_generated_image.png', type: 'amenity' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/14a36ec3e_generated_image.png', type: 'amenity' },
     ],
   },
   {
@@ -44,9 +44,9 @@ const TEMPLATES = [
     tagAr: 'مكاتب من الفئة الأولى',
     accentColor: '#6a7a8a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/1c741a0cc_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/f2eb431ff_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/7ea00a136_generated_image.png', type: 'interior' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/68721c17e_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ff088973f_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ea1b4efe3_generated_image.png', type: 'interior' },
     ],
   },
 ];
@@ -145,15 +145,7 @@ export default function CommercialPortfolioSection() {
                 />
 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex items-end justify-between gap-3">
-                    <div>
-                      <h3 className={`text-2xl md:text-3xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                        {lang === 'ar' ? tpl.nameAr : tpl.nameEn}
-                      </h3>
-                      <p className={`text-white/50 text-xs mt-1 leading-relaxed max-w-[260px] ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                        {lang === 'ar' ? tpl.descAr : tpl.descEn}
-                      </p>
-                    </div>
+                  <div className="flex items-end justify-end gap-3">
                     <div
                       className="shrink-0 w-9 h-9 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 border border-white/40"
                       style={{ background: `${tpl.accentColor}44` }}
@@ -163,19 +155,6 @@ export default function CommercialPortfolioSection() {
                       </svg>
                     </div>
                   </div>
-                </div>
-
-                <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
-                  <span
-                    className="text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/40 backdrop-blur-sm font-inter"
-                    style={{
-                      color: tpl.accentColor,
-                      textShadow: `0 0 10px ${tpl.accentColor}cc, 0 0 20px ${tpl.accentColor}66`,
-                      boxShadow: `0 0 8px ${tpl.accentColor}44, inset 0 0 6px ${tpl.accentColor}18`,
-                    }}
-                  >
-                    {lang === 'ar' ? tpl.tagAr : tpl.tagEn}
-                  </span>
                 </div>
               </motion.div>
             );
@@ -194,16 +173,7 @@ export default function CommercialPortfolioSection() {
             className="fixed inset-0 z-50 bg-black/95 overflow-y-auto"
             dir={isRTL ? 'rtl' : 'ltr'}
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/10 bg-black/80 backdrop-blur-sm">
-              <div>
-                <p className={`text-xs tracking-[0.2em] uppercase mb-0.5 ${isRTL ? 'font-arabic' : 'font-inter'}`}
-                  style={{ color: activeTemplate.accentColor }}>
-                  {lang === 'ar' ? activeTemplate.tagAr : activeTemplate.tagEn}
-                </p>
-                <h2 className={`text-2xl font-bold text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                  {lang === 'ar' ? activeTemplate.nameAr : activeTemplate.nameEn}
-                </h2>
-              </div>
+            <div className="sticky top-0 z-10 flex items-center justify-end px-6 md:px-12 py-5 border-b border-white/10 bg-black/80 backdrop-blur-sm">
               <button
                 onClick={closeTemplate}
                 className="w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:border-white/60 transition-colors"
