@@ -14,8 +14,8 @@ const TEMPLATES = [
     tagAr: 'تجاري محلي',
     accentColor: '#a0622a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/f274ca701_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/42556f229_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/bd6bdc3a0_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/1731e9190_generated_image.png', type: 'facade' },
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/bb6b412f6_generated_image.png', type: 'amenity' },
     ],
   },
@@ -29,8 +29,8 @@ const TEMPLATES = [
     tagAr: 'متعدد الاستخدامات حضري',
     accentColor: '#8a7a6a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/cb8aa5e9e_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ebb0b6669_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4bdaa6b94_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/4cf1def0b_generated_image.png', type: 'facade' },
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/14a36ec3e_generated_image.png', type: 'amenity' },
     ],
   },
@@ -44,8 +44,8 @@ const TEMPLATES = [
     tagAr: 'مكاتب من الفئة الأولى',
     accentColor: '#6a7a8a',
     images: [
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/68721c17e_generated_image.png', type: 'facade' },
-      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ff088973f_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/8471c7e86_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/9daf5591c_generated_image.png', type: 'facade' },
       { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/ea1b4efe3_generated_image.png', type: 'interior' },
     ],
   },
@@ -55,12 +55,6 @@ function sortedImages(images) {
   const order = { facade: 0, amenity: 1, interior: 2 };
   return [...images].sort((a, b) => order[a.type] - order[b.type]);
 }
-
-const TYPE_LABELS = {
-  facade:   { en: 'Façade',   ar: 'واجهة' },
-  amenity:  { en: 'Amenities', ar: 'ملحقات' },
-  interior: { en: 'Interior', ar: 'داخلي' },
-};
 
 export default function CommercialPortfolioSection() {
   const { isRTL, lang } = useLanguage();
@@ -190,12 +184,6 @@ export default function CommercialPortfolioSection() {
                   <div key={type}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-6 h-[1.5px]" style={{ background: activeTemplate.accentColor }} />
-                      <span
-                        className={`text-xs tracking-[0.2em] uppercase font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}
-                        style={{ color: activeTemplate.accentColor }}
-                      >
-                        {TYPE_LABELS[type][lang === 'ar' ? 'ar' : 'en']}
-                      </span>
                     </div>
 
                     <div className={`grid gap-3 ${
