@@ -4,6 +4,7 @@ import PerimeterNav from '@/components/navigation/PerimeterNav';
 import HeroSection from '@/components/sections/HeroSection';
 import StatsStrip from '@/components/sections/StatsStrip';
 import PortfolioSection from '@/components/sections/PortfolioSection';
+import CommercialPortfolioSection from '@/components/sections/CommercialPortfolioSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
@@ -32,6 +33,7 @@ export default function Home() {
         <StatsStrip />
         <AboutSection />
         <PortfolioSection />
+        <CommercialPortfolioSection />
         <WhyUsSection />
         <ServicesSection />
         <ProcessSection />
