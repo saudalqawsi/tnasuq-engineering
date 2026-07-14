@@ -35,6 +35,21 @@ const TEMPLATES = [
     ],
   },
   {
+    id: 'drive-thru',
+    nameEn: 'Commercial Drive-Thru',
+    nameAr: 'محل تجاري بسياق القيادة',
+    descEn: 'Single-storey drive-thru retail or F&B unit with a wrapped canopied drive lane, dedicated surface parking, and blank signage band sized to typical roadside Saudi commercial plots.',
+    descAr: 'وحدة تجارية أرضية بمسار قيادة مغطى، مواقف سطحية مخصصة، وحزام إعلاني فارغ منظّم حسب القطع التجارية الطرقية السعودية.',
+    tagEn: 'Roadside Drive-Thru',
+    tagAr: 'محل بطريق سريع',
+    accentColor: '#9a7a4a',
+    images: [
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/0d5f1a3e2_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/e7af9bbc1_generated_image.png', type: 'facade' },
+      { url: 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/1dadf3fce_generated_image.png', type: 'amenity' },
+    ],
+  },
+  {
     id: 'office',
     nameEn: 'Commercial Office',
     nameAr: 'مبنى مكتبي تجاري',
