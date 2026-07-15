@@ -57,11 +57,14 @@ export default function FooterSection() {
       className="relative bg-foreground text-primary-foreground overflow-hidden"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
-      {/* Massive watermark */}
+      {/* Massive brand-mark watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span className="font-inter font-black text-[18vw] text-primary-foreground/[0.03] leading-none tracking-tighter whitespace-nowrap select-none">
-          TNASUQ
-        </span>
+        <img
+          src="https://media.base44.com/images/public/6a01985ff51577d637f369f5/72dedd084_logo_transparent.png"
+          alt=""
+          aria-hidden="true"
+          className="h-[55vh] w-auto max-w-none select-none opacity-[0.3]"
+        />
       </div>
 
       <div className="relative px-6 md:px-16 lg:px-24 pt-20 pb-12">

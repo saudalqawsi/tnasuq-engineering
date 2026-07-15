@@ -1,20 +1,24 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
+import { FileCheck, Layers, Zap } from 'lucide-react';
 
 const pillars = {
   en: [
     {
       number: '01',
+      icon: FileCheck,
       title: 'Zero Permit Surprises',
       body: 'We have processed approvals with Amanat Al-Riyadh, MOMRA, SEC, and NWC across dozens of projects. We know exactly what each authority requires before a drawing is submitted — preventing the costly back-and-forth that delays most projects.',
     },
     {
       number: '02',
+      icon: Layers,
       title: 'One Firm, Full Accountability',
       body: 'Architecture, structure, MEP, supervision — under one contract and one point of contact. No finger-pointing between consultants. If something needs fixing on site, we are the ones who fix it.',
     },
     {
       number: '03',
+      icon: Zap,
       title: 'Faster Starts, Proven Designs',
       body: 'Our Saudi market design templates — calibrated to villa, apartment, commercial, and industrial typologies — mean your project moves from brief to permit-ready drawings in weeks, not months, without compromising quality.',
     },
@@ -22,16 +26,19 @@ const pillars = {
   ar: [
     {
       number: '٠١',
+      icon: FileCheck,
       title: 'صفر مفاجآت في التراخيص',
       body: 'أنجزنا طلبات الموافقة لدى أمانة الرياض ووزارة الشؤون البلدية وشركة الكهرباء والمياه في عشرات المشاريع. نعرف تحديداً ما تشترطه كل جهة قبل تقديم أي رسمة — وهذا يحمي مشروعك من التأخير المكلف.',
     },
     {
       number: '٠٢',
+      icon: Layers,
       title: 'شركة واحدة، مسؤولية كاملة',
       body: 'معماري وإنشائي وكهروميكانيكي وإشراف — عقد واحد ونقطة تواصل واحدة. لا تضارب بين المستشارين. إن ظهر خطأ في الموقع، نحن من يصلحه.',
     },
     {
       number: '٠٣',
+      icon: Zap,
       title: 'انطلاقة أسرع بتصاميم مُختبَرة',
       body: 'نماذجنا التصميمية للسوق السعودي — فلل وعمائر وتجاري وصناعي — تُحرّك مشروعك من الموجز إلى الرسومات الجاهزة للترخيص في أسابيع لا أشهر، دون أي تنازل عن الجودة.',
     },
@@ -75,16 +82,23 @@ export default function WhyUsSection() {
 
         {/* Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40">
-          {items.map((pillar, i) => (
+          {items.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
             <div
               key={i}
               className="group bg-background p-10 md:p-12 hover:bg-card transition-colors duration-500"
             >
-              <div
-                className="font-inter font-black text-[4rem] leading-none mb-8 select-none"
-                style={{ color: 'hsl(32 55% 36% / 0.15)' }}
-              >
-                {pillar.number}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="shrink-0 w-11 h-11 flex items-center justify-center border border-primary/40 bg-primary/5 text-primary">
+                  {Icon ? <Icon className="w-5 h-5" /> : null}
+                </div>
+                <div
+                  className="font-inter font-black text-[4rem] leading-none select-none"
+                  style={{ color: 'hsl(32 55% 36% / 0.15)' }}
+                >
+                  {pillar.number}
+                </div>
               </div>
               <h3 className={`text-xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {pillar.title}
@@ -94,7 +108,8 @@ export default function WhyUsSection() {
               </p>
               <div className="mt-8 h-[1.5px] bg-primary w-8 group-hover:w-16 transition-all duration-500" />
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
