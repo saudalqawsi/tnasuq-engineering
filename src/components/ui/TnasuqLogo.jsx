@@ -64,7 +64,7 @@ export const CALLIGRAPHY_STYLES = {
 // ← CHANGE THIS to any key to set the active logo style
 export const ACTIVE_STYLE = 'Y';
 
-export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = false }) {
+export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = false, scrolled = false }) {
   const sizes = {
     sm: { h: 28, enSize: 11, arSize: 14, gap: 2 },
     md: { h: 38, enSize: 13, arSize: 16, gap: 3 },
@@ -83,7 +83,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
       />
       <div className="flex flex-col" style={{ gap: s.gap }}>
         <span
-          className={`${dark ? 'text-primary-foreground' : 'text-[#A68958]'} leading-none`}
+          className={`${dark ? 'text-primary-foreground' : scrolled ? 'text-muted-foreground' : 'text-foreground'} leading-none`}
           style={{
             fontFamily: cal.fontFamily,
             fontWeight: cal.fontWeight,
@@ -94,7 +94,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
           تناســـــق
         </span>
         <span
-          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground' : 'text-[#A68958]'} leading-none`}
+          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground' : scrolled ? 'text-muted-foreground' : 'text-foreground'} leading-none`}
           style={{ fontSize: s.enSize }}
         >
           TNASUQ
