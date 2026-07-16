@@ -8,7 +8,7 @@ function sortedImages(images) {
   return [...images].sort((a, b) => (TYPE_ORDER[a.type] ?? 9) - (TYPE_ORDER[b.type] ?? 9));
 }
 
-function TemplateCard({ tpl, index, isRTL, lang, onOpen }) {
+function TemplateCard({ tpl, index, isRTL, lang, onOpen, category }) {
   const hero = sortedImages(tpl.images)[0];
   const name = lang === 'ar' ? tpl.nameAr : tpl.nameEn;
   const desc = lang === 'ar' ? tpl.descAr : tpl.descEn;
@@ -43,6 +43,18 @@ function TemplateCard({ tpl, index, isRTL, lang, onOpen }) {
           {tag}
         </span>
       </div>
+
+      {/* Category chip */}
+      {category && (
+        <div className={`absolute top-4 z-10 ${isRTL ? 'right-4' : 'left-4'}`}>
+          <span
+            className="block text-[9px] tracking-[0.2em] uppercase px-3 py-1 bg-black/35 backdrop-blur-sm font-inter"
+            style={{ color: category.color }}
+          >
+            {lang === 'ar' ? category.ar : category.en}
+          </span>
+        </div>
+      )}
 
       {/* Base + hover gradients */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
@@ -79,7 +91,7 @@ function TemplateCard({ tpl, index, isRTL, lang, onOpen }) {
   );
 }
 
-export default function TemplateGrid({ templates }) {
+export default function TemplateGrid({ templates, category }) {
   const { isRTL, lang } = useLanguage();
   const [active, setActive] = useState(null);
   const [idx, setIdx] = useState(0);
@@ -120,6 +132,7 @@ export default function TemplateGrid({ templates }) {
             isRTL={isRTL}
             lang={lang}
             onOpen={() => openGallery(tpl)}
+            category={category}
           />
         ))}
       </div>

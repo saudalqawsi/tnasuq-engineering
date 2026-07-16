@@ -2,6 +2,8 @@ import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import TemplateGrid from '@/components/sections/TemplateGrid';
 
+const CATEGORY = { en: 'Commercial', ar: 'تجاري', color: '#5A6B7A' };
+
 const TEMPLATES = [
   {
     id: 'strip-mall',
@@ -67,6 +69,7 @@ const TEMPLATES = [
 
 export default function CommercialPortfolioSection() {
   const { isRTL } = useLanguage();
+  const cat = CATEGORY;
 
   return (
     <section
@@ -84,6 +87,12 @@ export default function CommercialPortfolioSection() {
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border" style={{ borderColor: cat.color + '66' }}>
+              <span className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
+              <span className={`text-xs tracking-[0.25em] uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`} style={{ color: cat.color }}>
+                {isRTL ? cat.ar : cat.en}
+              </span>
+            </div>
             <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
               {isRTL ? 'نماذج تجارية للسوق السعودي' : 'Commercial Templates for the Saudi Market'}
             </h2>
@@ -98,7 +107,7 @@ export default function CommercialPortfolioSection() {
 
       {/* 2×2 hover-expand template grid */}
       <div className="px-6 md:px-16 lg:px-24">
-        <TemplateGrid templates={TEMPLATES} />
+        <TemplateGrid templates={TEMPLATES} category={cat} />
       </div>
 
       {/* Commercial CTA */}

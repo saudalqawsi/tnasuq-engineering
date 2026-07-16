@@ -3,6 +3,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import TemplateGrid from '@/components/sections/TemplateGrid';
 
 const BASE = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/';
+const CATEGORY = { en: 'Residential', ar: 'سكني', color: '#9A7A4D' };
 
 const TEMPLATES = [
   {
@@ -143,6 +144,7 @@ const TEMPLATES = [
 
 export default function PortfolioSection() {
   const { t, isRTL } = useLanguage();
+  const cat = CATEGORY;
 
   return (
     <section
@@ -160,6 +162,12 @@ export default function PortfolioSection() {
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border" style={{ borderColor: cat.color + '66' }}>
+              <span className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
+              <span className={`text-xs tracking-[0.25em] uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`} style={{ color: cat.color }}>
+                {isRTL ? cat.ar : cat.en}
+              </span>
+            </div>
             <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
               {t.portfolio.subtitle}
             </h2>
@@ -172,7 +180,7 @@ export default function PortfolioSection() {
 
       {/* 2×2 hover-expand template grid */}
       <div className="px-6 md:px-16 lg:px-24">
-        <TemplateGrid templates={TEMPLATES} />
+        <TemplateGrid templates={TEMPLATES} category={cat} />
       </div>
 
       {/* Portfolio CTA */}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/72dedd084_logo_transparent.png';
+const LOGO_URL = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d8fc367d4_Designer4.png';
 
 export const CALLIGRAPHY_STYLES = {
   // ── Batch 1 — Original 10 ─────────────────────────────────────────────────
@@ -63,7 +63,7 @@ export const CALLIGRAPHY_STYLES = {
 // ← CHANGE THIS to any key to set the active logo style
 export const ACTIVE_STYLE = 'Y';
 
-export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
+export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = false }) {
   const sizes = {
     sm: { h: 28, enSize: 11, arSize: 14, gap: 2 },
     md: { h: 38, enSize: 13, arSize: 16, gap: 3 },
@@ -79,11 +79,11 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
       <img
         src={LOGO_URL}
         alt="Tnasuq logo"
-        style={{ height: s.h, width: 'auto', filter: shadowFilter, display: 'block', flexShrink: 0 }}
+        style={{ height: s.h, width: 'auto', filter: dark ? `${shadowFilter} brightness(1.6) saturate(1.1)` : shadowFilter, display: 'block', flexShrink: 0 }}
       />
       <div className="flex flex-col" style={{ gap: s.gap }}>
         <span
-          className="text-foreground leading-none"
+          className={`${dark ? 'text-primary-foreground' : 'text-foreground'} leading-none`}
           style={{
             fontFamily: cal.fontFamily,
             fontWeight: cal.fontWeight,
@@ -94,7 +94,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey }) {
           تناســـــق
         </span>
         <span
-          className="font-inter font-black tracking-[-0.02em] text-foreground leading-none"
+          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground' : 'text-foreground'} leading-none`}
           style={{ fontSize: s.enSize }}
         >
           TNASUQ

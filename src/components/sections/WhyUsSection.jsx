@@ -1,24 +1,24 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { FileCheck, Layers, Zap } from 'lucide-react';
+import { IconPermit, IconLayers, IconBolt } from '@/components/ui/BrandIcons';
 
 const pillars = {
   en: [
     {
       number: '01',
-      icon: FileCheck,
+      icon: IconPermit,
       title: 'Zero Permit Surprises',
       body: 'We have processed approvals with Amanat Al-Riyadh, MOMRA, SEC, and NWC across dozens of projects. We know exactly what each authority requires before a drawing is submitted — preventing the costly back-and-forth that delays most projects.',
     },
     {
       number: '02',
-      icon: Layers,
+      icon: IconLayers,
       title: 'One Firm, Full Accountability',
       body: 'Architecture, structure, MEP, supervision — under one contract and one point of contact. No finger-pointing between consultants. If something needs fixing on site, we are the ones who fix it.',
     },
     {
       number: '03',
-      icon: Zap,
+      icon: IconBolt,
       title: 'Faster Starts, Proven Designs',
       body: 'Our Saudi market design templates — calibrated to villa, apartment, commercial, and industrial typologies — mean your project moves from brief to permit-ready drawings in weeks, not months, without compromising quality.',
     },
@@ -26,19 +26,19 @@ const pillars = {
   ar: [
     {
       number: '٠١',
-      icon: FileCheck,
+      icon: IconPermit,
       title: 'صفر مفاجآت في التراخيص',
       body: 'أنجزنا طلبات الموافقة لدى أمانة الرياض ووزارة الشؤون البلدية وشركة الكهرباء والمياه في عشرات المشاريع. نعرف تحديداً ما تشترطه كل جهة قبل تقديم أي رسمة — وهذا يحمي مشروعك من التأخير المكلف.',
     },
     {
       number: '٠٢',
-      icon: Layers,
+      icon: IconLayers,
       title: 'شركة واحدة، مسؤولية كاملة',
       body: 'معماري وإنشائي وكهروميكانيكي وإشراف — عقد واحد ونقطة تواصل واحدة. لا تضارب بين المستشارين. إن ظهر خطأ في الموقع، نحن من يصلحه.',
     },
     {
       number: '٠٣',
-      icon: Zap,
+      icon: IconBolt,
       title: 'انطلاقة أسرع بتصاميم مُختبَرة',
       body: 'نماذجنا التصميمية للسوق السعودي — فلل وعمائر وتجاري وصناعي — تُحرّك مشروعك من الموجز إلى الرسومات الجاهزة للترخيص في أسابيع لا أشهر، دون أي تنازل عن الجودة.',
     },

@@ -1,26 +1,31 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { motion } from 'framer-motion';
+import { IconInquiry, IconSite, IconDesign, IconHardHat } from '@/components/ui/BrandIcons';
 
 const steps = {
   en: [
     {
       num: '01',
+      icon: IconInquiry,
       title: 'Inquiry & Scope',
       body: 'You submit a brief or call us directly. We respond within 24 hours with initial questions to understand your plot, programme, and budget.',
     },
     {
       num: '02',
+      icon: IconSite,
       title: 'Site Visit & Proposal',
       body: 'We visit the site, verify municipal records, and prepare a clear proposal covering scope, fees, and realistic timelines — no vague estimates.',
     },
     {
       num: '03',
+      icon: IconDesign,
       title: 'Design & Permitting',
       body: 'Our team produces permit-ready drawings and manages all authority submissions — Amanat Al-Riyadh, MOMRA, SEC, NWC — until approvals are secured.',
     },
     {
       num: '04',
+      icon: IconHardHat,
       title: 'Supervision & Handover',
       body: 'We supervise construction to ensure the build matches the approved drawings. Final inspections, snagging, and sign-off are included.',
     },
@@ -28,21 +33,25 @@ const steps = {
   ar: [
     {
       num: '٠١',
+      icon: IconInquiry,
       title: 'الاستفسار وتحديد النطاق',
       body: 'أرسل لنا نبذة عن مشروعك أو تواصل معنا مباشرةً. سنرد خلال ٢٤ ساعة بأسئلة تتعلق بقطعتك والبرنامج الوظيفي والميزانية.',
     },
     {
       num: '٠٢',
+      icon: IconSite,
       title: 'الزيارة الميدانية والعرض',
       body: 'نزور الموقع ونتحقق من السجلات البلدية، ونُعد عرضاً واضحاً يشمل النطاق والرسوم والجداول الزمنية الواقعية — دون تقديرات مبهمة.',
     },
     {
       num: '٠٣',
+      icon: IconDesign,
       title: 'التصميم والتراخيص',
       body: 'يُنتج فريقنا رسومات جاهزة للترخيص ويدير جميع تقديمات الجهات — أمانة الرياض، وزارة الشؤون البلدية، شركة الكهرباء والمياه — حتى صدور الموافقات.',
     },
     {
       num: '٠٤',
+      icon: IconHardHat,
       title: 'الإشراف والتسليم',
       body: 'نشرف على التنفيذ للتأكد من مطابقة البناء للرسومات المعتمدة. تشمل الخدمة الفحص النهائي وجدول المخالفات والتوقيع الرسمي على التسليم.',
     },
@@ -82,7 +91,9 @@ export default function ProcessSection() {
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-primary-foreground/10">
-          {items.map((step, i) => (
+          {items.map((step, i) => {
+            const Icon = step.icon;
+            return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 24 }}
@@ -91,12 +102,16 @@ export default function ProcessSection() {
               transition={{ duration: 0.6, delay: i * 0.12 }}
               className="group bg-foreground p-8 md:p-10 relative"
             >
-              {/* Step number — large watermark */}
-              <div
-                className="font-inter font-black text-[5rem] leading-none mb-6 select-none"
-                style={{ color: 'hsl(32 55% 36% / 0.18)' }}
-              >
-                {step.num}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="shrink-0 w-11 h-11 flex items-center justify-center border border-primary/40 bg-primary/5 text-primary">
+                  {Icon ? <Icon className="w-5 h-5" /> : null}
+                </div>
+                <div
+                  className="font-inter font-black text-[5rem] leading-none select-none"
+                  style={{ color: 'hsl(32 55% 36% / 0.18)' }}
+                >
+                  {step.num}
+                </div>
               </div>
 
               {/* Connector line between steps (desktop) */}
@@ -116,7 +131,8 @@ export default function ProcessSection() {
               {/* Bottom accent */}
               <div className="mt-8 h-[1.5px] bg-primary w-8 group-hover:w-16 transition-all duration-500" />
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA at bottom */}

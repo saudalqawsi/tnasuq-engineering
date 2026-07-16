@@ -1,102 +1,28 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { CheckCircle } from 'lucide-react';
+import {
+  IconArchitectural,
+  IconStructural,
+  IconManagement,
+  IconHardHat,
+  IconMEP,
+  IconGeotech,
+  IconUrban,
+  IconCadastral,
+  IconLandscape,
+} from '@/components/ui/BrandIcons';
 
 const serviceIcons = [
-  // Architectural
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="8" y="8" width="32" height="32" />
-      <rect x="8" y="8" width="16" height="16" />
-      <rect x="24" y="24" width="16" height="16" />
-      <line x1="8" y1="24" x2="40" y2="24" />
-      <line x1="24" y1="8" x2="24" y2="40" />
-    </svg>
-  ),
-  // Structural
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="6" y="6" width="36" height="36" />
-      <line x1="6" y1="24" x2="42" y2="24" />
-      <line x1="24" y1="6" x2="24" y2="42" />
-      <circle cx="24" cy="24" r="8" />
-    </svg>
-  ),
-  // Project Management
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="6" y="10" width="22" height="5" />
-      <rect x="12" y="20" width="28" height="5" />
-      <rect x="6" y="30" width="18" height="5" />
-      <line x1="6" y1="6" x2="6" y2="42" />
-    </svg>
-  ),
-  // Construction Supervision
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M8 30 Q24 12 40 30" />
-      <line x1="6" y1="30" x2="42" y2="30" />
-      <rect x="14" y="30" width="20" height="8" />
-      <line x1="24" y1="14" x2="24" y2="22" />
-    </svg>
-  ),
-  // MEP
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 6 L12 42" />
-      <path d="M24 6 L24 42" />
-      <path d="M36 6 L36 42" />
-      <path d="M6 16 L42 16" />
-      <path d="M6 32 L42 32" />
-      <circle cx="12" cy="16" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="24" cy="32" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="36" cy="16" r="2.5" fill="currentColor" stroke="none" />
-    </svg>
-  ),
-  // Geotechnical
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="24" cy="24" r="18" />
-      <circle cx="24" cy="24" r="10" />
-      <circle cx="24" cy="24" r="3" />
-      <line x1="24" y1="6" x2="24" y2="14" />
-      <line x1="24" y1="34" x2="24" y2="42" />
-      <line x1="6" y1="24" x2="14" y2="24" />
-      <line x1="34" y1="24" x2="42" y2="24" />
-    </svg>
-  ),
-  // Urban Planning
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="6" y="22" width="10" height="20" />
-      <rect x="19" y="14" width="10" height="28" />
-      <rect x="32" y="18" width="10" height="24" />
-      <line x1="6" y1="42" x2="42" y2="42" />
-      <line x1="6" y1="6" x2="6" y2="22" strokeDasharray="3 2" />
-    </svg>
-  ),
-  // Cadastral
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="6" y="6" width="36" height="36" />
-      <line x1="6" y1="24" x2="42" y2="24" />
-      <line x1="24" y1="6" x2="24" y2="42" />
-      <circle cx="24" cy="24" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="6" cy="6" r="2" fill="currentColor" stroke="none" />
-      <circle cx="42" cy="6" r="2" fill="currentColor" stroke="none" />
-      <circle cx="6" cy="42" r="2" fill="currentColor" stroke="none" />
-      <circle cx="42" cy="42" r="2" fill="currentColor" stroke="none" />
-    </svg>
-  ),
-  // Landscape
-  ({ className, style }) => (
-    <svg className={className} style={style} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M4 34 Q14 22 20 30 Q26 20 32 28 Q38 20 44 30" />
-      <line x1="4" y1="38" x2="44" y2="38" />
-      <circle cx="14" cy="14" r="5" />
-      <line x1="14" y1="19" x2="14" y2="34" />
-    </svg>
-  ),
+  IconArchitectural,
+  IconStructural,
+  IconManagement,
+  IconHardHat,
+  IconMEP,
+  IconGeotech,
+  IconUrban,
+  IconCadastral,
+  IconLandscape,
 ];
 
 export default function ServicesSection() {
