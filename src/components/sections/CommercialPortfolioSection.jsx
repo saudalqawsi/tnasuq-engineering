@@ -38,7 +38,7 @@ const TEMPLATES = [
   {
     id: 'drive-thru',
     nameEn: 'Commercial Drive-Thru',
-    nameAr: 'محل تجاري بخدمة السيارة',
+    nameAr: 'درايف ثرو',
     descEn: 'Single-storey drive-thru retail or F&B unit with a wrapped canopied drive lane, dedicated surface parking, and blank signage band sized to typical roadside Saudi commercial plots.',
     descAr: 'وحدة تجارية من دور واحد بممر خدمة السيارة (درايف ثرو) المظلل، ومواقف سطحية مخصصة، وحزام إعلاني جاهز وفق اشتراطات الأراضي التجارية على الطرق السعودية.',
     tagEn: 'Roadside Drive-Thru',
