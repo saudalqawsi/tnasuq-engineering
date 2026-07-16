@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const TYPE_ORDER = { facade: 0, amenity: 1, interior: 2 };
@@ -11,34 +11,31 @@ function sortedImages(images) {
 function TemplateCard({ tpl, index, isRTL, lang, onOpen, category }) {
   const hero = sortedImages(tpl.images)[0];
   const name = lang === 'ar' ? tpl.nameAr : tpl.nameEn;
-  const desc = lang === 'ar' ? tpl.descAr : tpl.descEn;
   const tag = lang === 'ar' ? tpl.tagAr : tpl.tagEn;
+  const galleryLabel = isRTL ? 'تصفّح المعرض' : 'View Gallery';
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.6, delay: index * 0.06 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       onClick={onOpen}
-      className="group relative cursor-pointer overflow-hidden bg-muted hover:z-10 transition-transform duration-500 ease-out hover:scale-[1.015]"
+      className="group relative cursor-pointer overflow-hidden bg-muted hover:z-10 transition-transform duration-500 ease-out hover:scale-[1.02]"
       style={{ aspectRatio: '4 / 3' }}
     >
       <img
         src={hero.url}
         alt={name}
         loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.07]"
+        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
       />
 
-      {/* Tag pill */}
-      <div className={`absolute top-4 z-10 ${isRTL ? 'left-4' : 'right-4'}`}>
+      {/* Style tag pill */}
+      <div className={`absolute top-3 z-10 ${isRTL ? 'left-3' : 'right-3'}`}>
         <span
-          className="block text-[9px] tracking-[0.18em] uppercase px-3 py-1 bg-black/40 backdrop-blur-sm font-inter"
-          style={{
-            color: tpl.accentColor,
-            textShadow: `0 0 10px ${tpl.accentColor}cc, 0 0 20px ${tpl.accentColor}66`,
-          }}
+          className="block text-[9px] tracking-[0.18em] uppercase px-2.5 py-1 bg-black/40 backdrop-blur-sm font-inter"
+          style={{ color: tpl.accentColor, textShadow: `0 0 10px ${tpl.accentColor}cc` }}
         >
           {tag}
         </span>
@@ -46,9 +43,9 @@ function TemplateCard({ tpl, index, isRTL, lang, onOpen, category }) {
 
       {/* Category chip */}
       {category && (
-        <div className={`absolute top-4 z-10 ${isRTL ? 'right-4' : 'left-4'}`}>
+        <div className={`absolute top-3 z-10 ${isRTL ? 'right-3' : 'left-3'}`}>
           <span
-            className="block text-[9px] tracking-[0.2em] uppercase px-3 py-1 bg-black/35 backdrop-blur-sm font-inter"
+            className="block text-[9px] tracking-[0.2em] uppercase px-2.5 py-1 bg-black/35 backdrop-blur-sm font-inter"
             style={{ color: category.color }}
           >
             {lang === 'ar' ? category.ar : category.en}
@@ -56,36 +53,27 @@ function TemplateCard({ tpl, index, isRTL, lang, onOpen, category }) {
         </div>
       )}
 
-      {/* Base + hover gradients */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Name + hover-reveal detail */}
-      <div className={`absolute inset-x-0 bottom-0 p-6 md:p-8 ${isRTL ? 'text-right' : 'text-left'}`}>
-        <h3 className={`text-2xl md:text-3xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+      {/* Name (always visible) */}
+      <div className={`absolute inset-x-0 bottom-0 p-4 md:p-5 ${isRTL ? 'text-right' : 'text-left'}`}>
+        <h3 className={`text-lg md:text-xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
           {name}
         </h3>
-        <div className="max-h-0 opacity-0 group-hover:max-h-56 group-hover:opacity-100 transition-all duration-500 ease-out overflow-hidden">
-          <p className={`text-white/75 text-sm leading-relaxed mt-3 mb-4 max-w-md ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-            {desc}
-          </p>
-          <span
-            className={`inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/90 border-b border-white/40 pb-1 ${
-              isRTL ? 'font-arabic' : 'font-inter'
-            }`}
-          >
-            {isRTL ? 'تصفّح المعرض' : 'Browse Gallery'}
-            <svg
-              width="14"
-              height="10"
-              viewBox="0 0 14 10"
-              fill="none"
-              className={isRTL ? 'rotate-180' : ''}
-            >
-              <path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        </div>
+      </div>
+
+      {/* Hover: View Gallery prompt */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <span
+          className={`inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/30 text-white text-[11px] tracking-[0.2em] uppercase ${
+            isRTL ? 'font-arabic' : 'font-inter'
+          }`}
+        >
+          {galleryLabel}
+          <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
+        </span>
       </div>
     </motion.div>
   );
@@ -122,8 +110,8 @@ export default function TemplateGrid({ templates, category }) {
 
   return (
     <>
-      {/* 2-column grid of hover-expand quadrants */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+      {/* Tight 2-column grid; hover surfaces the gallery prompt */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
         {templates.map((tpl, i) => (
           <TemplateCard
             key={tpl.id}

@@ -1,6 +1,7 @@
 import React from 'react';
+import MaskedLogo from '@/components/ui/MaskedLogo';
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/d8fc367d4_Designer4.png';
+const LOGO_URL = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/09abea324_Designer5.png';
 
 export const CALLIGRAPHY_STYLES = {
   // ── Batch 1 — Original 10 ─────────────────────────────────────────────────
@@ -76,10 +77,9 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
 
   const content = (
     <div className="flex items-center gap-2.5" style={{ lineHeight: 1 }}>
-      <img
+      <MaskedLogo
         src={LOGO_URL}
-        alt="Tnasuq logo"
-        style={{ height: s.h, width: 'auto', filter: dark ? `${shadowFilter} brightness(1.6) saturate(1.1)` : shadowFilter, display: 'block', flexShrink: 0 }}
+        style={{ height: s.h, width: 'auto', display: 'block', flexShrink: 0, filter: shadowFilter }}
       />
       <div className="flex flex-col" style={{ gap: s.gap }}>
         <span
