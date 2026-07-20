@@ -6,7 +6,7 @@ import React from 'react';
  * Gold-toned fill, no border frame. Used in the stats strip for "Licensed in KSA".
  */
 export default function SaudiMapThumbnail({ className = '' }) {
-  const gold = 'hsl(32 55% 45%)';
+  const gold = 'hsl(32 55% 36%)';
 
   return (
     <svg
