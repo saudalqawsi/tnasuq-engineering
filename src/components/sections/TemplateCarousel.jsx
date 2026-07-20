@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -10,25 +10,26 @@ function sortedImages(images) {
 
 export default function TemplateCarousel({ templates, category }) {
   const { isRTL, lang } = useLanguage();
-  const [active, setActive] = useState(null);
+  const [center, setCenter] = useState(0);
+  const [gallery, setGallery] = useState(null);
   const [idx, setIdx] = useState(0);
-  const scroller = useRef(null);
 
-  const imgs = active ? sortedImages(active.images) : [];
+  const n = templates.length;
+  const imgs = gallery ? sortedImages(gallery.images) : [];
   const count = imgs.length;
 
   const openGallery = useCallback((tpl) => {
-    setActive(tpl);
+    setGallery(tpl);
     setIdx(0);
     document.body.style.overflow = 'hidden';
   }, []);
   const closeGallery = useCallback(() => {
-    setActive(null);
+    setGallery(null);
     document.body.style.overflow = '';
   }, []);
 
   useEffect(() => {
-    if (!active) return;
+    if (!gallery) return;
     const onKey = (e) => {
       if (e.key === 'Escape') closeGallery();
       else if (e.key === 'ArrowRight') setIdx((i) => (i + 1) % count);
@@ -36,140 +37,148 @@ export default function TemplateCarousel({ templates, category }) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [active, count, closeGallery]);
+  }, [gallery, count, closeGallery]);
 
-  // Drag-to-scroll behaviour on the track
-  const dragState = useRef({ down: false, startX: 0, startLeft: 0, moved: false });
-  const onPointerDown = (e) => {
-    const el = scroller.current;
-    if (!el) return;
-    dragState.current = { down: true, startX: e.clientX, startLeft: el.scrollLeft, moved: false };
+  // Normalise an offset to the shortest signed distance (handles wrap-around)
+  const wrapOffset = (i, c) => {
+    let d = i - c;
+    if (d > n / 2) d -= n;
+    if (d < -n / 2) d += n;
+    return d;
   };
-  const onPointerMove = (e) => {
-    const el = scroller.current;
-    if (!el || !dragState.current.down) return;
-    const dx = e.clientX - dragState.current.startX;
-    if (Math.abs(dx) > 4) dragState.current.moved = true;
-    el.scrollLeft = dragState.current.startLeft - dx;
-  };
-  const onPointerUp = () => { dragState.current.down = false; };
 
-  const stepBy = (dir) => {
-    const el = scroller.current;
-    if (!el) return;
-    // In RTL, scrollLeft is negative; normalize
-    el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' });
-  };
+  const step = (dir) => setCenter((c) => (c + dir + n) % n);
 
   return (
     <>
-      {/* Carousel track */}
-      <div className="relative">
-        {/* Edge dim + arrows */}
+      {/* Coverflow stage */}
+      <div className="relative select-none" style={{ height: 'clamp(22rem, 52vw, 34rem)' }}>
+        {/* Arrows */}
         <button
-          onClick={() => stepBy(isRTL ? 1 : -1)}
+          onClick={() => step(isRTL ? 1 : -1)}
           aria-label={isRTL ? 'التالي' : 'Previous'}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center border border-border/60 bg-background/80 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background transition-colors"
-          style={isRTL ? { right: '-1.25rem' } : { left: '-1.25rem' }}
+          className="absolute top-1/2 -translate-y-1/2 z-40 w-11 h-11 flex items-center justify-center border border-border/60 bg-background/70 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background transition-colors"
+          style={isRTL ? { right: '4rem' } : { left: '4rem' }}
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
-          onClick={() => stepBy(isRTL ? -1 : 1)}
+          onClick={() => step(isRTL ? -1 : 1)}
           aria-label={isRTL ? 'السابق' : 'Next'}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center border border-border/60 bg-background/80 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background transition-colors"
-          style={isRTL ? { left: '-1.25rem' } : { right: '-1.25rem' }}
+          className="absolute top-1/2 -translate-y-1/2 z-40 w-11 h-11 flex items-center justify-center border border-border/60 bg-background/70 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background transition-colors"
+          style={isRTL ? { left: '4rem' } : { right: '4rem' }}
         >
           <ChevronRight className="w-5 h-5" />
         </button>
 
-        <div
-          ref={scroller}
-          dir={isRTL ? 'rtl' : 'ltr'}
-          onMouseDown={onPointerDown}
-          onMouseMove={onPointerMove}
-          onMouseUp={onPointerUp}
-          onMouseLeave={onPointerUp}
-          className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-2 px-2 cursor-grab active:cursor-grabbing hide-scroll"
-          style={{ scrollbarWidth: 'none' }}
-        >
+        {/* Cards */}
+        <div className="absolute inset-0 flex items-center justify-center">
           {templates.map((tpl, i) => {
+            const off = wrapOffset(i, center);
+            if (Math.abs(off) > 2) return null;
+
             const hero = sortedImages(tpl.images)[0];
             const name = lang === 'ar' ? tpl.nameAr : tpl.nameEn;
             const tag = lang === 'ar' ? tpl.tagAr : tpl.tagEn;
             const galleryLabel = isRTL ? 'تصفّح المعرض' : 'View Gallery';
+            const isCenter = off === 0;
+
+            // spacing responsive to viewport width
+            const spacing = typeof window !== 'undefined' && window.innerWidth < 640 ? 0.62 : 0.42;
+            const xPct = off * spacing * 100;
+            const scale = isCenter ? 1 : 1 - Math.min(Math.abs(off), 2) * 0.16;
+            const opacity = isCenter ? 1 : Math.max(0.18, 1 - Math.abs(off) * 0.42);
+            const z = 30 - Math.abs(off) * 10;
+
             return (
               <motion.div
                 key={tpl.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                onClick={() => { if (!dragState.current.moved) openGallery(tpl); }}
-                className="group relative shrink-0 snap-center cursor-pointer overflow-hidden bg-muted hover:z-10 transition-transform duration-500 ease-out hover:scale-[1.02] w-[82%] sm:w-[56%] lg:w-[40%]"
-                style={{ aspectRatio: '4 / 3' }}
+                onMouseEnter={() => !isCenter && setCenter(i)}
+                onFocus={() => !isCenter && setCenter(i)}
+                onClick={() => { if (isCenter) openGallery(tpl); else setCenter(i); }}
+                animate={{ x: `${xPct}%`, scale, opacity, zIndex: z }}
+                transition={{ type: 'spring', stiffness: 260, damping: 32 }}
+                className="group absolute w-[78%] sm:w-[52%] lg:w-[38%] cursor-pointer"
+                style={{ aspectRatio: '4 / 3', transformOrigin: 'center', pointerEvents: Math.abs(off) > 2 ? 'none' : 'auto' }}
               >
-                <img
-                  src={hero.url}
-                  alt={name}
-                  loading="lazy"
-                  draggable={false}
-                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06] pointer-events-none"
-                />
+                <div className="relative w-full h-full overflow-hidden bg-muted shadow-2xl">
+                  <img
+                    src={hero.url}
+                    alt={name}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
+                  />
 
-                {/* Style tag pill */}
-                <div className={`absolute top-3 z-10 ${isRTL ? 'left-3' : 'right-3'}`}>
-                  <span
-                    className="block text-[9px] tracking-[0.18em] uppercase px-2.5 py-1 bg-black/40 backdrop-blur-sm font-inter"
-                    style={{ color: tpl.accentColor, textShadow: `0 0 10px ${tpl.accentColor}cc` }}
-                  >
-                    {tag}
-                  </span>
-                </div>
-
-                {/* Category chip */}
-                {category && (
-                  <div className={`absolute top-3 z-10 ${isRTL ? 'right-3' : 'left-3'}`}>
+                  {/* Style tag pill */}
+                  <div className={`absolute top-3 z-10 ${isRTL ? 'left-3' : 'right-3'}`}>
                     <span
-                      className="block text-[9px] tracking-[0.2em] uppercase px-2.5 py-1 bg-black/35 backdrop-blur-sm font-inter"
-                      style={{ color: category.color }}
+                      className="block text-[9px] tracking-[0.18em] uppercase px-2.5 py-1 bg-black/40 backdrop-blur-sm font-inter"
+                      style={{ color: tpl.accentColor, textShadow: `0 0 10px ${tpl.accentColor}cc` }}
                     >
-                      {lang === 'ar' ? category.ar : category.en}
+                      {tag}
                     </span>
                   </div>
-                )}
 
-                {/* Gradients */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Category chip */}
+                  {category && (
+                    <div className={`absolute top-3 z-10 ${isRTL ? 'right-3' : 'left-3'}`}>
+                      <span
+                        className="block text-[9px] tracking-[0.2em] uppercase px-2.5 py-1 bg-black/35 backdrop-blur-sm font-inter"
+                        style={{ color: category.color }}
+                      >
+                        {lang === 'ar' ? category.ar : category.en}
+                      </span>
+                    </div>
+                  )}
 
-                {/* Name (always visible) */}
-                <div className={`absolute inset-x-0 bottom-0 p-4 md:p-5 ${isRTL ? 'text-right' : 'text-left'}`}>
-                  <h3 className={`text-lg md:text-xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                    {name}
-                  </h3>
-                </div>
+                  {/* Gradients */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                  {isCenter && (
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500" />
+                  )}
 
-                {/* Hover: View Gallery prompt */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <span
-                    className={`inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/30 text-white text-[11px] tracking-[0.2em] uppercase ${
-                      isRTL ? 'font-arabic' : 'font-inter'
-                    }`}
-                  >
-                    {galleryLabel}
-                    <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
-                  </span>
+                  {/* Name */}
+                  <div className={`absolute inset-x-0 bottom-0 p-4 md:p-5 ${isRTL ? 'text-right' : 'text-left'}`}>
+                    <h3 className={`text-lg md:text-2xl font-bold text-white leading-tight ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      {name}
+                    </h3>
+                  </div>
+
+                  {/* Hover: View Gallery prompt (center only) */}
+                  {isCenter && (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <span
+                        className={`inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/30 text-white text-[11px] tracking-[0.2em] uppercase ${
+                          isRTL ? 'font-arabic' : 'font-inter'
+                        }`}
+                      >
+                        {galleryLabel}
+                        <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
+                      </span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );
           })}
         </div>
+
+        {/* Dot indicators */}
+        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-2 z-40">
+          {templates.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCenter(i)}
+              aria-label={`${i + 1}`}
+              className={`h-1.5 transition-all duration-300 ${i === center ? 'w-8 bg-primary' : 'w-3 bg-border'}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Fullscreen gallery lightbox */}
       <AnimatePresence>
-        {active && (
+        {gallery && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -183,16 +192,16 @@ export default function TemplateCarousel({ templates, category }) {
               <div className={`min-w-0 ${isRTL ? 'text-right' : 'text-left'}`}>
                 <p
                   className={`text-xs tracking-[0.2em] uppercase mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}
-                  style={{ color: active.accentColor }}
+                  style={{ color: gallery.accentColor }}
                 >
-                  {lang === 'ar' ? active.tagAr : active.tagEn}
+                  {lang === 'ar' ? gallery.tagAr : gallery.tagEn}
                 </p>
                 <h2
                   className={`text-xl md:text-2xl font-bold text-white truncate ${
                     isRTL ? 'font-arabic' : 'font-inter'
                   }`}
                 >
-                  {lang === 'ar' ? active.nameAr : active.nameEn}
+                  {lang === 'ar' ? gallery.nameAr : gallery.nameEn}
                 </h2>
               </div>
               <button
@@ -218,7 +227,7 @@ export default function TemplateCarousel({ templates, category }) {
                 <motion.img
                   key={idx}
                   src={imgs[idx].url}
-                  alt={`${lang === 'ar' ? active.nameAr : active.nameEn} ${idx + 1}`}
+                  alt={`${lang === 'ar' ? gallery.nameAr : gallery.nameEn} ${idx + 1}`}
                   initial={{ opacity: 0, scale: 0.985 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
