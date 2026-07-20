@@ -1,31 +1,31 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { IconInquiry, IconSite, IconDesign, IconHardHat } from '@/components/ui/BrandIcons';
+import { ClipboardList, MapPinned, PencilRuler, HardHat } from 'lucide-react';
 
 const steps = {
   en: [
     {
       num: '01',
-      icon: IconInquiry,
+      icon: ClipboardList,
       title: 'Inquiry & Scope',
       body: 'You submit a brief or call us directly. We respond within 24 hours with initial questions to understand your plot, programme, and budget.',
     },
     {
       num: '02',
-      icon: IconSite,
+      icon: MapPinned,
       title: 'Site Visit & Proposal',
       body: 'We visit the site, verify municipal records, and prepare a clear proposal covering scope, fees, and realistic timelines — no vague estimates.',
     },
     {
       num: '03',
-      icon: IconDesign,
+      icon: PencilRuler,
       title: 'Design & Permitting',
       body: 'Our team produces permit-ready drawings and manages all authority submissions — Amanat Al-Riyadh, MOMRA, SEC, NWC — until approvals are secured.',
     },
     {
       num: '04',
-      icon: IconHardHat,
+      icon: HardHat,
       title: 'Supervision & Handover',
       body: 'We supervise construction to ensure the build matches the approved drawings. Final inspections, snagging, and sign-off are included.',
     },
@@ -33,25 +33,25 @@ const steps = {
   ar: [
     {
       num: '٠١',
-      icon: IconInquiry,
+      icon: ClipboardList,
       title: 'الاستفسار وتحديد النطاق',
       body: 'أرسل لنا ملخّصاً عن مشروعك أو تواصل معنا مباشرةً. نرد خلال ٢٤ ساعة بأسئلة نتعرف من خلالها على قطعة الأرض والمتطلبات الوظيفية والميزانية.',
     },
     {
       num: '٠٢',
-      icon: IconSite,
+      icon: MapPinned,
       title: 'الزيارة الميدانية والعرض',
       body: 'نزور الموقع ونتحقق من السجلات البلدية، ونُعد عرضاً واضحاً يشمل النطاق والرسوم والجداول الزمنية الواقعية — دون تقديرات مبهمة.',
     },
     {
       num: '٠٣',
-      icon: IconDesign,
+      icon: PencilRuler,
       title: 'التصميم والتراخيص',
       body: 'يُعدّ فريقنا رسومات جاهزة للترخيص ويدير طلبات الجهات كافة — أمانة الرياض، ووزارة الشؤون البلدية، والشركة السعودية للكهرباء، والشركة الوطنية للمياه — حتى صدور الموافقات.',
     },
     {
       num: '٠٤',
-      icon: IconHardHat,
+      icon: HardHat,
       title: 'الإشراف والتسليم',
       body: 'نشرف على التنفيذ لضمان مطابقة البناء للرسومات المعتمدة، ويشمل ذلك الفحص النهائي وكشف العيوب والتسليم النهائي للمشروع.',
     },
