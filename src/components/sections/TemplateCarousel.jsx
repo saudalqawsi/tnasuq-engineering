@@ -93,8 +93,6 @@ export default function TemplateCarousel({ templates, category }) {
             return (
               <motion.div
                 key={tpl.id}
-                onMouseEnter={() => !isCenter && setCenter(i)}
-                onFocus={() => !isCenter && setCenter(i)}
                 onClick={() => { if (isCenter) openGallery(tpl); else setCenter(i); }}
                 animate={{ x: `${xPct}%`, scale, opacity, zIndex: z }}
                 transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
