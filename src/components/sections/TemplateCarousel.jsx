@@ -119,18 +119,6 @@ export default function TemplateCarousel({ templates, category }) {
                     </span>
                   </div>
 
-                  {/* Category chip */}
-                  {category && (
-                    <div className={`absolute top-3 z-10 ${isRTL ? 'right-3' : 'left-3'}`}>
-                      <span
-                        className="block text-[9px] tracking-[0.2em] uppercase px-2.5 py-1 bg-black/35 backdrop-blur-sm font-inter"
-                        style={{ color: category.color }}
-                      >
-                        {lang === 'ar' ? category.ar : category.en}
-                      </span>
-                    </div>
-                  )}
-
                   {/* Gradients */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                   {isCenter && (
