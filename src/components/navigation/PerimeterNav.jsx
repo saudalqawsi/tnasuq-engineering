@@ -91,10 +91,7 @@ const navItems = [
           >
             {/* Gold-tone company watermark */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
-              <MaskedLogo
-                className="h-[72vh] w-auto max-w-none select-none"
-                style={{ filter: 'sepia(1) saturate(8) hue-rotate(8deg) brightness(1.15) contrast(1.05)' }}
-              />
+              <MaskedLogo className="h-[72vh] w-auto max-w-none select-none" />
             </div>
             <button
               onClick={() => setMenuOpen(false)}
