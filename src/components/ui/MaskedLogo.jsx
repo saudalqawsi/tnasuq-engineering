@@ -8,9 +8,25 @@ const DEFAULT_SRC =
  * transparency (so it works over light or dark backdrops) using an
  * SVG color matrix on the blue channel.
  */
-export default function MaskedLogo({ className, style, src = DEFAULT_SRC, alt = 'Tnasuq' }) {
+export default function MaskedLogo({ className, style, src = DEFAULT_SRC, alt = 'Tnasuq', blend = false }) {
   const raw = useId();
   const filterId = `wta-${raw.replace(/[^a-zA-Z0-9]/g, '')}`;
+
+  if (blend) {
+    // For small/light backdrops, multiply blend removes the source image's
+    // white background cleanly (white→backdrop, bronze stays) with no fringing.
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        style={{ ...style, mixBlendMode: 'multiply' }}
+        crossOrigin="anonymous"
+        aria-label={alt}
+        role="img"
+      />
+    );
+  }
 
   return (
     <svg

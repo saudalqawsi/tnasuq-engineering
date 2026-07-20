@@ -79,11 +79,12 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
     <div className="flex items-center gap-2.5" style={{ lineHeight: 1 }}>
       <MaskedLogo
         src={LOGO_URL}
-        style={{ height: s.h, width: 'auto', display: 'block', flexShrink: 0, filter: shadowFilter }}
+        blend={!dark}
+        style={{ height: s.h, width: 'auto', display: 'block', flexShrink: 0, filter: dark ? shadowFilter : 'none' }}
       />
       <div className="flex flex-col" style={{ gap: s.gap }}>
         <span
-          className={`${dark ? 'text-primary-foreground' : 'text-muted-foreground'} leading-none`}
+          className={`${dark ? 'text-primary-foreground' : 'text-foreground/75'} leading-none`}
           style={{
             fontFamily: cal.fontFamily,
             fontWeight: cal.fontWeight,
@@ -94,7 +95,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
           تناســـــق
         </span>
         <span
-          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground' : 'text-muted-foreground'} leading-none`}
+          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground' : 'text-foreground/75'} leading-none`}
           style={{ fontSize: s.enSize }}
         >
           TNASUQ

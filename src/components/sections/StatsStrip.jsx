@@ -30,7 +30,7 @@ export default function StatsStrip() {
         {items.map((stat, i) => (
           <div
             key={i}
-            className="px-8 py-10 md:py-12 flex flex-col items-center md:items-start gap-2"
+            className="px-8 py-10 md:py-12 flex flex-col items-center gap-3 text-center"
           >
             {stat.map ? (
               <SaudiMapThumbnail />
