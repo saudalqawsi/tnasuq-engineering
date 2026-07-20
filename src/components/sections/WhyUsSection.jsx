@@ -1,24 +1,24 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { IconPermit, IconLayers, IconBolt } from '@/components/ui/BrandIcons';
+import { ShieldCheck, Handshake, Zap } from 'lucide-react';
 
 const pillars = {
   en: [
     {
       number: '01',
-      icon: IconPermit,
+      icon: ShieldCheck,
       title: 'Zero Permit Surprises',
       body: 'We have processed approvals with Amanat Al-Riyadh, MOMRA, SEC, and NWC across dozens of projects. We know exactly what each authority requires before a drawing is submitted — preventing the costly back-and-forth that delays most projects.',
     },
     {
       number: '02',
-      icon: IconLayers,
+      icon: Handshake,
       title: 'One Firm, Full Accountability',
       body: 'Architecture, structure, MEP, supervision — under one contract and one point of contact. No finger-pointing between consultants. If something needs fixing on site, we are the ones who fix it.',
     },
     {
       number: '03',
-      icon: IconBolt,
+      icon: Zap,
       title: 'Faster Starts, Proven Designs',
       body: 'Our Saudi market design templates — calibrated to villa, apartment, commercial, and industrial typologies — mean your project moves from brief to permit-ready drawings in weeks, not months, without compromising quality.',
     },
@@ -26,19 +26,19 @@ const pillars = {
   ar: [
     {
       number: '٠١',
-      icon: IconPermit,
+      icon: ShieldCheck,
       title: 'لا مفاجآت في التراخيص',
       body: 'أنجزنا طلبات الموافقة لدى أمانة الرياض، ووزارة الشؤون البلدية، والشركة السعودية للكهرباء، والشركة الوطنية للمياه في عشرات المشاريع. نعرف بدقة ما تشترطه كل جهة قبل تقديم أي رسم — وهذا يحمي مشروعك من التأخير المكلف.',
     },
     {
       number: '٠٢',
-      icon: IconLayers,
+      icon: Handshake,
       title: 'شركة واحدة، مسؤولية كاملة',
       body: 'معماري وإنشائي وكهروميكانيكي وإشراف — عقد واحد ونقطة تواصل واحدة. لا تضارب بين المستشارين. وإن ظهر أي خطأ في الموقع، فنحن من يصلحه.',
     },
     {
       number: '٠٣',
-      icon: IconBolt,
+      icon: Zap,
       title: 'انطلاقة أسرع بتصاميم مُجرّبة',
       body: 'نماذجنا التصميمية للسوق السعودي — فلل وعمائر ومبانٍ تجارية وصناعية — تنقل مشروعك من الموجز إلى رسومات جاهزة للترخيص في أسابيع لا في أشهر، دون أي تنازل عن الجودة.',
     },
@@ -97,12 +97,10 @@ export default function WhyUsSection() {
                 {pillar.number}
               </span>
 
-              {/* Blown-up icon */}
-              <div className="relative mb-7">
+              {/* Blown-up icon — no frame */}
+              <div className="relative mb-7 flex items-center justify-center">
                 <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center border-2 border-primary/30 text-primary group-hover:border-primary group-hover:scale-110 transition-all duration-500">
-                  {Icon ? <Icon className="w-8 h-8 md:w-12 md:h-12" /> : null}
-                </div>
+                {Icon ? <Icon className="relative w-10 h-10 md:w-16 md:h-16 text-primary group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} /> : null}
               </div>
 
               {/* Title */}
