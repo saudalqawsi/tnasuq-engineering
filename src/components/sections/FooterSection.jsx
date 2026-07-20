@@ -39,7 +39,7 @@ export default function FooterSection() {
     >
       {/* Massive brand-mark watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <MaskedLogo className="h-[38vh] md:h-[42vh] lg:h-[55vh] w-auto max-w-none select-none opacity-[0.15]" />
+        <MaskedLogo className="h-[28vh] md:h-[32vh] lg:h-[40vh] w-auto max-w-none select-none opacity-[0.05]" />
       </div>
 
       <div className="relative px-6 md:px-16 lg:px-24 pt-20 pb-12">
