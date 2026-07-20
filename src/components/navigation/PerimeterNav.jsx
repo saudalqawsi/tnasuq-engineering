@@ -50,7 +50,7 @@ const navItems = [
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
                 className={`text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 ${
-                  isRTL ? 'font-arabic' : 'font-inter'
+                  isRTL ? 'font-arabic' : 'font-inter uppercase tracking-wider'
                 }`}
               >
                 {item.label}
