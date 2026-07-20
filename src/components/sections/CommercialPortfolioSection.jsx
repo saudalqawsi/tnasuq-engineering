@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import TemplateGrid from '@/components/sections/TemplateGrid';
+import TemplateCarousel from '@/components/sections/TemplateCarousel';
 
 const CATEGORY = { en: 'Commercial', ar: 'تجاري', color: '#5A6B7A' };
 
@@ -107,7 +107,7 @@ export default function CommercialPortfolioSection() {
 
       {/* 2×2 hover-expand template grid */}
       <div className="px-6 md:px-16 lg:px-24">
-        <TemplateGrid templates={TEMPLATES} category={cat} />
+        <TemplateCarousel templates={TEMPLATES} category={cat} />
       </div>
 
       {/* Commercial CTA */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import TemplateGrid from '@/components/sections/TemplateGrid';
+import TemplateCarousel from '@/components/sections/TemplateCarousel';
 
 const BASE = 'https://media.base44.com/images/public/6a01985ff51577d637f369f5/';
 const CATEGORY = { en: 'Residential', ar: 'سكني', color: '#9A7A4D' };
@@ -180,7 +180,7 @@ export default function PortfolioSection() {
 
       {/* 2×2 hover-expand template grid */}
       <div className="px-6 md:px-16 lg:px-24">
-        <TemplateGrid templates={TEMPLATES} category={cat} />
+        <TemplateCarousel templates={TEMPLATES} category={cat} />
       </div>
 
       {/* Portfolio CTA */}
