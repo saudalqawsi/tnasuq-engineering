@@ -95,8 +95,10 @@ export default function ServicesSection() {
         <div className="mt-16 border border-primary/20 p-8 md:p-12">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16">
             <div className="shrink-0">
-              <span className={`text-xs tracking-[0.2em] text-primary uppercase block mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                {t.services.codesBadge.title}
+              <span className={`text-xs tracking-[0.2em] text-primary uppercase block mb-3 leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                {t.services.codesBadge.title.split(' ').map((word, i) => (
+                  <span key={i} className="block">{word}</span>
+                ))}
               </span>
               <div className="w-8 h-[1.5px] bg-primary" />
             </div>
