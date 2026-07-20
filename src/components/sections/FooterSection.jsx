@@ -123,7 +123,7 @@ export default function FooterSection() {
                 info@tnasuq.com
               </a>
               <a href="tel:+966530336660" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-inter">
-                +966(0)530336660
+                0530336660
               </a>
               <span className={`text-sm text-primary-foreground/50 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {isRTL ? 'حي القيروان، الرياض ١٣٥٣١' : 'Al Qairawan, Riyadh 13531, KSA'}

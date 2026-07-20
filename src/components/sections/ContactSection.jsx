@@ -81,7 +81,7 @@ export default function ContactSection() {
                   {isRTL ? 'الهاتف' : 'Phone'}
                 </span>
                 <a href="tel:+966530336660" className="text-foreground hover:text-primary transition-colors font-inter">
-                  +966(0)530336660
+                  0530336660
                 </a>
               </div>
               <div>
@@ -95,7 +95,7 @@ export default function ContactSection() {
                   className="text-foreground hover:text-primary transition-colors font-inter"
                   dir="ltr"
                 >
-                  +966(0)530336660
+                  0530336660
                 </a>
               </div>
               <div>
