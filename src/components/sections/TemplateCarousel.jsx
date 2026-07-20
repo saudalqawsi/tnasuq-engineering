@@ -97,7 +97,7 @@ export default function TemplateCarousel({ templates, category }) {
                 onFocus={() => !isCenter && setCenter(i)}
                 onClick={() => { if (isCenter) openGallery(tpl); else setCenter(i); }}
                 animate={{ x: `${xPct}%`, scale, opacity, zIndex: z }}
-                transition={{ type: 'spring', stiffness: 90, damping: 18, mass: 1.1 }}
+                transition={{ type: 'spring', stiffness: 45, damping: 22, mass: 1.8 }}
                 className="group absolute w-[78%] sm:w-[52%] lg:w-[38%] cursor-pointer"
                 style={{ aspectRatio: '4 / 3', transformOrigin: 'center', pointerEvents: Math.abs(off) > 2 ? 'none' : 'auto' }}
               >
