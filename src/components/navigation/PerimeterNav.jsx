@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import TnasuqLogo from '@/components/ui/TnasuqLogo';
+import TnasuqLogo, { CALLIGRAPHY_STYLES, ACTIVE_STYLE } from '@/components/ui/TnasuqLogo';
 
 export default function PerimeterNav() {
   const { lang, toggleLanguage, t, isRTL } = useLanguage();
@@ -20,6 +20,8 @@ export default function PerimeterNav() {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
+
+const cal = CALLIGRAPHY_STYLES[ACTIVE_STYLE];
 
   const navItems = [
     { id: 'hero', label: t.nav.home },
@@ -104,9 +106,10 @@ export default function PerimeterNav() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => scrollTo(item.id)}
-                  className={`text-3xl font-light text-foreground hover:text-primary transition-colors ${
-                    isRTL ? 'font-arabic' : 'font-inter'
+                  className={`text-3xl text-foreground hover:text-primary transition-colors ${
+                    isRTL ? 'font-arabic' : 'font-inter font-black tracking-[-0.02em]'
                   }`}
+                  style={isRTL ? { fontFamily: cal.fontFamily, fontWeight: cal.fontWeight, letterSpacing: cal.letterSpacing } : undefined}
                 >
                   {item.label}
                 </motion.button>
