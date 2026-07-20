@@ -119,9 +119,6 @@ export default function FooterSection() {
               <span className="font-inter text-2xl font-bold text-primary-foreground/60 tracking-wider">
                 {t.footer.crNumber}
               </span>
-              <span className={`text-xs text-primary-foreground/25 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                {isRTL ? 'الرقم الموحّد الوطني' : 'National Unified Number'}
-              </span>
             </div>
           </div>
         </div>
