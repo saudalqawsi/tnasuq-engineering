@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import TnasuqLogo from '@/components/ui/TnasuqLogo';
-import MaskedLogo from '@/components/ui/MaskedLogo';
 
 // Social icons as inline SVGs (no external dependency needed)
 function TwitterX() {
@@ -37,10 +36,7 @@ export default function FooterSection() {
       className="relative bg-foreground text-primary-foreground overflow-hidden"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
-      {/* Massive brand-mark watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <MaskedLogo className="h-40 md:h-56 lg:h-[864px] w-auto max-w-none select-none opacity-[0.08]" />
-      </div>
+
 
       <div className="relative px-6 md:px-16 lg:px-24 pt-20 pb-12">
         {/* Top section */}
