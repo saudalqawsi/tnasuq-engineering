@@ -24,10 +24,10 @@ export default function SaudiMapThumbnail({ className = '' }) {
         <rect x="0" y="0" width="200" height="150" fill="hsl(32 55% 45% / 0.06)" />
         {/* Saudi Arabia silhouette */}
         <path
-          d="M42 24 L128 20 L150 26 L162 34 L166 50 L154 56 L142 60 L150 72 L172 88 L170 106 L144 126 L120 144 L96 138 L74 124 L56 120 L44 102 L30 84 L26 60 L34 40 Z"
+          d="M44 30 L80 26 L130 26 L165 34 L170 52 L150 58 L150 66 L156 66 L158 54 L168 54 L172 86 L150 108 L126 126 L108 140 L74 128 L48 118 L32 96 L26 64 L34 42 Z"
           fill={goldFill}
           stroke={goldStroke}
-          strokeWidth="2.5"
+          strokeWidth="2"
           strokeLinejoin="round"
         />
       </svg>
