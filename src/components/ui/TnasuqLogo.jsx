@@ -79,7 +79,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
     <div className="flex items-center gap-2.5" style={{ lineHeight: 1 }}>
       <MaskedLogo
         src={LOGO_URL}
-        blend={!dark}
+        blend={false}
         style={{ height: s.h, width: 'auto', display: 'block', flexShrink: 0, filter: dark ? shadowFilter : 'none' }}
       />
       <div className="flex flex-col" style={{ gap: s.gap }}>
