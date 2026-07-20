@@ -1,28 +1,14 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { CheckCircle } from 'lucide-react';
-import {
-  IconArchitectural,
-  IconStructural,
-  IconManagement,
-  IconHardHat,
-  IconMEP,
-  IconGeotech,
-  IconUrban,
-  IconCadastral,
-  IconLandscape,
-} from '@/components/ui/BrandIcons';
+import { CheckCircle, Compass, Building2, CalendarClock, HardHat, Cable, Trees } from 'lucide-react';
 
 const serviceIcons = [
-  IconArchitectural,
-  IconStructural,
-  IconManagement,
-  IconHardHat,
-  IconMEP,
-  IconGeotech,
-  IconUrban,
-  IconCadastral,
-  IconLandscape,
+  Compass,       // Architectural Design
+  Building2,     // Structural Engineering
+  CalendarClock, // Project Management
+  HardHat,       // Construction Supervision
+  Cable,         // MEP Engineering
+  Trees,         // Landscape Design
 ];
 
 export default function ServicesSection() {
