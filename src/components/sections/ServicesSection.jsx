@@ -100,7 +100,7 @@ export default function ServicesSection() {
               </span>
               <div className="w-8 h-[1.5px] bg-primary" />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 flex-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 flex-1">
               {t.services.codesBadge.items.map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <CheckCircle className="w-3.5 h-3.5 shrink-0" style={{ color: 'hsl(32 55% 60%)' }} />

@@ -44,13 +44,13 @@ const navItems = [
           <TnasuqLogo size="md" onClick={() => scrollTo('hero')} scrolled={scrolled} />
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.slice(1).map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className={`text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 ${
-                  isRTL ? 'font-arabic' : 'font-inter uppercase tracking-wider'
+                className={`text-muted-foreground hover:text-foreground transition-colors duration-300 ${
+                  isRTL ? 'font-arabic text-sm tracking-wide' : 'font-inter text-xs uppercase tracking-[0.06em]'
                 }`}
               >
                 {item.label}
