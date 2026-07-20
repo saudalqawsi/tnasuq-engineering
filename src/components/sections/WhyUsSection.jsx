@@ -80,33 +80,47 @@ export default function WhyUsSection() {
           </h2>
         </div>
 
-        {/* Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40">
+        {/* Pillars — squeezed side by side; large icon + title, details reveal on hover */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40 border-y border-border/40">
           {items.map((pillar, i) => {
             const Icon = pillar.icon;
             return (
             <div
               key={i}
-              className="group bg-background p-10 md:p-12 hover:bg-card transition-colors duration-500"
+              className="group relative bg-background hover:bg-card transition-colors duration-500 flex flex-col items-center text-center py-16 md:py-20 px-6 md:px-10 overflow-hidden"
             >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="shrink-0 w-11 h-11 flex items-center justify-center border border-primary/40 bg-primary/5 text-primary">
-                  {Icon ? <Icon className="w-5 h-5" /> : null}
-                </div>
-                <div
-                  className="font-inter font-black text-[4rem] leading-none select-none"
-                  style={{ color: 'hsl(32 55% 36% / 0.15)' }}
-                >
-                  {pillar.number}
+              {/* Number watermark */}
+              <span
+                className="absolute top-5 end-6 font-inter font-black text-3xl leading-none select-none opacity-20 group-hover:opacity-50 group-hover:scale-110 transition-all duration-500"
+                style={{ color: 'hsl(32 55% 36%)' }}
+              >
+                {pillar.number}
+              </span>
+
+              {/* Blown-up icon */}
+              <div className="relative mb-7">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-24 h-24 flex items-center justify-center border-2 border-primary/30 text-primary group-hover:border-primary group-hover:scale-110 transition-all duration-500">
+                  {Icon ? <Icon className="w-12 h-12" /> : null}
                 </div>
               </div>
-              <h3 className={`text-xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+
+              {/* Title */}
+              <h3 className={`relative text-lg md:text-xl font-bold text-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {pillar.title}
               </h3>
-              <p className={`text-sm text-muted-foreground leading-[1.9] ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                {pillar.body}
-              </p>
-              <div className="mt-8 h-[1.5px] bg-primary w-8 group-hover:w-16 transition-all duration-500" />
+
+              {/* Details — reveal on hover */}
+              <div className="relative w-full overflow-hidden max-h-0 opacity-0 group-hover:max-h-72 group-hover:opacity-100 group-hover:mt-5 transition-all duration-500 ease-out">
+                <div className="pt-4 border-t border-primary/20">
+                  <p className={`text-sm text-muted-foreground leading-[1.85] ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    {pillar.body}
+                  </p>
+                </div>
+              </div>
+
+              {/* bottom hairline grows on hover */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-primary w-0 group-hover:w-16 transition-all duration-500" />
             </div>
             );
           })}
