@@ -80,8 +80,8 @@ export default function ContactSection() {
                 <span className={`text-xs tracking-[0.15em] text-muted-foreground uppercase block mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {isRTL ? 'الهاتف' : 'Phone'}
                 </span>
-                <a href="tel:+966530336660" className="text-foreground hover:text-primary transition-colors font-inter" dir="ltr">
-                  +966 53 033 6660
+                <a href="tel:+966530336660" className="text-foreground hover:text-primary transition-colors font-inter">
+                  +966 530336660
                 </a>
               </div>
               <div>
@@ -95,7 +95,7 @@ export default function ContactSection() {
                   className="text-foreground hover:text-primary transition-colors font-inter"
                   dir="ltr"
                 >
-                  +966 53 033 6660
+                  +966 530336660
                 </a>
               </div>
               <div>
