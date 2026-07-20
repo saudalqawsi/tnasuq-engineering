@@ -82,7 +82,7 @@ export default function CommercialPortfolioSection() {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-12 h-[1.5px] bg-primary" />
           <span className={`text-sm tracking-[0.2em] text-primary font-medium uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-            {isRTL ? 'نماذج المشاريع' : 'Project Templates'}
+            {isRTL ? 'نماذج المشاريع التجارية' : 'Commercial Project Templates'}
           </span>
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
