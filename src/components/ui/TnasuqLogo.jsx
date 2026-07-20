@@ -83,7 +83,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
       />
       <div className="flex flex-col" style={{ gap: s.gap }}>
         <span
-          className={`${dark ? 'text-primary-foreground/75' : scrolled ? 'text-muted-foreground' : 'text-foreground'} leading-none`}
+          className={`${dark ? 'text-primary-foreground/75' : scrolled ? 'text-muted-foreground' : 'text-white'} leading-none`}
           style={{
             fontFamily: cal.fontFamily,
             fontWeight: cal.fontWeight,
@@ -94,7 +94,7 @@ export default function TnasuqLogo({ size = 'md', onClick, styleKey, dark = fals
           تناســـــق
         </span>
         <span
-          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground/75' : scrolled ? 'text-muted-foreground' : 'text-foreground'} leading-none`}
+          className={`font-inter font-black tracking-[-0.02em] ${dark ? 'text-primary-foreground/75' : scrolled ? 'text-muted-foreground' : 'text-white'} leading-none`}
           style={{ fontSize: s.enSize }}
         >
           TNASUQ
