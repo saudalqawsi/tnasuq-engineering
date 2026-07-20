@@ -1,17 +1,18 @@
 import React from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
+import SaudiMapThumbnail from '@/components/ui/SaudiMapThumbnail';
 
 const stats = {
   en: [
     { value: '15+', label: 'Projects Underway' },
     { value: '8+', label: 'Years in Saudi Market' },
-    { value: 'KSA', label: 'Licensed & Registered' },
+    { value: 'KSA', label: 'Licensed & Registered', map: true },
     { value: '6', label: 'Engineering Disciplines' },
   ],
   ar: [
     { value: '+١٥', label: 'مشروع قيد التنفيذ' },
     { value: '+٨', label: 'سنوات في السوق السعودي' },
-    { value: 'KSA', label: 'مرخّصون ومسجّلون رسمياً' },
+    { value: 'KSA', label: 'مرخّصون ومسجّلون رسمياً', map: true },
     { value: '٦', label: 'تخصصات هندسية' },
   ],
 };
@@ -31,12 +32,16 @@ export default function StatsStrip() {
             key={i}
             className="px-8 py-10 md:py-12 flex flex-col items-center md:items-start gap-2"
           >
-            <span
-              className="font-inter font-black text-4xl md:text-5xl leading-none"
-              style={{ color: 'hsl(32 55% 36%)' }}
-            >
-              {stat.value}
-            </span>
+            {stat.map ? (
+              <SaudiMapThumbnail />
+            ) : (
+              <span
+                className="font-inter font-black text-4xl md:text-5xl leading-none"
+                style={{ color: 'hsl(32 55% 36%)' }}
+              >
+                {stat.value}
+              </span>
+            )}
             <span className={`text-sm text-muted-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {stat.label}
             </span>
