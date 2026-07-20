@@ -22,11 +22,13 @@ export default function MaskedLogo({ className, style, src = DEFAULT_SRC, alt = 
       aria-label={alt}
     >
       <defs>
-        {/* alpha = 1.2 - 1.2·B  → white (B≈1) becomes transparent, bronze (B≈0.29) stays opaque */}
+        {/* Steep alpha key on the blue channel: any pixel bluer than B≈0.8 (white +
+            near-white/cream backgrounds) → fully transparent; the bronze mark
+            (B≈0.2–0.4) stays fully opaque. RGB passes through untouched. */}
         <filter id={filterId}>
           <feColorMatrix
             type="matrix"
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 -1.2 0 1.2"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 -2.5 0 2"
           />
         </filter>
       </defs>
