@@ -39,10 +39,15 @@ export default function TemplateCarousel({ templates, category }) {
     return () => window.removeEventListener('keydown', onKey);
   }, [gallery, count, closeGallery]);
 
-  // Offset from the center item — no wrap (linear navigation, clamped at ends)
-  const wrapOffset = (i, c) => i - c;
+  // Normalise an offset to the shortest signed distance (handles wrap-around)
+  const wrapOffset = (i, c) => {
+    let d = i - c;
+    if (d > n / 2) d -= n;
+    if (d < -n / 2) d += n;
+    return d;
+  };
 
-  const step = (dir) => setCenter((c) => Math.max(0, Math.min(n - 1, c + dir)));
+  const step = (dir) => setCenter((c) => (c + dir + n) % n);
 
   return (
     <>
@@ -70,7 +75,7 @@ export default function TemplateCarousel({ templates, category }) {
         <div className="absolute inset-0 flex items-center justify-center">
           {templates.map((tpl, i) => {
             const off = wrapOffset(i, center);
-            if (Math.abs(off) > 1) return null;
+            if (Math.abs(off) > 2) return null;
 
             const hero = sortedImages(tpl.images)[0];
             const name = lang === 'ar' ? tpl.nameAr : tpl.nameEn;
