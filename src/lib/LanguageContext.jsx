@@ -85,24 +85,6 @@ const translations = {
           highlight: true,
         },
         {
-          title: 'Geotechnical Engineering',
-          description: 'Soil investigation, foundation recommendations, and ground improvement design — critical for Wadi Hanifah catchment areas and expansive soil zones across Riyadh.',
-          highlight: false,
-          partner: true,
-        },
-        {
-          title: 'Urban Planning',
-          description: 'Master planning, land-use studies, and urban design frameworks delivered in partnership with licensed urban planning specialists.',
-          highlight: false,
-          partner: true,
-        },
-        {
-          title: 'Cadastral Services',
-          description: 'Cadastral mapping, parcel data preparation, and deed registration support provided in partnership with accredited cadastral offices.',
-          highlight: false,
-          partner: true,
-        },
-        {
           title: 'Landscape Design',
           description: 'Softscape and hardscape design, irrigation planning, and outdoor space design delivered in partnership with specialised landscape architects.',
           highlight: false,
@@ -244,24 +226,6 @@ const translations = {
           title: 'الهندسة الكهروميكانيكية',
           description: 'تصميم ميكانيكي وكهربائي وصحي متكامل منسّق مع الشركة السعودية للكهرباء، والشركة الوطنية للمياه، وهيئة المواصفات والمقاييس والجودة — مع إدارة كاملة لموافقات جميع مقدمي الخدمات.',
           highlight: true,
-        },
-        {
-          title: 'الهندسة الجيوتقنية',
-          description: 'تحريات التربة وتوصيات الأساسات وتصميم تحسين الأرض — ضرورية في نطاق وادي حنيفة ومناطق التربة المتنفّخة بالرياض.',
-          highlight: false,
-          partner: true,
-        },
-        {
-          title: 'التخطيط العمراني',
-          description: 'دراسات التخطيط الرئيسية واستعمالات الأراضي والإطار التصميمي الحضري، تُقدَّم بالشراكة مع متخصصين معتمدين في التخطيط العمراني.',
-          highlight: false,
-          partner: true,
-        },
-        {
-          title: 'الخدمات المساحية',
-          description: 'إعداد الخرائط المساحية وبيانات القطع الأرضية ودعم تسجيل الصكوك، بالشراكة مع مكاتب مساحة عقارية معتمدة.',
-          highlight: false,
-          partner: true,
         },
         {
           title: 'تصميم المناظر الطبيعية',

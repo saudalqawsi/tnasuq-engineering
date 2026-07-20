@@ -74,7 +74,7 @@ export default function ServicesSection() {
                 {service.highlight && (
                   <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
                     <span className={`text-[8px] tracking-[0.2em] uppercase px-2 py-0.5 bg-primary/20 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-                      {isRTL ? 'خدمة محورية' : 'Core Service'}
+                      {isRTL ? 'خدماتنا' : 'Core Service'}
                     </span>
                   </div>
                 )}
