@@ -74,7 +74,7 @@ export default function CommercialPortfolioSection() {
   return (
     <section
       id="commercial"
-      className="relative py-24 md:py-40 overflow-hidden bg-background"
+      className="relative py-24 md:py-40 overflow-hidden bg-foreground text-background"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Section header */}
@@ -87,16 +87,16 @@ export default function CommercialPortfolioSection() {
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border" style={{ borderColor: cat.color + '66' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border" style={{ borderColor: cat.color + '99' }}>
               <span className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
               <span className={`text-xs tracking-[0.25em] uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`} style={{ color: cat.color }}>
                 {isRTL ? cat.ar : cat.en}
               </span>
             </div>
-            <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
+            <h2 className={`text-4xl md:text-6xl font-bold text-background mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
               {isRTL ? 'نماذج تجارية للسوق السعودي' : 'Commercial Templates for the Saudi Market'}
             </h2>
-            <p className={`text-lg text-muted-foreground max-w-2xl leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-background/60 max-w-2xl leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {isRTL
                 ? 'نماذج جاهزة للتنفيذ للمجمعات التجارية والمباني متعددة الاستخدامات والمكاتب، معدّة وفق اشتراطات البلديات ومتطلبات التخطيط التجاري في المملكة.'
                 : 'Ready-to-execute templates for retail centres, mixed-use buildings, and office developments — calibrated to Saudi municipal and commercial planning requirements.'}
@@ -112,12 +112,12 @@ export default function CommercialPortfolioSection() {
 
       {/* Commercial CTA */}
       <div className="px-6 md:px-16 lg:px-24 mt-16">
-        <div className="border border-border/50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="border border-background/20 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <h3 className={`text-2xl md:text-3xl font-bold text-foreground mb-2 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
+            <h3 className={`text-2xl md:text-3xl font-bold text-background mb-2 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
               {isRTL ? 'أعجبك ما رأيت؟' : 'See something you like?'}
             </h3>
-            <p className={`text-muted-foreground text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-background/60 text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {isRTL
                 ? 'كل نموذج قابل للتخصيص وفق قطعتك ومتطلباتك.'
                 : 'Every template is fully customisable to your plot and requirements.'}
@@ -125,7 +125,7 @@ export default function CommercialPortfolioSection() {
           </div>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className={`group shrink-0 inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 text-sm tracking-wider font-medium hover:bg-primary transition-colors duration-500 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+            className={`group shrink-0 inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 text-sm tracking-wider font-medium hover:bg-primary hover:text-background transition-colors duration-500 ${isRTL ? 'font-arabic' : 'font-inter'}`}
           >
             {isRTL ? 'ابدأ مشروعك' : 'Start a Project'}
             <span className="inline-block w-5 h-[1.5px] bg-current group-hover:w-8 transition-all duration-300" />

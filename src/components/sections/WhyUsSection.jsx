@@ -81,13 +81,13 @@ export default function WhyUsSection() {
         </div>
 
         {/* Pillars — squeezed side by side; large icon + title, details reveal on hover */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40 border-y border-border/40">
+        <div className="grid grid-cols-3 gap-px bg-border/40 border-y border-border/40">
           {items.map((pillar, i) => {
             const Icon = pillar.icon;
             return (
             <div
               key={i}
-              className="group relative bg-background hover:bg-card transition-colors duration-500 flex flex-col items-center text-center py-16 md:py-20 px-6 md:px-10 overflow-hidden"
+              className="group relative bg-background hover:bg-card transition-colors duration-500 flex flex-col items-center text-center py-10 md:py-20 px-3 md:px-10 overflow-hidden"
             >
               {/* Number watermark */}
               <span
@@ -100,13 +100,13 @@ export default function WhyUsSection() {
               {/* Blown-up icon */}
               <div className="relative mb-7">
                 <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative w-24 h-24 flex items-center justify-center border-2 border-primary/30 text-primary group-hover:border-primary group-hover:scale-110 transition-all duration-500">
-                  {Icon ? <Icon className="w-12 h-12" /> : null}
+                <div className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center border-2 border-primary/30 text-primary group-hover:border-primary group-hover:scale-110 transition-all duration-500">
+                  {Icon ? <Icon className="w-8 h-8 md:w-12 md:h-12" /> : null}
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className={`relative text-lg md:text-xl font-bold text-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h3 className={`relative text-xs md:text-xl font-bold text-foreground ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {pillar.title}
               </h3>
 
