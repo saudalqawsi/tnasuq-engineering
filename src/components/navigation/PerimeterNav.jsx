@@ -3,6 +3,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import TnasuqLogo from '@/components/ui/TnasuqLogo';
+import MaskedLogo from '@/components/ui/MaskedLogo';
 
 export default function PerimeterNav() {
   const { lang, toggleLanguage, t, isRTL } = useLanguage();
@@ -88,6 +89,13 @@ const navItems = [
             className="fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center"
             dir={isRTL ? 'rtl' : 'ltr'}
           >
+            {/* Gold-tone company watermark */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+              <MaskedLogo
+                className="h-[72vh] w-auto max-w-none select-none"
+                style={{ filter: 'sepia(1) saturate(6) hue-rotate(350deg) brightness(0.85)' }}
+              />
+            </div>
             <button
               onClick={() => setMenuOpen(false)}
               className="absolute top-5 right-6"
@@ -105,7 +113,7 @@ const navItems = [
                   transition={{ delay: i * 0.1 }}
                   onClick={() => scrollTo(item.id)}
                   className={`text-3xl font-light text-foreground hover:text-primary transition-colors ${
-                    isRTL ? 'font-arabic' : 'font-inter'
+                    isRTL ? 'font-arabic' : 'font-inter uppercase tracking-wide'
                   }`}
                 >
                   {item.label}
