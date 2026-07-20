@@ -60,44 +60,44 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-primary-foreground/10">
+        {/* Services grid — constrained, compact blocks */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-primary-foreground/10 max-w-6xl mx-auto">
           {t.services.items.map((service, i) => {
             const Icon = serviceIcons[i];
             return (
               <div
                 key={i}
-                className={`group relative bg-foreground p-8 md:p-10 hover:bg-foreground/80 transition-colors duration-500 ${
+                className={`group relative bg-foreground p-6 md:p-7 hover:bg-foreground/80 transition-colors duration-500 ${
                   service.highlight ? 'ring-1 ring-inset ring-primary/30' : ''
                 }`}
               >
                 {service.highlight && (
-                  <div className={`absolute top-5 ${isRTL ? 'left-5' : 'right-5'}`}>
-                    <span className={`text-[9px] tracking-[0.2em] uppercase px-2 py-1 bg-primary/20 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
+                    <span className={`text-[8px] tracking-[0.2em] uppercase px-2 py-0.5 bg-primary/20 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {isRTL ? 'خدمة محورية' : 'Core Service'}
                     </span>
                   </div>
                 )}
                 {service.partner && (
-                  <div className={`absolute top-5 ${isRTL ? 'left-5' : 'right-5'}`}>
-                    <span className={`text-[9px] tracking-[0.2em] uppercase px-2 py-1 bg-primary-foreground/10 text-primary-foreground/40 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'}`}>
+                    <span className={`text-[8px] tracking-[0.2em] uppercase px-2 py-0.5 bg-primary-foreground/10 text-primary-foreground/40 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {isRTL ? 'عبر الشركاء' : 'Via Partners'}
                     </span>
                   </div>
                 )}
-                <div className="mb-8">
+                <div className="mb-5">
                   <Icon
-                    className="w-12 h-12 group-hover:text-primary-foreground transition-colors duration-500"
+                    className="w-9 h-9 group-hover:text-primary-foreground transition-colors duration-500"
                     style={{ color: 'hsl(32 55% 60%)' }}
                   />
                 </div>
-                <h3 className={`text-xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-base font-semibold mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {service.title}
                 </h3>
-                <p className={`text-sm text-primary-foreground/50 leading-[1.8] group-hover:text-primary-foreground/70 transition-colors duration-500 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <p className={`text-xs text-primary-foreground/50 leading-[1.75] group-hover:text-primary-foreground/70 transition-colors duration-500 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {service.description}
                 </p>
-                <div className="mt-8 font-inter text-[3rem] font-bold text-primary-foreground/[0.06] leading-none">
+                <div className="mt-6 font-inter text-[2.25rem] font-bold text-primary-foreground/[0.06] leading-none">
                   {String(i + 1).padStart(2, '0')}
                 </div>
               </div>
