@@ -106,10 +106,10 @@ const cal = CALLIGRAPHY_STYLES[ACTIVE_STYLE];
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => scrollTo(item.id)}
-                  className={`text-3xl text-foreground hover:text-primary transition-colors ${
-                    isRTL ? 'font-arabic' : 'font-inter font-black tracking-[-0.02em]'
+                  className={`text-3xl font-light text-foreground hover:text-primary transition-colors ${
+                    isRTL ? 'font-arabic' : 'font-inter'
                   }`}
-                  style={isRTL ? { fontFamily: cal.fontFamily, fontWeight: cal.fontWeight, letterSpacing: cal.letterSpacing } : undefined}
+                  style={isRTL ? { fontFamily: cal.fontFamily, fontWeight: 400, letterSpacing: cal.letterSpacing } : undefined}
                 >
                   {item.label}
                 </motion.button>
