@@ -60,7 +60,7 @@ export default function TemplateCarousel({ templates, category }) {
           className="absolute top-1/2 -translate-y-1/2 z-40 w-11 h-11 flex items-center justify-center border border-border/60 bg-background/70 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background transition-colors"
           style={isRTL ? { right: '4rem' } : { left: '4rem' }}
         >
-          <ChevronLeft className="w-5 h-5" />
+          {isRTL ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
         </button>
         <button
           onClick={() => step(isRTL ? -1 : 1)}
@@ -68,7 +68,7 @@ export default function TemplateCarousel({ templates, category }) {
           className="absolute top-1/2 -translate-y-1/2 z-40 w-11 h-11 flex items-center justify-center border border-border/60 bg-background/70 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background transition-colors"
           style={isRTL ? { left: '4rem' } : { right: '4rem' }}
         >
-          <ChevronRight className="w-5 h-5" />
+          {isRTL ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
         </button>
 
         {/* Cards */}
