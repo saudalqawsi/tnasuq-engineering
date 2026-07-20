@@ -109,16 +109,6 @@ export default function TemplateCarousel({ templates, category }) {
                     className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
                   />
 
-                  {/* Style tag pill */}
-                  <div className={`absolute top-3 z-10 ${isRTL ? 'left-3' : 'right-3'}`}>
-                    <span
-                      className="block text-[9px] tracking-[0.18em] uppercase px-2.5 py-1 bg-black/40 backdrop-blur-sm font-inter"
-                      style={{ color: tpl.accentColor, textShadow: `0 0 10px ${tpl.accentColor}cc` }}
-                    >
-                      {tag}
-                    </span>
-                  </div>
-
                   {/* Gradients */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                   {isCenter && (
@@ -132,16 +122,16 @@ export default function TemplateCarousel({ templates, category }) {
                     </h3>
                   </div>
 
-                  {/* Hover: View Gallery prompt (center only) */}
+                  {/* Hover: View Gallery prompt — top-right corner (center only) */}
                   {isCenter && (
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className={`absolute top-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${isRTL ? 'left-3' : 'right-3'}`}>
                       <span
-                        className={`inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/30 text-white text-[11px] tracking-[0.2em] uppercase ${
+                        className={`inline-flex items-center gap-2 px-3 py-1.5 bg-black/50 backdrop-blur-md border border-white/30 text-white text-[10px] tracking-[0.2em] uppercase ${
                           isRTL ? 'font-arabic' : 'font-inter'
                         }`}
                       >
                         {galleryLabel}
-                        <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
+                        <ArrowRight className={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} />
                       </span>
                     </div>
                   )}
