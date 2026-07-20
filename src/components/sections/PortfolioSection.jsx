@@ -162,12 +162,12 @@ export default function PortfolioSection() {
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-5 border hidden" style={{ borderColor: cat.color + '66' }}>
-              <span className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
-              <span className={`text-xs tracking-[0.25em] uppercase ${isRTL ? 'font-arabic' : 'font-inter'}`} style={{ color: cat.color }}>
-                {isRTL ? cat.ar : cat.en}
-              </span>
-            </div>
+            
+
+
+
+
+            
             <h2 className={`text-4xl md:text-6xl font-bold text-foreground mb-4 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
               {t.portfolio.subtitle}
             </h2>
