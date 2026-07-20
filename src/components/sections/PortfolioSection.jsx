@@ -185,25 +185,25 @@ export default function PortfolioSection() {
 
       {/* Portfolio CTA */}
       <div className="px-6 md:px-16 lg:px-24 mt-16">
-        <div className="border border-border/50 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 hidden">
-          <div>
-            <h3 className={`text-2xl md:text-3xl font-bold text-foreground mb-2 ${isRTL ? 'font-arabic' : 'font-inter tracking-tight'}`}>
-              {isRTL ? 'أعجبك ما رأيت؟' : 'See something you like?'}
-            </h3>
-            <p className={`text-muted-foreground text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-              {isRTL ?
-              'كل نموذج قابل للتخصيص وفق قطعتك ومتطلباتك.' :
-              'Every template is fully customisable to your plot and requirements.'}
-            </p>
-          </div>
-          <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className={`group shrink-0 inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 text-sm tracking-wider font-medium hover:bg-primary transition-colors duration-500 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-            
-            {isRTL ? 'ابدأ مشروعك' : 'Start a Project'}
-            <span className="inline-block w-5 h-[1.5px] bg-current group-hover:w-8 transition-all duration-300" />
-          </button>
-        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
       </div>
     </section>);
 
