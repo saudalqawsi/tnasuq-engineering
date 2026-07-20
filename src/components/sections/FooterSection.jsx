@@ -6,17 +6,17 @@ import MaskedLogo from '@/components/ui/MaskedLogo';
 // Social icons as inline SVGs (no external dependency needed)
 function TwitterX() {
   return (
-    <svg width="13" height="13" viewBox="0 0 25 25" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 3.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H3.744l7.73-8.835L2.254 3.25H8.08l4.253 5.622zm-1.161 17.52h1.833L8.084 5.126H6.117z" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );
 }
 function Instagram() {
   return (
-    <svg width="13" height="13" viewBox="0 0 25 25" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <rect x="3" y="3" width="19" height="19" rx="5" />
-      <circle cx="12.5" cy="12.5" r="5" />
-      <circle cx="18" cy="7" r="1" fill="currentColor" stroke="none" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
     </svg>
   );
 }
@@ -39,7 +39,7 @@ export default function FooterSection() {
     >
       {/* Massive brand-mark watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <MaskedLogo className="h-[28vh] md:h-[32vh] lg:h-[40vh] w-auto max-w-none select-none opacity-[0.05]" />
+        <MaskedLogo className="h-[55vh] w-auto max-w-none select-none opacity-[0.3]" />
       </div>
 
       <div className="relative px-6 md:px-16 lg:px-24 pt-20 pb-12">
@@ -60,7 +60,7 @@ export default function FooterSection() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-8 h-8 flex items-center justify-center border border-primary-foreground/15 text-primary-foreground/40 hover:text-primary-foreground hover:border-primary-foreground/40 transition-all duration-300 overflow-hidden p-1.5"
+                  className="w-8 h-8 flex items-center justify-center border border-primary-foreground/15 text-primary-foreground/40 hover:text-primary-foreground hover:border-primary-foreground/40 transition-all duration-300"
                 >
                   <Icon />
                 </a>
